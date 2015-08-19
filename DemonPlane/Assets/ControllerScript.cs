@@ -3,23 +3,45 @@ using System.Collections;
 
 public class ControllerScript : MonoBehaviour {
 
+	public int PlayerId;				// Id of the player, zero based
+	public float MinSpeed;				// Minimum speed of the airplane (this is the speed when stick is pulled back)
+	public float NormalSpeed;			// Normal flight speed, when stick is neither pulled nor pushed)
+	public float MaxSpeed;				// Max flight speed reached when stick is pressed forward
+	public float RotationSpeed;			// Rotation speed of the airplane
+	public float AltitudeChangeSpeed;	// Specifies how fast altitude is changed
+
+	private float Altitude; // 0.0 == ground, 1.0f == normal flight height
+	private float TargetAltitude;
 	private Vector3 Direction;
-	public float MinSpeed;
-	public float NormalSpeed;
-	public float MaxSpeed;
-	public float RotationSpeed;
+
+	private readonly string HorizontalAxixName;
+	private readonly string VerticalAxixName;
+	private readonly string ClimbButtonName;
+	private readonly string SinkButtonName;
+
+	ControllerScript()
+	{
+		HorizontalAxixName = "Horizontal" + PlayerId.ToString();
+		VerticalAxixName = "Vertical" + PlayerId.ToString();
+		ClimbButtonName = "AltClimb" + PlayerId.ToString();
+		SinkButtonName = "AltSink" + PlayerId.ToString();
+	}
 
 	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
+		Altitude = TargetAltitude = 1.0f;
 		Direction = new Vector3 (0, 1, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		float hAxis = Input.GetAxis ("Horizontal");
-		float vAxis = Input.GetAxis ("Vertical");
+		float hAxis = Input.GetAxis (HorizontalAxixName);
+		float vAxis = Input.GetAxis (VerticalAxixName);
+
+		float pressedAltClimb = Input.GetAxis (ClimbButtonName);
+		float pressedAltSink = Input.GetAxis (SinkButtonName);
 
 		// Rotation
 		float rotateBy = RotationSpeed * Time.deltaTime * hAxis;
@@ -47,5 +69,18 @@ public class ControllerScript : MonoBehaviour {
 
 		Direction = newDirection;
 
+		Debug.LogWarning(Altitude.ToString() + " " + TargetAltitude.ToString() + " -- " + pressedAltSink.ToString() + " " + pressedAltClimb.ToString());
+		if (TargetAltitude == Altitude)
+		{
+			TargetAltitude = pressedAltSink > 0 ? 0.0f : TargetAltitude;
+			TargetAltitude = pressedAltClimb > 0 ? 1.0f : TargetAltitude;
+		}
+		else
+		{
+			float diff = Mathf.Sign(TargetAltitude - Altitude) * AltitudeChangeSpeed * Time.deltaTime;
+			Altitude = Mathf.Clamp(Altitude + diff, 0.0f, 1.0f);
+
+			transform.localScale = new Vector3(Mathf.Lerp(0.5f, 1.0f, Altitude), Mathf.Lerp(0.5f, 1.0f, Altitude), 1.0f);
+		}
 	}
 }
