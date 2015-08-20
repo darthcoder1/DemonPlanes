@@ -100,6 +100,8 @@ public class ControllerScript : MonoBehaviour {
 
 		Direction = newDirection;
 
+		PlayerDetailsComp.CollectWaterFX.enableEmission = Altitude < 0.01f && !PlayerDetailsComp.IsOverLand;
+
 		if (TargetAltitude == Altitude)
 		{
 			TargetAltitude = pressedAltSink > 0 ? 0.0f : TargetAltitude;

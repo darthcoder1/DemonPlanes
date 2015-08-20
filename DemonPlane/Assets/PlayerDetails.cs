@@ -13,6 +13,7 @@ public class PlayerDetails : MonoBehaviour {
 
 	public Text AmmoDisplay;
 	public ParticleSystem DropWaterFX;
+	public ParticleSystem CollectWaterFX;
 	public bool IsOverLand { get { return bOverLand; } }
 
 	// Use this for initialization
