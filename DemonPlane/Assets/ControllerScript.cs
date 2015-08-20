@@ -128,11 +128,22 @@ public class ControllerScript : MonoBehaviour {
 		}
 
 		// Relase Water
-		float releaseWater = Input.GetAxis(ReleaseWaterName);
-		Debug.LogWarning("Trigger: " + releaseWater.ToString());
-		if (releaseWater > 0)
-		{
+		bool releaseWater = Input.GetAxis(ReleaseWaterName)>0 && PlayerDetailsComp.CurrentAmmo > 0;
 
+		PlayerDetailsComp.DropWaterFX.enableEmission = releaseWater;
+
+		if (releaseWater)
+		{
+			int AmmoToRemove = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoUsagePerSecond * Time.deltaTime);
+			PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo - AmmoToRemove, 0, PlayerDetailsComp.MaxAmmo);
 		}
+		/*if (releaseWater > 0 && !PlayerDetailsComp.DropWaterFX.enableEmission)
+		{
+			PlayerDetailsComp.DropWaterFX.enableEmission = true;
+		}
+		else if (releaseWater <= 0 && PlayerDetailsComp.DropWaterFX.enableEmission)
+		{
+			PlayerDetailsComp.DropWaterFX.enableEmission = false;
+		}*/
 	}
 }

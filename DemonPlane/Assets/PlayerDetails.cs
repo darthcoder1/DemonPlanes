@@ -6,17 +6,19 @@ public class PlayerDetails : MonoBehaviour {
 
 	public int MaxAmmo;
 	public int AmmoRefillPerSecond;
+	public int AmmoUsagePerSecond;
 
 	public int CurrentAmmo;
 	private bool bOverLand;
 
 	public Text AmmoDisplay;
+	public ParticleSystem DropWaterFX;
 	public bool IsOverLand { get { return bOverLand; } }
 
 	// Use this for initialization
 	void Start () 
 	{
-		CurrentAmmo = 0;
+		CurrentAmmo = MaxAmmo;
 
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
 	}
