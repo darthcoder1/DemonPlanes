@@ -24,13 +24,17 @@ public class ControllerScript : MonoBehaviour {
 	private readonly string VerticalAxixName;
 	private readonly string ClimbButtonName;
 	private readonly string SinkButtonName;
+	private readonly string ReleaseWaterName;
 
 	ControllerScript()
 	{
-		HorizontalAxixName = "Horizontal" + PlayerId.ToString();
-		VerticalAxixName = "Vertical" + PlayerId.ToString();
-		ClimbButtonName = "AltClimb" + PlayerId.ToString();
-		SinkButtonName = "AltSink" + PlayerId.ToString();
+		string PlayerIdStr = PlayerId.ToString();
+
+		HorizontalAxixName = "Horizontal" + PlayerIdStr;
+		VerticalAxixName = "Vertical" + PlayerIdStr;
+		ClimbButtonName = "AltClimb" + PlayerIdStr;
+		SinkButtonName = "AltSink" + PlayerIdStr;
+		ReleaseWaterName = "ReleaseWater" + PlayerIdStr;
 	}
 
 	// Use this for initialization
@@ -43,18 +47,7 @@ public class ControllerScript : MonoBehaviour {
 		PlayerDetailsComp = GetComponent<PlayerDetails>();
 		GameOverText.text = "";
 	}
-
-
-	void OnGui()
-	{
-		if (bDied)
-		{
-			//GUIContent content = new GUIContent();
-			//content.text = "Game Over!";
-			//GUI.Label (new Rect(Screen.width * 0.5f - 50, Screen.height * 0.5f - 10, 100, 20), content);
-
-		}
-	}
+	
 
 	void Die()
 	{
@@ -70,7 +63,8 @@ public class ControllerScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 
 		if (bDied) { return; }
 
@@ -131,6 +125,14 @@ public class ControllerScript : MonoBehaviour {
 			Altitude = Mathf.Clamp(Altitude + diff, 0.0f, 1.0f);
 
 			transform.localScale = new Vector3(Mathf.Lerp(0.5f, 1.0f, Altitude), Mathf.Lerp(0.5f, 1.0f, Altitude), 1.0f);
+		}
+
+		// Relase Water
+		float releaseWater = Input.GetAxis(ReleaseWaterName);
+		Debug.LogWarning("Trigger: " + releaseWater.ToString());
+		if (releaseWater > 0)
+		{
+
 		}
 	}
 }

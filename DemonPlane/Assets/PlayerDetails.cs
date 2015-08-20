@@ -11,7 +11,6 @@ public class PlayerDetails : MonoBehaviour {
 	private bool bOverLand;
 
 	public Text AmmoDisplay;
-
 	public bool IsOverLand { get { return bOverLand; } }
 
 	// Use this for initialization
