@@ -43,3 +43,10 @@ Temporary Items
 .apdisk
 DemonPlane/Temp/
 DemonPlane/Library/
+
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.DS_store
