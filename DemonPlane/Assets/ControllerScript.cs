@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ControllerScript : MonoBehaviour {
@@ -10,9 +11,14 @@ public class ControllerScript : MonoBehaviour {
 	public float RotationSpeed;			// Rotation speed of the airplane
 	public float AltitudeChangeSpeed;	// Specifies how fast altitude is changed
 
+	private bool bDied;
+
 	private float Altitude; // 0.0 == ground, 1.0f == normal flight height
 	private float TargetAltitude;
 	private Vector3 Direction;
+
+	private PlayerDetails PlayerDetailsComp;
+	public Text GameOverText;
 
 	private readonly string HorizontalAxixName;
 	private readonly string VerticalAxixName;
@@ -32,10 +38,41 @@ public class ControllerScript : MonoBehaviour {
 	{
 		Altitude = TargetAltitude = 1.0f;
 		Direction = new Vector3 (0, 1, 0);
+		bDied = false;
+
+		PlayerDetailsComp = GetComponent<PlayerDetails>();
+		GameOverText.text = "";
 	}
-	
+
+
+	void OnGui()
+	{
+		if (bDied)
+		{
+			//GUIContent content = new GUIContent();
+			//content.text = "Game Over!";
+			//GUI.Label (new Rect(Screen.width * 0.5f - 50, Screen.height * 0.5f - 10, 100, 20), content);
+
+		}
+	}
+
+	void Die()
+	{
+		bDied = true;
+		GameOverText.text = "Game Over!";
+		Invoke("RestartLevel", 3.0f);
+	}
+
+	void RestartLevel()
+	{
+		Destroy(gameObject);
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
 	// Update is called once per frame
 	void Update () {
+
+		if (bDied) { return; }
 
 		float hAxis = Input.GetAxis (HorizontalAxixName);
 		float vAxis = Input.GetAxis (VerticalAxixName);
@@ -69,11 +106,24 @@ public class ControllerScript : MonoBehaviour {
 
 		Direction = newDirection;
 
-		Debug.LogWarning(Altitude.ToString() + " " + TargetAltitude.ToString() + " -- " + pressedAltSink.ToString() + " " + pressedAltClimb.ToString());
 		if (TargetAltitude == Altitude)
 		{
 			TargetAltitude = pressedAltSink > 0 ? 0.0f : TargetAltitude;
 			TargetAltitude = pressedAltClimb > 0 ? 1.0f : TargetAltitude;
+
+			if (Altitude <= 0.01f)
+			{
+				if (PlayerDetailsComp.IsOverLand)
+				{
+					Die();
+				}
+				else
+				{
+					int AmmoToAdd = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoRefillPerSecond * Time.deltaTime);
+					PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo + AmmoToAdd, 0, PlayerDetailsComp.MaxAmmo);
+					Debug.LogWarning("Ammo: " + PlayerDetailsComp.CurrentAmmo);
+				}
+			}
 		}
 		else
 		{

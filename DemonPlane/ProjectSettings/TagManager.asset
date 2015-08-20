@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - forest
+  - land
   layers:
   - Default
   - TransparentFX

@@ -26,6 +26,7 @@ public class CameraScript : MonoBehaviour {
 		PlayerCenterPos /= Players.Length;
 		PlayerCenterPos.z = transform.position.z;
 
+		//transform.position = PlayerCenterPos;
 		transform.position = Vector3.SmoothDamp(transform.position, PlayerCenterPos, ref CurrentCamVelocity, DampTime);
 	}
 }
