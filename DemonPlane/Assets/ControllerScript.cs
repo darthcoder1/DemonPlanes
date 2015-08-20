@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ControllerScript : MonoBehaviour {
 
@@ -10,12 +11,15 @@ public class ControllerScript : MonoBehaviour {
 	public float MaxSpeed;				// Max flight speed reached when stick is pressed forward
 	public float RotationSpeed;			// Rotation speed of the airplane
 	public float AltitudeChangeSpeed;	// Specifies how fast altitude is changed
-
+	public float WaterCollisionCheckInterval; // Specifies the interval in which the dropped water is checking for collision
+	public float DropWaterInheritVelocity; // This must match the value from the particlesystem
 	private bool bDied;
 
 	private float Altitude; // 0.0 == ground, 1.0f == normal flight height
 	private float TargetAltitude;
 	private Vector3 Direction;
+	private float TimeSinceLastWaterCollisionCheck;
+	private List<Vector3> WaterCollisionCheckList;
 
 	private PlayerDetails PlayerDetailsComp;
 	public Text GameOverText;
@@ -46,6 +50,9 @@ public class ControllerScript : MonoBehaviour {
 
 		PlayerDetailsComp = GetComponent<PlayerDetails>();
 		GameOverText.text = "";
+
+		WaterCollisionCheckList = new List<Vector3>();
+		TimeSinceLastWaterCollisionCheck = 0.0f;
 	}
 	
 
@@ -60,6 +67,33 @@ public class ControllerScript : MonoBehaviour {
 	{
 		Destroy(gameObject);
 		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	void CheckWaterCollision()
+	{
+		Vector3 Pos = WaterCollisionCheckList[0];
+		WaterCollisionCheckList.RemoveAt(0);
+
+		Debug.DrawLine(Pos, Pos + Vector3.up * PlayerDetailsComp.WaterDropRadius, Color.red);
+		Debug.DrawLine(Pos, Pos + Vector3.left * PlayerDetailsComp.WaterDropRadius, Color.red);
+		Debug.DrawLine(Pos, Pos + Vector3.right * PlayerDetailsComp.WaterDropRadius, Color.red);
+		Debug.DrawLine(Pos, Pos + Vector3.down * PlayerDetailsComp.WaterDropRadius, Color.red);
+
+		Collider2D[] HitObjects = Physics2D.OverlapCircleAll(Pos, PlayerDetailsComp.WaterDropRadius);
+
+		foreach (Collider2D coll in HitObjects)
+		{
+			if (coll.CompareTag("forest"))
+			{
+
+			}
+			else if (coll.CompareTag("enemy"))
+			{
+				DemonBehavior demon = coll.GetComponent<DemonBehavior>();
+				demon.Health -= PlayerDetailsComp.WaterDamage;
+
+			}
+		}
 	}
 
 	// Update is called once per frame
@@ -84,6 +118,7 @@ public class ControllerScript : MonoBehaviour {
 		Debug.DrawLine( position, position + Direction * 100, Color.red );
 
 		transform.rotation = rotateByQuat * transform.rotation;
+
 
 		float currentSpeed = NormalSpeed;
 		// Movement
@@ -117,7 +152,6 @@ public class ControllerScript : MonoBehaviour {
 				{
 					int AmmoToAdd = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoRefillPerSecond * Time.deltaTime);
 					PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo + AmmoToAdd, 0, PlayerDetailsComp.MaxAmmo);
-					Debug.LogWarning("Ammo: " + PlayerDetailsComp.CurrentAmmo);
 				}
 			}
 		}
@@ -129,16 +163,29 @@ public class ControllerScript : MonoBehaviour {
 			transform.localScale = new Vector3(Mathf.Lerp(0.5f, 1.0f, Altitude), Mathf.Lerp(0.5f, 1.0f, Altitude), 1.0f);
 		}
 
-		// Relase Water
-		bool releaseWater = Input.GetAxis(ReleaseWaterName)>0 && PlayerDetailsComp.CurrentAmmo > 0;
+		TimeSinceLastWaterCollisionCheck += Time.deltaTime;
 
-		PlayerDetailsComp.DropWaterFX.enableEmission = releaseWater;
-
-		if (releaseWater)
+		if (Altitude >= 0.99f && Altitude == TargetAltitude)
 		{
-			int AmmoToRemove = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoUsagePerSecond * Time.deltaTime);
-			PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo - AmmoToRemove, 0, PlayerDetailsComp.MaxAmmo);
+			// Relase Water
+			bool releaseWater = Input.GetAxis(ReleaseWaterName)>0 && PlayerDetailsComp.CurrentAmmo > 0;
+			
+			PlayerDetailsComp.DropWaterFX.enableEmission = releaseWater;
+			
+			if (releaseWater)
+			{
+				int AmmoToRemove = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoUsagePerSecond * Time.deltaTime);
+				PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo - AmmoToRemove, 0, PlayerDetailsComp.MaxAmmo);
+
+				if (TimeSinceLastWaterCollisionCheck >= WaterCollisionCheckInterval)
+				{
+					TimeSinceLastWaterCollisionCheck = 0.0f;
+					WaterCollisionCheckList.Add(transform.position + newDirection * currentSpeed * DropWaterInheritVelocity * PlayerDetailsComp.TimeForWaterToDrop);
+					Invoke("CheckWaterCollision", PlayerDetailsComp.TimeForWaterToDrop);
+				}
+			}
 		}
+
 		/*if (releaseWater > 0 && !PlayerDetailsComp.DropWaterFX.enableEmission)
 		{
 			PlayerDetailsComp.DropWaterFX.enableEmission = true;

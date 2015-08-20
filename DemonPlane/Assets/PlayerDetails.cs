@@ -8,6 +8,10 @@ public class PlayerDetails : MonoBehaviour {
 	public int AmmoRefillPerSecond;
 	public int AmmoUsagePerSecond;
 
+	public float TimeForWaterToDrop;
+	public float WaterDropRadius;
+	public int WaterDamage;
+
 	public int CurrentAmmo;
 	private bool bOverLand;
 
@@ -20,8 +24,9 @@ public class PlayerDetails : MonoBehaviour {
 	void Start () 
 	{
 		CurrentAmmo = MaxAmmo;
-
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
+
+		DropWaterFX.startLifetime = TimeForWaterToDrop;
 	}
 	
 	// Update is called once per frame
