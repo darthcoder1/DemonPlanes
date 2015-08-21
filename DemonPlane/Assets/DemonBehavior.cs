@@ -14,11 +14,12 @@ public class DemonBehavior : MonoBehaviour
 
 	private bool bSoundPlayed;
 
-	private GameObject DemonExtinguishSFX;
+	public AudioSource DemonExtinguishSFX;
 
 	// Use this for initialization
 	void Start () 
 	{
+
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
 		float nearestVillageDistance = float.MaxValue;
@@ -39,19 +40,21 @@ public class DemonBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Health < Health / 2)
-		{
-			/*
-			if(!bSoundPlayed)
+
+			if (Health < MaxHealth / 1.5)
 			{
-				bSoundPlayed=true;
-				AudioSource audio = DemonExtinguishSFX.GetComponent<AudioSource>();
-				audio.Play();
-				audio.Play(44100);
+
+				//DemonExtinguishSFX.Play();
+				if(!bSoundPlayed)
+				{
+					bSoundPlayed=true;
+
+					DemonExtinguishSFX.Play();
+					//DemonExtinguishSFX.Play(44100);
+				}
+			
+
 			}
-		
-		*/
-		}
 		if (Health <= 0)
 		{
 			Die();
