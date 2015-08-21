@@ -12,6 +12,10 @@ public class DemonBehavior : MonoBehaviour
 
 	public float WalkingSpeed;
 
+	private bool bSoundPlayed;
+
+	private GameObject DemonExtinguishSFX;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -35,6 +39,19 @@ public class DemonBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (Health < Health / 2)
+		{
+			/*
+			if(!bSoundPlayed)
+			{
+				bSoundPlayed=true;
+				AudioSource audio = DemonExtinguishSFX.GetComponent<AudioSource>();
+				audio.Play();
+				audio.Play(44100);
+			}
+		
+		*/
+		}
 		if (Health <= 0)
 		{
 			Die();
