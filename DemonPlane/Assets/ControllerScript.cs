@@ -17,6 +17,7 @@ public class ControllerScript : MonoBehaviour {
 
 	private float Altitude; // 0.0 == ground, 1.0f == normal flight height
 	private float TargetAltitude;
+	private Vector3 OriginalScale;
 	private Vector3 Direction;
 	private float TimeSinceLastWaterCollisionCheck;
 	private List<Vector3> WaterCollisionCheckList;
@@ -53,6 +54,8 @@ public class ControllerScript : MonoBehaviour {
 
 		WaterCollisionCheckList = new List<Vector3>();
 		TimeSinceLastWaterCollisionCheck = 0.0f;
+
+		OriginalScale = transform.localScale;
 	}
 	
 
@@ -160,7 +163,9 @@ public class ControllerScript : MonoBehaviour {
 			float diff = Mathf.Sign(TargetAltitude - Altitude) * AltitudeChangeSpeed * Time.deltaTime;
 			Altitude = Mathf.Clamp(Altitude + diff, 0.0f, 1.0f);
 
-			transform.localScale = new Vector3(Mathf.Lerp(0.5f, 1.0f, Altitude), Mathf.Lerp(0.5f, 1.0f, Altitude), 1.0f);
+			transform.localScale = new Vector3(Mathf.Lerp(OriginalScale.x * 0.5f, OriginalScale.x * 1.0f, Altitude), 
+			                                   Mathf.Lerp(OriginalScale.y * 0.5f, OriginalScale.y * 1.0f, Altitude), 
+			                                   OriginalScale.z * 1.0f);
 		}
 
 		TimeSinceLastWaterCollisionCheck += Time.deltaTime;
