@@ -40,21 +40,14 @@ public class DemonBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
-			if (Health < MaxHealth / 1.5)
+		if (Health < MaxHealth * 0.5f)
+		{
+			if(!bSoundPlayed)
 			{
-
-				//DemonExtinguishSFX.Play();
-				if(!bSoundPlayed)
-				{
-					bSoundPlayed=true;
-
-					DemonExtinguishSFX.Play();
-					//DemonExtinguishSFX.Play(44100);
-				}
-			
-
+				bSoundPlayed=true;
+				DemonExtinguishSFX.Play();
 			}
+		}
 		if (Health <= 0)
 		{
 			Die();

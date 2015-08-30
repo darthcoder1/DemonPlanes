@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.03499997, y: -15.007, z: 0}
+  m_LocalPosition: {x: -7.19462729, y: .193160534, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 163504}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -74,6 +74,7 @@ MonoBehaviour:
   MaxHealth: 50
   Health: 0
   WalkingSpeed: .200000003
+  DemonExtinguishSFX: {fileID: 0}
 --- !u!212 &21291490
 SpriteRenderer:
   m_ObjectHideFlags: 1

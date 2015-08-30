@@ -43,11 +43,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 410012}
   - 212: {fileID: 21244734}
-  - 114: {fileID: 11456468}
   - 114: {fileID: 11477306}
   - 61: {fileID: 6103768}
   - 50: {fileID: 5088142}
   - 82: {fileID: 8279484}
+  - 114: {fileID: 11464156}
+  - 114: {fileID: 11484054}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -119,9 +120,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 2.52769752e-07, y: -.00374837825}
+  m_Offset: {x: .020812273, y: .0482845306}
   serializedVersion: 2
-  m_Size: {x: .801306129, y: 1.16309762}
+  m_Size: {x: 3.67347479, y: .934154034}
 --- !u!82 &8279484
 AudioSource:
   m_ObjectHideFlags: 1
@@ -191,7 +192,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11456468
+--- !u!114 &11464156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -199,18 +200,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 131898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03cf6b84e063cc4b90c5f196f4de122, type: 3}
+  m_Script: {fileID: 11500000, guid: a82526243bfe34740baca02d4d36a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerId: 0
-  MinSpeed: 1
-  NormalSpeed: 2
-  MaxSpeed: 3
-  RotationSpeed: 15
-  AltitudeChangeSpeed: .400000006
+  NormalSpeed: 5
+  RotationSpeed: 70
+  AltitudeChangeSpeed: 1
   WaterCollisionCheckInterval: .25
   DropWaterInheritVelocity: .25
-  GameOverText: {fileID: 0}
+  AltitudeChangeBtn: {fileID: 0}
 --- !u!114 &11477306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,13 +223,28 @@ MonoBehaviour:
   MaxAmmo: 500
   AmmoRefillPerSecond: 250
   AmmoUsagePerSecond: 100
+  CurrentAmmo: 500
+  FlightVelocity: {x: 0, y: 0}
+  GameOverText: {fileID: 0}
+  AmmoDisplay: {fileID: 0}
+  CollectWaterFX: {fileID: 19898142}
+--- !u!114 &11484054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1df14fcd01b54489f327498b7a0487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterCollisionCheckInterval: .25
+  DropWaterInheritVelocity: .25
+  DropWaterFX: {fileID: 19880826}
   TimeForWaterToDrop: 3
   WaterDropRadius: 1
   WaterDamage: 25
-  CurrentAmmo: 500
-  AmmoDisplay: {fileID: 0}
-  DropWaterFX: {fileID: 19880826}
-  CollectWaterFX: {fileID: 19898142}
 --- !u!198 &19880826
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2422,7 +2435,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131898}

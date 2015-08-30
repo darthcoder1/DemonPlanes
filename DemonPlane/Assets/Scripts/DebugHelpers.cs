@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MouseControllerScript : MonoBehaviour 
+public class DebugHelpers : MonoBehaviour 
 {
-
+	//public static void DrawLine(Vector2 start, Vector2 end
 	// Use this for initialization
 	void Start () 
 	{

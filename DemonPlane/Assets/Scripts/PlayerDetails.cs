@@ -8,25 +8,26 @@ public class PlayerDetails : MonoBehaviour {
 	public int AmmoRefillPerSecond;
 	public int AmmoUsagePerSecond;
 
-	public float TimeForWaterToDrop;
-	public float WaterDropRadius;
-	public int WaterDamage;
-
 	public int CurrentAmmo;
+	public Vector2 FlightVelocity;
 	private bool bOverLand;
+	private bool bDied;
 
+	public Text GameOverText;
 	public Text AmmoDisplay;
-	public ParticleSystem DropWaterFX;
 	public ParticleSystem CollectWaterFX;
+
 	public bool IsOverLand { get { return bOverLand; } }
+	public bool IsDead { get { return bDied; } }
 
 	// Use this for initialization
 	void Start () 
 	{
 		CurrentAmmo = MaxAmmo;
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
+		GameOverText.enabled = false;
 
-		DropWaterFX.startLifetime = TimeForWaterToDrop;
+
 	}
 	
 	// Update is called once per frame
@@ -49,6 +50,20 @@ public class PlayerDetails : MonoBehaviour {
 		{
 			bOverLand = false;
 		}
+	}
+
+	public void Die()
+	{
+		bDied = true;
+		GameOverText.enabled = true;
+		GameOverText.text = "Game Over!";
+		Invoke("RestartLevel", 3.0f);
+	}
+	
+	void RestartLevel()
+	{
+		Destroy(gameObject);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 	
 }
