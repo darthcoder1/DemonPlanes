@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82526243bfe34740baca02d4d36a277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalSpeed: 5
-  RotationSpeed: 70
+  NormalSpeed: 3.5
+  RotationSpeed: 65
   AltitudeChangeSpeed: 1
   WaterCollisionCheckInterval: .25
   DropWaterInheritVelocity: .25

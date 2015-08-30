@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\DropWater.cs" />
      <Compile Include="Assets\Scripts\MouseControllerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
+     <Compile Include="Assets\Scripts\WaveSpawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
