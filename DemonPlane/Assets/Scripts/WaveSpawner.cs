@@ -110,7 +110,8 @@ public class WaveSpawner : MonoBehaviour
 			return;
 		}
 
-		GameObject.Instantiate (Resources.Load ("PrefDemon"), GetNextSpawnPosition(), Quaternion.identity);
+		Transform spawnTransform = GetNextSpawnTransform();
+		GameObject.Instantiate (Resources.Load ("PrefDemon"), spawnTransform.position, spawnTransform.rotation);
 		TimeLeftBeforeNextSpawn = SpawnInterval;
 
 		if (++NumSpawned >= EnemyWaves[CurrentWave].NumDemons)
@@ -119,7 +120,7 @@ public class WaveSpawner : MonoBehaviour
 		}
 	}
 	
-	Vector3 GetNextSpawnPosition()
+	Transform GetNextSpawnTransform()
 	{
 		GameObject volcano = Volcanos [NextSpawnVolcanoIndex++];
 
@@ -128,7 +129,6 @@ public class WaveSpawner : MonoBehaviour
 			NextSpawnVolcanoIndex = 0;
 		}
 
-		Transform trans = volcano.transform.GetChild (Random.Range (0, volcano.transform.childCount));
-		return trans.position;
+		return volcano.transform.GetChild (Random.Range (0, volcano.transform.childCount));
 	}
 }
