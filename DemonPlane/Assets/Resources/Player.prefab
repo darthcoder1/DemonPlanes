@@ -49,6 +49,7 @@ GameObject:
   - 82: {fileID: 8279484}
   - 114: {fileID: 11464156}
   - 114: {fileID: 11484054}
+  - 114: {fileID: 11429558}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -192,13 +193,31 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11464156
+--- !u!114 &11429558
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131898}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03cf6b84e063cc4b90c5f196f4de122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerId: 0
+  MinSpeed: 2
+  NormalSpeed: 3.5
+  MaxSpeed: 5
+  RotationSpeed: 65
+  AltitudeChangeSpeed: 1
+  GameOverText: {fileID: 0}
+--- !u!114 &11464156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131898}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82526243bfe34740baca02d4d36a277, type: 3}
   m_Name: 

@@ -89,7 +89,7 @@ public class DropWater : MonoBehaviour
 			}
 			else if (coll.CompareTag("enemy"))
 			{
-				DemonBehavior demon = coll.GetComponent<DemonBehavior>();
+				HealthBar demon = coll.GetComponent<HealthBar>();
 				demon.Health -= WaterDamage;
 			}
 		}

@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 484092}
   - 212: {fileID: 21212276}
   - 61: {fileID: 6160360}
+  - 114: {fileID: 11406576}
+  - 114: {fileID: 11412022}
   m_Layer: 8
   m_Name: Village
   m_TagString: village
@@ -42,6 +44,30 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.12999916, y: 4.20999956}
+--- !u!114 &11406576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc536dcd1c205408a8f9e814d638fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 500
+  Health: 0
+--- !u!114 &11412022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80802a0b9742e7c4fbb0cda83c607f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21212276
 SpriteRenderer:
   m_ObjectHideFlags: 1

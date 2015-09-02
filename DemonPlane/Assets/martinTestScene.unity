@@ -573,7 +573,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -633,6 +632,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18402c92350c2534da76a83208ba85e9, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &723422530 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 116140, guid: 18402c92350c2534da76a83208ba85e9, type: 2}
+  m_PrefabInternal: {fileID: 671460675}
+--- !u!114 &723422531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723422530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc536dcd1c205408a8f9e814d638fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 500
+  Health: 0
+--- !u!114 &723422532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723422530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80802a0b9742e7c4fbb0cda83c607f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &795953198
 Prefab:
   m_ObjectHideFlags: 0
@@ -1468,6 +1495,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ac0dd092ca1cc44abdd83d009805fad, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1656130194 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 131898, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+  m_PrefabInternal: {fileID: 1931785213}
+--- !u!114 &1656130202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656130194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03cf6b84e063cc4b90c5f196f4de122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerId: 0
+  MinSpeed: 2
+  NormalSpeed: 3.5
+  MaxSpeed: 5
+  RotationSpeed: 65
+  AltitudeChangeSpeed: 1
+  GameOverText: {fileID: 128962368}
 --- !u!1001 &1931785213
 Prefab:
   m_ObjectHideFlags: 0
@@ -1519,6 +1568,10 @@ Prefab:
       propertyPath: AmmoDisplay
       value: 
       objectReference: {fileID: 1263572262}
+    - target: {fileID: 11464156, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0

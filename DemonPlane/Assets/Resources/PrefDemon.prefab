@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5837008}
   - 50: {fileID: 5090844}
   - 114: {fileID: 11484188}
+  - 114: {fileID: 11438096}
   m_Layer: 8
   m_Name: PrefDemon
   m_TagString: enemy
@@ -60,6 +61,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .650625706
+--- !u!114 &11438096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48cc536dcd1c205408a8f9e814d638fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Health: 0
 --- !u!114 &11484188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,8 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27204c98ac5b758458ac170346f31075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
-  Health: 0
+  VillageDamagePerSecond: 5
   WalkingSpeed: .200000003
   DemonExtinguishSFX: {fileID: 0}
 --- !u!212 &21291490

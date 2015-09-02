@@ -19,6 +19,7 @@ public class ControllerScript : MonoBehaviour {
 	private Vector3 Direction;
 
 	private PlayerDetails PlayerDetailsComp;
+	private DropWater DropWaterComp;
 	public Text GameOverText;
 
 	private readonly string HorizontalAxixName;
@@ -29,13 +30,11 @@ public class ControllerScript : MonoBehaviour {
 
 	ControllerScript()
 	{
-		string PlayerIdStr = PlayerId.ToString();
-
-		HorizontalAxixName = "Horizontal" + PlayerIdStr;
-		VerticalAxixName = "Vertical" + PlayerIdStr;
-		ClimbButtonName = "AltClimb" + PlayerIdStr;
-		SinkButtonName = "AltSink" + PlayerIdStr;
-		ReleaseWaterName = "ReleaseWater" + PlayerIdStr;
+		HorizontalAxixName = "Horizontal";
+		VerticalAxixName = "Vertical";
+		ClimbButtonName = "AltClimb";
+		SinkButtonName = "AltSink";
+		ReleaseWaterName = "ReleaseWater";
 	}
 
 	// Use this for initialization
@@ -45,32 +44,43 @@ public class ControllerScript : MonoBehaviour {
 		Direction = new Vector3 (0, 1, 0);
 		bDied = false;
 
+		DropWaterComp = GetComponent<DropWater> ();
 		PlayerDetailsComp = GetComponent<PlayerDetails>();
 		GameOverText.text = "";
 
 		OriginalScale = transform.localScale;
 	}
 	
-
 	void Die()
 	{
 		bDied = true;
 		GameOverText.text = "Game Over!";
+		GameOverText.enabled = true;
 		Invoke("RestartLevel", 3.0f);
 	}
 
 	void RestartLevel()
 	{
-		Destroy(gameObject);
+		GameObject.Destroy(gameObject);
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
-
+	void UpdateWaterDrop()
+	{
+		bool bShouldDrop = Input.GetAxis (ReleaseWaterName) > 0.3f;
+		if (!DropWaterComp.DroppingWater && bShouldDrop) 
+		{
+			DropWaterComp.DropWaterStart();
+		}
+		else if (DropWaterComp.DroppingWater && !bShouldDrop)
+		{
+			DropWaterComp.DropWaterStop();
+		}
+	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-
 		if (bDied) { return; }
 
 		float hAxis = Input.GetAxis (HorizontalAxixName);
@@ -135,5 +145,7 @@ public class ControllerScript : MonoBehaviour {
 			                                   Mathf.Lerp(OriginalScale.y * 0.5f, OriginalScale.y * 1.0f, Altitude), 
 			                                   OriginalScale.z * 1.0f);
 		}
+
+		UpdateWaterDrop ();
 	}
 }

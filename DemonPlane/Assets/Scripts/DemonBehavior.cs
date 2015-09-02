@@ -4,11 +4,10 @@ using System.Collections;
 public class DemonBehavior : MonoBehaviour 
 {
 
-	public int MaxHealth;
+	public int VillageDamagePerSecond = 5;
 
 	private GameObject TargetVillage;
-
-	public int Health;
+	private HealthBar HealthBarComp;
 
 	public float WalkingSpeed;
 
@@ -19,6 +18,7 @@ public class DemonBehavior : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		HealthBarComp = GetComponent<HealthBar> ();
 
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
@@ -33,14 +33,12 @@ public class DemonBehavior : MonoBehaviour
 			}
 		}
 		TargetVillage = nearestVillage;
-
-		Health = MaxHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Health < MaxHealth * 0.5f)
+		if (HealthBarComp.Health < HealthBarComp.MaxHealth * 0.5f)
 		{
 			if(!bSoundPlayed)
 			{
@@ -48,7 +46,7 @@ public class DemonBehavior : MonoBehaviour
 				DemonExtinguishSFX.Play();
 			}
 		}
-		if (Health <= 0)
+		if (HealthBarComp.Health <= 0)
 		{
 			Die();
 			return;
