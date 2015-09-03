@@ -22,6 +22,8 @@ public class ForestScript : MonoBehaviour
 			{
 				PSComp.enableEmission = false;
 				objs.Add (childTrans.gameObject);
+
+				childTrans.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 			}
 		}
 
