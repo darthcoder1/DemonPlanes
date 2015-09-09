@@ -85,7 +85,12 @@ public class DropWater : MonoBehaviour
 		{
 			if (coll.CompareTag("forest"))
 			{
-				
+                FireCell cell = coll.gameObject.GetComponent<FireCell>();
+
+                if (cell)
+                {
+                    cell.CurrentHealth -= WaterDamage;
+                }
 			}
 			else if (coll.CompareTag("enemy"))
 			{

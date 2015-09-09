@@ -11,6 +11,8 @@ GameObject:
   - 198: {fileID: 19896600}
   - 199: {fileID: 19962920}
   - 212: {fileID: 21261992}
+  - 114: {fileID: 11472280}
+  - 58: {fileID: 5832036}
   m_Layer: 0
   m_Name: BurningFire
   m_TagString: Untagged
@@ -25,11 +27,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129420}
   m_LocalRotation: {x: 0, y: 0, z: .382683456, w: .923879504}
-  m_LocalPosition: {x: -2.9000001, y: -15.8100004, z: 0}
+  m_LocalPosition: {x: -14.1736298, y: -18.9446316, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5832036
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129420}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .680000007
+--- !u!114 &11472280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 250
+  StartBurningThreshold: 2
 --- !u!198 &19896600
 ParticleSystem:
   m_ObjectHideFlags: 1

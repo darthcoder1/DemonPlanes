@@ -59,7 +59,15 @@ public class ControllerScript : MonoBehaviour {
 		Invoke("RestartLevel", 3.0f);
 	}
 
-	void RestartLevel()
+    void Win()
+    {
+        bDied = true;
+        GameOverText.text = "You won!";
+        GameOverText.enabled = true;
+        Invoke("RestartLevel", 3.0f);
+    }
+
+    void RestartLevel()
 	{
 		GameObject.Destroy(gameObject);
 		Application.LoadLevel(Application.loadedLevel);

@@ -76,6 +76,11 @@ public class WaveSpawner : MonoBehaviour
 			if (aliveDemons.Length <= 0)
 			{
 				bWaveSpawningActive = PrepareNextWave ();
+
+                if (!bWaveSpawningActive && FireCell.BurningCells <=0)
+                {
+                    GameObject.FindGameObjectWithTag("Player").SendMessage("Win");
+                }
 			}
 		}
 	}

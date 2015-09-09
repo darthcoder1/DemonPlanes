@@ -11,9 +11,11 @@ GameObject:
   - 198: {fileID: 19830550}
   - 199: {fileID: 19909268}
   - 212: {fileID: 21265992}
+  - 114: {fileID: 11456278}
+  - 58: {fileID: 5817846}
   m_Layer: 0
   m_Name: BurningFire (3)
-  m_TagString: Untagged
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,9 +31,11 @@ GameObject:
   - 198: {fileID: 19861178}
   - 199: {fileID: 19905486}
   - 212: {fileID: 21290168}
+  - 114: {fileID: 11406112}
+  - 58: {fileID: 5837844}
   m_Layer: 0
   m_Name: BurningFire (2)
-  m_TagString: Untagged
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +51,11 @@ GameObject:
   - 198: {fileID: 19836338}
   - 199: {fileID: 19973364}
   - 212: {fileID: 21229142}
+  - 114: {fileID: 11451422}
+  - 58: {fileID: 5864082}
   m_Layer: 0
   m_Name: BurningFire (1)
-  m_TagString: Untagged
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,9 +71,11 @@ GameObject:
   - 198: {fileID: 19820364}
   - 199: {fileID: 19938618}
   - 212: {fileID: 21268894}
+  - 114: {fileID: 11459162}
+  - 58: {fileID: 5801706}
   m_Layer: 0
   m_Name: BurningFire (4)
-  m_TagString: Untagged
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +108,11 @@ GameObject:
   - 198: {fileID: 19866302}
   - 199: {fileID: 19964756}
   - 212: {fileID: 21279506}
-  m_Layer: 0
+  - 114: {fileID: 11412938}
+  - 58: {fileID: 5867774}
+  m_Layer: 8
   m_Name: BurningFire
-  m_TagString: Untagged
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.88419867, y: -4.20777321, z: 0}
+  m_LocalPosition: {x: 2.79999995, y: -13.9200001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437150}
@@ -184,6 +194,99 @@ Transform:
   - {fileID: 408706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!58 &5801706
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137852}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .699999988
+--- !u!58 &5817846
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110154}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .699999988
+--- !u!58 &5837844
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114036}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .699999988
+--- !u!58 &5864082
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137138}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .699999988
+--- !u!58 &5867774
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160414}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .699999988
+--- !u!114 &11406112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  MaxHealth: 250
+  StartBurningThreshold: 2
+--- !u!114 &11412938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  MaxHealth: 250
+  StartBurningThreshold: 2
 --- !u!114 &11428112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,6 +298,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0a11f3767da184c9de945753f31a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11451422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  MaxHealth: 250
+  StartBurningThreshold: 2
+--- !u!114 &11456278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  MaxHealth: 250
+  StartBurningThreshold: 2
+--- !u!114 &11459162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753510874da5f1947a58a7783a824770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  MaxHealth: 250
+  StartBurningThreshold: 2
 --- !u!198 &19820364
 ParticleSystem:
   m_ObjectHideFlags: 1
