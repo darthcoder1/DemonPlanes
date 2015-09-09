@@ -33,6 +33,12 @@ public class DemonBehavior : MonoBehaviour
 			}
 		}
 		TargetVillage = nearestVillage;
+
+		//play sound when spawning
+		AudioSource audio = GetComponent<AudioSource>();
+		audio.Play();
+
+
 	}
 	
 	// Update is called once per frame
