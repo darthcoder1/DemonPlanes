@@ -40,6 +40,7 @@ GameObject:
   - 4: {fileID: 438114}
   - 212: {fileID: 21206488}
   - 60: {fileID: 6093592}
+  - 95: {fileID: 9593484}
   m_Layer: 8
   m_Name: Volcano
   m_TagString: volcano
@@ -93,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5299997, y: -9.34000015, z: 0}
+  m_LocalPosition: {x: -14.3500004, y: -24.1100006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425000}
@@ -139,6 +140,23 @@ PolygonCollider2D:
       - {x: -1.30160522, y: -2.11650848}
       - {x: -1.80104637, y: -1.59019089}
       - {x: -2.34699821, y: -.0131225586}
+--- !u!95 &9593484
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bbcc0f755deb8ca488541ac2934ccfc0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &21206488
 SpriteRenderer:
   m_ObjectHideFlags: 1
