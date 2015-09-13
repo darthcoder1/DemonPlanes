@@ -67,6 +67,7 @@ public class WaveSpawner : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+        //Debug.LogWarning("Cells: " + FireCell.BurningCells.ToString());
 		if (bWaveSpawningActive) {
 			UpdateSpawning ();
 		} 

@@ -33,7 +33,7 @@ public class FireCell : MonoBehaviour
             }
             else
             {
-                --BurningCells;
+                BurningCells = Mathf.Max(BurningCells-1, 0);
             }
         }
     }
