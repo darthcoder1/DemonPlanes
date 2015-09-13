@@ -13,6 +13,8 @@ public class FireCell : MonoBehaviour
     public float StartBurningThreshold = 2.0f;
 
     public static int BurningCells = 0;
+	public AudioSource StartedBurningSFX;
+	public AudioSource StoppedBurningSFX;
 
     private CircleCollider2D CollisionComp;
     private ParticleSystem FireFXComp;
@@ -63,6 +65,7 @@ public class FireCell : MonoBehaviour
             if (BurningCounter > StartBurningThreshold)
             {
                 IsBurning = true;
+				StartedBurningSFX.Play();
             }
         }
         else
@@ -80,6 +83,7 @@ public class FireCell : MonoBehaviour
         if (!IsBurning)
         {
             CurrentHealth = MaxHealth;
+			StoppedBurningSFX.Play ();
         }
         else
         {
