@@ -8,10 +8,12 @@ public class DemonBehavior : MonoBehaviour
 
 	private GameObject TargetVillage;
 	private HealthBar HealthBarComp;
+	//private bool CountingForDeath;
 
 	public float WalkingSpeed;
 
 	private bool bSoundPlayed;
+	private double TimeTillDeath;
 
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
@@ -20,7 +22,7 @@ public class DemonBehavior : MonoBehaviour
 	void Start () 
 	{
 		HealthBarComp = GetComponent<HealthBar> ();
-
+		TimeTillDeath = 0;
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
 		float nearestVillageDistance = float.MaxValue;
@@ -38,6 +40,7 @@ public class DemonBehavior : MonoBehaviour
 		//play sound when spawning
 		AudioSource audio = GetComponent<AudioSource>();
 		audio.Play();
+		//DemonDefeatedSFX.Play ();
 
 
 	}
@@ -56,10 +59,11 @@ public class DemonBehavior : MonoBehaviour
 		}
 		if (HealthBarComp.Health <= 0)
 		{
-			//play sound when dieing
-			DemonDefeatedSFX.Play ();
+
 			Die();
 			return;
+
+
 		}
 
 		Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
@@ -71,7 +75,15 @@ public class DemonBehavior : MonoBehaviour
 	void Die()
 	{
 	   
-
-		GameObject.Destroy(gameObject);
+		if (TimeTillDeath == 0) {
+			//play sound when dieing
+			DemonDefeatedSFX.Play ();
+			//CountingForDeath=true;
+			TimeTillDeath = Time.time + 10.0;
+		} 
+		else if (Time.time > TimeTillDeath)
+		{
+			GameObject.Destroy (gameObject);
+		}
 	}
 }
