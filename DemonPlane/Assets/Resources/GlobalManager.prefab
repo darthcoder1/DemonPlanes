@@ -54,7 +54,7 @@ MonoBehaviour:
   EnemyWaves:
   - NumDemons: 2
     SpawnTimeInSeconds: 6
-    StartSpawningDelay: 10
+    StartSpawningDelay: 1
   - NumDemons: 5
     SpawnTimeInSeconds: 20
     StartSpawningDelay: 10
