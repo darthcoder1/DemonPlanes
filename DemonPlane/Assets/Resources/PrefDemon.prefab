@@ -72,13 +72,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6851f667cc0d9cf428fb8d0ff1671020, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ba5ddf2fd24c43a4dab069dbf06d4ae1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -148,7 +147,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -278,7 +276,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 21da33d421991824c820d7789ee6f81a, type: 3}
+      objectReference: {fileID: 8300000, guid: ba5ddf2fd24c43a4dab069dbf06d4ae1, type: 3}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
