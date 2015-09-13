@@ -77,7 +77,8 @@ public class WaveSpawner : MonoBehaviour
 			{
 				bWaveSpawningActive = PrepareNextWave ();
 
-                if (!bWaveSpawningActive && FireCell.BurningCells <=0)
+                if (!bWaveSpawningActive && FireCell.BurningCells <=0 && 
+                    !GameObject.FindGameObjectWithTag("village").GetComponent<VillageScript>().IsDestroyed)
                 {
                     GameObject.FindGameObjectWithTag("Player").SendMessage("Win");
                 }

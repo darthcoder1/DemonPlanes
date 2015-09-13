@@ -7,6 +7,8 @@ public class VillageScript : MonoBehaviour
 	List<GameObject> DemonsInVillage;
 	private HealthBar HealthBarComp;
 
+    public bool IsDestroyed { get { return HealthBarComp.Health <= 0; } }
+
 	// Use this for initialization
 	void Start () 
 	{

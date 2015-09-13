@@ -55,7 +55,7 @@ public class FireCell : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (!IsBurning)
+        if (!IsBurning & CurrentHealth > 0)
         {
             UpdateTrackedDemons();
             UpdateSpreading();
@@ -70,9 +70,22 @@ public class FireCell : MonoBehaviour
             if (CurrentHealth <= 0)
             {
                 IsBurning = false;
+                Invoke("ResetHealth", 10.0f);
             }
         }
 	}
+
+    void ResetHealth()
+    {
+        if (!IsBurning)
+        {
+            CurrentHealth = MaxHealth;
+        }
+        else
+        {
+            Invoke("ResetHealth", 10.0f);
+        }
+    }
 
     void UpdateSpreading()
     {
