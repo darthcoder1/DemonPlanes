@@ -640,7 +640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417358, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: NextWaveStartsText
@@ -1283,11 +1283,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 410012, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.75
+      value: -.0399999991
       objectReference: {fileID: 0}
     - target: {fileID: 410012, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -18.1399994
+      value: -19.9300003
       objectReference: {fileID: 0}
     - target: {fileID: 410012, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1311,7 +1311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410012, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11464156, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: AltitudeChangeBtn
