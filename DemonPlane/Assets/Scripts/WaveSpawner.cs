@@ -54,7 +54,13 @@ public class WaveSpawner : MonoBehaviour
 
 	bool PrepareNextWave()
 	{
-		if (++CurrentWave >= EnemyWaves.Length) 
+        if (CurrentWave >= 0)
+        {
+            GameObject.FindGameObjectWithTag("Player").SendMessage("WaveSurvived");
+        }
+       
+
+        if (++CurrentWave >= EnemyWaves.Length) 
 		{
 			// won
 			return false;

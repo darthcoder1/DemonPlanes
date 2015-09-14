@@ -15,6 +15,7 @@ public class PlayerDetails : MonoBehaviour {
 
 	public Text GameOverText;
 	public Text AmmoDisplay;
+    public Text ScoreDisplay;
 	public ParticleSystem CollectWaterFX;
 
 	public bool IsOverLand { get { return bOverLand; } }
@@ -34,7 +35,14 @@ public class PlayerDetails : MonoBehaviour {
 	void Update () 
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-	}
+        ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
+
+        int Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
+        if (Malus > 0)
+        {
+            ScoreDisplay.text += "-" + Malus;
+        }
+    }
 
 	void OnTriggerEnter2D(Collider2D collision) 
 	{

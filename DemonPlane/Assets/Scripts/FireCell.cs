@@ -104,7 +104,7 @@ public class FireCell : MonoBehaviour
         {
             FireCell cell = Parent.transform.GetChild(i).gameObject.GetComponent<FireCell>();
 
-            if (cell != this)
+            if (cell != this && cell)
             {
                 float magnitude = (cell.transform.position - transform.position).magnitude;
                 if (magnitude < nearestCellDist)
