@@ -18,6 +18,10 @@ public class PlayerDetails : MonoBehaviour {
     public Text ScoreDisplay;
 	public ParticleSystem CollectWaterFX;
 
+	//dieinn
+	private SpriteRenderer rend; 
+	Transform spawnTransform;
+
 	public bool IsOverLand { get { return bOverLand; } }
 	public bool IsDead { get { return bDied; } }
 
@@ -27,7 +31,7 @@ public class PlayerDetails : MonoBehaviour {
 		CurrentAmmo = MaxAmmo;
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
 		GameOverText.enabled = false;
-
+		rend = gameObject.GetComponent<SpriteRenderer>();
 
 	}
 	
@@ -63,9 +67,13 @@ public class PlayerDetails : MonoBehaviour {
 	public void Die()
 	{
 		bDied = true;
+		spawnTransform = transform;
+		rend.enabled = false;
+		//print ("spawn broken plane");
+		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
 		GameOverText.enabled = true;
 		GameOverText.text = "Game Over!";
-		Invoke("RestartLevel", 3.0f);
+		Invoke("RestartLevel", 10.0f);
 	}
 	
 	void RestartLevel()
