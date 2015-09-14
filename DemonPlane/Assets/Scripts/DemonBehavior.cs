@@ -8,9 +8,10 @@ public class DemonBehavior : MonoBehaviour
 
 	private GameObject TargetVillage;
 	private HealthBar HealthBarComp;
-	//private bool CountingForDeath;
+
 
 	public float WalkingSpeed;
+	public double TimeToDisappear; // the time between the demon reaching 0 HP and disappearing
 
 	private bool bSoundPlayed;
 	private double TimeTillDeath;
@@ -79,7 +80,7 @@ public class DemonBehavior : MonoBehaviour
 			//play sound when dieing
 			DemonDefeatedSFX.Play ();
 			//CountingForDeath=true;
-			TimeTillDeath = Time.time + 10.0;
+			TimeTillDeath = Time.time + TimeToDisappear;
 		} 
 		else if (Time.time > TimeTillDeath)
 		{
