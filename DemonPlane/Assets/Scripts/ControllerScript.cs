@@ -22,6 +22,8 @@ public class ControllerScript : MonoBehaviour {
 	private DropWater DropWaterComp;
 	public Text GameOverText;
 
+    private GameObject DropShadowObject;
+
 	private readonly string HorizontalAxixName;
 	private readonly string VerticalAxixName;
 	private readonly string ClimbButtonName;
@@ -48,6 +50,7 @@ public class ControllerScript : MonoBehaviour {
 		PlayerDetailsComp = GetComponent<PlayerDetails>();
 		GameOverText.text = "";
 
+        DropShadowObject = transform.GetChild(0).gameObject;
 		OriginalScale = transform.localScale;
 	}
 	
@@ -152,7 +155,12 @@ public class ControllerScript : MonoBehaviour {
 			transform.localScale = new Vector3(Mathf.Lerp(OriginalScale.x * 0.5f, OriginalScale.x * 1.0f, Altitude), 
 			                                   Mathf.Lerp(OriginalScale.y * 0.5f, OriginalScale.y * 1.0f, Altitude), 
 			                                   OriginalScale.z * 1.0f);
-		}
+
+            DropShadowObject.transform.localScale = Vector3.Lerp(new Vector3(0.5f, 0.5f, 0.5f),
+                                                                 new Vector3(0.75f, 0.75f, 0.75f), 1.0f-Altitude);
+            DropShadowObject.transform.localPosition = Vector3.Lerp(new Vector3(1.0f, 1.0f, 1.0f),
+                                                                    new Vector3(0.5f, 0.5f, 0.5f), 1.0f-Altitude);
+        }
 
 		UpdateWaterDrop ();
 	}
