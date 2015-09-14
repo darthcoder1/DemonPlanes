@@ -13,6 +13,9 @@ public class DemonBehavior : MonoBehaviour
 	public float WalkingSpeed;
 	public double TimeToDisappear; // the time between the demon reaching 0 HP and disappearing
 
+	//rotation
+	private Transform target;
+
 	private bool bSoundPlayed;
 	private double TimeTillDeath;
 	private float HealthScale; 
@@ -38,6 +41,7 @@ public class DemonBehavior : MonoBehaviour
 			}
 		}
 		TargetVillage = nearestVillage;
+		target = TargetVillage.transform;
 
 		//play sound when spawning
 		AudioSource audio = GetComponent<AudioSource>();
@@ -53,10 +57,13 @@ public class DemonBehavior : MonoBehaviour
 		//scale demon size
 		if (HealthBarComp.Health > 0) 
 		{
-			HealthScale=Mathf.Max((float)HealthBarComp.Health/100.0f, 0.25f); 
-			transform.localScale = new Vector3(HealthScale,HealthScale,HealthScale);
-			print (HealthScale);
-			//transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+			HealthScale=Mathf.Max((float)HealthBarComp.Health/30.0f, 0.25f); 
+			if(HealthScale <1) 
+			{
+				transform.localScale = new Vector3(HealthScale,HealthScale,HealthScale);
+			}
+
+
 		}
 
 		if (HealthBarComp.Health < HealthBarComp.MaxHealth * 0.8f)
@@ -76,11 +83,15 @@ public class DemonBehavior : MonoBehaviour
 
 
 		}
-
+		//move
 		Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
 		Quaternion randomRotation = Quaternion.AngleAxis((float)Random.Range(-10, 10), Vector3.back);
 
 		transform.position += (randomRotation * WalkDir) * WalkingSpeed * Time.deltaTime;
+		///rotate
+		Vector3 relativePos = target.position - transform.position;
+		Quaternion rotation = Quaternion.LookRotation(relativePos);
+		//transform.rotation = rotation;
 	}
 
 	void Die()
