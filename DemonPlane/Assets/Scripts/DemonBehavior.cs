@@ -15,6 +15,7 @@ public class DemonBehavior : MonoBehaviour
 
 	private bool bSoundPlayed;
 	private double TimeTillDeath;
+	private float HealthScale; 
 
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
@@ -49,6 +50,15 @@ public class DemonBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		//scale demon size
+		if (HealthBarComp.Health > 0) 
+		{
+			HealthScale=HealthBarComp.Health/100; 
+			transform.localScale = new Vector3(HealthScale,HealthScale,HealthScale);
+			print (HealthScale);
+			//transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+		}
+
 		if (HealthBarComp.Health < HealthBarComp.MaxHealth * 0.8f)
 		{
 			if(!bSoundPlayed)
