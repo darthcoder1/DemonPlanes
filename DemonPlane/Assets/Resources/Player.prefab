@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerId: 0
-  MinSpeed: 5
+  MinSpeed: 7
   NormalSpeed: 10
   MaxSpeed: 15
   RotationSpeed: 100
@@ -2462,6 +2462,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: NormalSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MinSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
