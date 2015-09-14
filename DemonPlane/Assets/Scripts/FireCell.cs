@@ -73,7 +73,7 @@ public class FireCell : MonoBehaviour
             if (CurrentHealth <= 0)
             {
                 IsBurning = false;
-                Invoke("ResetHealth", 10.0f);
+                Invoke("ResetHealth", 15.0f);
             }
         }
 	}
@@ -82,12 +82,14 @@ public class FireCell : MonoBehaviour
     {
         if (!IsBurning)
         {
+            IsBurning = false;
             CurrentHealth = MaxHealth;
-			StoppedBurningSFX.Play ();
+            BurningCounter = 0;
+            StoppedBurningSFX.Play ();
         }
         else
         {
-            Invoke("ResetHealth", 10.0f);
+            Invoke("ResetHealth", 15.0f);
         }
     }
 

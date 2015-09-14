@@ -53,7 +53,7 @@ public class DemonBehavior : MonoBehaviour
 		//scale demon size
 		if (HealthBarComp.Health > 0) 
 		{
-			HealthScale=HealthBarComp.Health/100; 
+			HealthScale=Mathf.Max((float)HealthBarComp.Health/100.0f, 0.25f); 
 			transform.localScale = new Vector3(HealthScale,HealthScale,HealthScale);
 			print (HealthScale);
 			//transform.localScale = new Vector3(0.5f,0.5f,0.5f);

@@ -34,6 +34,8 @@ public class WaveSpawner : MonoBehaviour
 	private int NextSpawnVolcanoIndex;
 	private int NumSpawned;
 
+    private bool bInvokedWinning;
+
 
 
 	// Use this for initialization
@@ -46,7 +48,9 @@ public class WaveSpawner : MonoBehaviour
 
 		NextWaveStartsText.enabled = false;
 		WaveStartsText.enabled = false;
-	}
+
+        bInvokedWinning = false;
+    }
 
 	bool PrepareNextWave()
 	{
@@ -78,16 +82,35 @@ public class WaveSpawner : MonoBehaviour
 			{
 				bWaveSpawningActive = PrepareNextWave ();
 
-                if (!bWaveSpawningActive && FireCell.BurningCells <=0 && 
-                    !GameObject.FindGameObjectWithTag("village").GetComponent<VillageScript>().IsDestroyed)
+                FireCell[] fireCells = GameObject.FindObjectsOfType<FireCell>();
+
+                int NumBurning = 0;
+
+                foreach(FireCell cell in fireCells)
                 {
-                    GameObject.FindGameObjectWithTag("Player").SendMessage("Win");
+                    if (cell.IsBurning)
+                    {
+                        ++NumBurning;
+                    }
+                }
+
+                if (!bWaveSpawningActive && NumBurning <= 0 && 
+                    !GameObject.FindGameObjectWithTag("village").GetComponent<VillageScript>().IsDestroyed
+                    && !bInvokedWinning)
+                {
+                    bInvokedWinning = true;
+                    Invoke("GameWon", 3);
                 }
 			}
 		}
 	}
 
-	void HideWaveText()
+    void GameWon()
+    {
+        GameObject.FindGameObjectWithTag("Player").SendMessage("Win");
+    }
+
+    void HideWaveText()
 	{
 		WaveStartsText.enabled = false;
 	}

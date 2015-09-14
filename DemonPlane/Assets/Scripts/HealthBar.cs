@@ -4,7 +4,7 @@ using System.Collections;
 public class HealthBar : MonoBehaviour {
 
 	public int MaxHealth = 100;
-
+    public bool bDisplayHealthBar = true;
 
 	public int Health;
 	private bool bDrawGUI = false;
@@ -13,7 +13,7 @@ public class HealthBar : MonoBehaviour {
 	void Start () 
 	{
 		Health = MaxHealth;
-		bDrawGUI = true;
+		bDrawGUI = bDisplayHealthBar;
 	}
 
 	void OnGUI()
@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour {
 	}
 	void OnBecameVisible () 
 	{
-		bDrawGUI = true;
+		bDrawGUI = bDisplayHealthBar;
 	}
 	
 	void OnBecameInvisible () 
