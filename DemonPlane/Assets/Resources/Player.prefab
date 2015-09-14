@@ -50,6 +50,7 @@ GameObject:
   - 114: {fileID: 11464156}
   - 114: {fileID: 11484054}
   - 114: {fileID: 11468372}
+  - 114: {fileID: 11404242}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -95,8 +96,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .289999992, y: .660000026, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 410012}
   m_RootOrder: 0
@@ -168,6 +169,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -222,6 +224,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11404242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20662f15469f5e54490afa2a1b03b1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KilledDemonBonus: 1000
+  SurvivedWaveBonus: 5000
+  BurningFireMalus: 100
+  Score: 0
 --- !u!114 &11464156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +292,7 @@ MonoBehaviour:
   FlightVelocity: {x: 0, y: 0}
   GameOverText: {fileID: 0}
   AmmoDisplay: {fileID: 0}
+  ScoreDisplay: {fileID: 0}
   CollectWaterFX: {fileID: 19898142}
 --- !u!114 &11484054
 MonoBehaviour:
