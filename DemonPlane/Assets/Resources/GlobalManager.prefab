@@ -122,14 +122,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyWaves:
-  - NumDemons: 2
-    SpawnTimeInSeconds: 3
+  - NumDemons: 1
+    SpawnTimeInSeconds: 1
     StartSpawningDelay: 1
+  - NumDemons: 2
+    SpawnTimeInSeconds: 5
+    StartSpawningDelay: 3
+  - NumDemons: 3
+    SpawnTimeInSeconds: 7
+    StartSpawningDelay: 3
   - NumDemons: 4
     SpawnTimeInSeconds: 10
     StartSpawningDelay: 3
+  - NumDemons: 5
+    SpawnTimeInSeconds: 14
+    StartSpawningDelay: 3
   - NumDemons: 6
     SpawnTimeInSeconds: 20
+    StartSpawningDelay: 3
+  - NumDemons: 8
+    SpawnTimeInSeconds: 25
+    StartSpawningDelay: 3
+  - NumDemons: 10
+    SpawnTimeInSeconds: 28
+    StartSpawningDelay: 3
+  - NumDemons: 12
+    SpawnTimeInSeconds: 32
+    StartSpawningDelay: 3
+  - NumDemons: 16
+    SpawnTimeInSeconds: 38
     StartSpawningDelay: 3
   NextWaveStartsText: {fileID: 0}
   WaveStartsText: {fileID: 0}

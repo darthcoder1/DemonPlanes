@@ -52,6 +52,7 @@ GameObject:
   - 114: {fileID: 11468372}
   - 114: {fileID: 11404242}
   - 114: {fileID: 11464814}
+  - 114: {fileID: 11453440}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -238,7 +239,24 @@ MonoBehaviour:
   KilledDemonBonus: 1000
   SurvivedWaveBonus: 5000
   BurningFireMalus: 100
+  NumDemonsKilled: 0
+  NumWavesSurvived: 0
+  NumBurning: 0
   Score: 0
+--- !u!114 &11453440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131898}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b7719d2a8c1f248bc539a8329168ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowSprite: {fileID: 21300000, guid: e0d2fbd282f6adb4794dd858f32bb87b, type: 3}
+  MinDemonDistance: 4
+  ArrowPlacementRadius: 4
 --- !u!114 &11464156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,6 +325,12 @@ MonoBehaviour:
   GameOverText: {fileID: 0}
   AmmoDisplay: {fileID: 0}
   ScoreDisplay: {fileID: 0}
+  FinalScoreDisplay: {fileID: 0}
+  FinalScoreDemons: {fileID: 0}
+  FinalScoreWaves: {fileID: 0}
+  FinalForestFire: {fileID: 0}
+  FinalScoreTotal: {fileID: 0}
+  FinalScoreRank: {fileID: 0}
   CollectWaterFX: {fileID: 19898142}
 --- !u!114 &11484054
 MonoBehaviour:

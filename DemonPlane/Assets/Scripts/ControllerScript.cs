@@ -61,6 +61,7 @@ public class ControllerScript : MonoBehaviour {
 	
 	void Die()
 	{
+		/*
 		bDied = true;
 		spawnTransform = transform;
 		rend.enabled = false;
@@ -69,6 +70,11 @@ public class ControllerScript : MonoBehaviour {
 		GameOverText.text = "Game Over!";
 		GameOverText.enabled = true;
 		Invoke("RestartLevel", 10.0f);
+		*/
+		bDied = true;
+		GetComponent<PlayerDetails> ().Die ();
+
+
 	}
 
     void Win()

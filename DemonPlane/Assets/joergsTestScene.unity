@@ -330,7 +330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'RANK: TADPOLE'
+  m_Text: 'RANK: '
 --- !u!222 &71308405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ GameObject:
   - 222: {fileID: 252332462}
   - 114: {fileID: 252332461}
   m_Layer: 5
-  m_Name: FS_ForesFire
+  m_Name: FS_ForestFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Forest Fire *-100 PTS =
+  m_Text: ' Forest Fire * '
 --- !u!222 &252332462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1504,24 +1504,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 484092, guid: 18402c92350c2534da76a83208ba85e9, type: 2}
   m_PrefabInternal: {fileID: 671460675}
---- !u!1 &772523378 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 131898, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-  m_PrefabInternal: {fileID: 1931785213}
---- !u!114 &772523389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 772523378}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b7719d2a8c1f248bc539a8329168ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrowSprite: {fileID: 21300000, guid: e0d2fbd282f6adb4794dd858f32bb87b, type: 3}
-  MinDemonDistance: 4
-  ArrowPlacementRadius: 4
 --- !u!1001 &795143637
 Prefab:
   m_ObjectHideFlags: 0
@@ -1605,7 +1587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417358, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: NextWaveStartsText
@@ -3522,7 +3504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Waves Survived *5000 PTS =
+  m_Text: ' Waves Survived * '
 --- !u!222 &1793861047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3722,7 +3704,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Demons Defeated *1000 PTS =
+  m_Text: '  Demons killed *'
 --- !u!222 &1869569137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3768,10 +3750,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 47
       objectReference: {fileID: 0}
-    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: GameOverText
-      value: 
-      objectReference: {fileID: 128962368}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: GameOverText
       value: 
@@ -3797,9 +3775,21 @@ Prefab:
       value: 
       objectReference: {fileID: 1793861046}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: FinalForestFire
+      value: 
+      objectReference: {fileID: 252332461}
+    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: FinalScoreTotal
       value: 
       objectReference: {fileID: 1274317366}
+    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: FinalScoreRank
+      value: 
+      objectReference: {fileID: 71308404}
+    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 128962368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0

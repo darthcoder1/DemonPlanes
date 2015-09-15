@@ -20,8 +20,11 @@ public class PlayerDetails : MonoBehaviour {
 	public Text FinalScoreDisplay;
 	public Text FinalScoreDemons;
 	public Text FinalScoreWaves;
+	public Text FinalForestFire;
 	public Text FinalScoreTotal;
 	public Text FinalScoreRank;
+
+	private ScoreComponent ScoreComp; 
 
 	public ParticleSystem CollectWaterFX;
 
@@ -41,8 +44,10 @@ public class PlayerDetails : MonoBehaviour {
 		FinalScoreDisplay.enabled = false;
 		FinalScoreDemons.enabled = false;
 		FinalScoreWaves.enabled = false;
+		FinalForestFire.enabled = false;
 		FinalScoreTotal.enabled = false;
 		FinalScoreRank.enabled = false;
+		ScoreComp = GetComponent<ScoreComponent>(); 
 		rend = gameObject.GetComponent<SpriteRenderer>();
 
 	}
@@ -88,21 +93,68 @@ public class PlayerDetails : MonoBehaviour {
 		//GameOverText.enabled = true;
 		//GameOverText.text = "Game Over!";
 		//show final scores:
-		ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
+		//ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
+		int DemonScore = ScoreComp.NumDemonsKilled * ScoreComp.KilledDemonBonus;
+		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
+		int FireMalus = ScoreComp.NumBurning * ScoreComp.BurningFireMalus*(-1);
+		int FinalScore = DemonScore + WaveScore + WaveScore;
+
+		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + ScoreComp.KilledDemonBonus.ToString () + " = " + DemonScore.ToString ();
+		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + ScoreComp.SurvivedWaveBonus.ToString () + " = " + WaveScore.ToString ();
+		FinalForestFire.text = ScoreComp.NumBurning.ToString () + FinalForestFire.text + " -" + ScoreComp.BurningFireMalus.ToString () + " = " + FireMalus.ToString ();
+		FinalScoreTotal.text += " " + FinalScore.ToString ();
+		FinalScoreRank.text += CalculateRank (FinalScore);
 
 		FinalScoreDisplay.enabled = true;
 		FinalScoreDemons.enabled = true;
 		FinalScoreWaves.enabled = true;
+		FinalForestFire.enabled = true;
 		FinalScoreTotal.enabled = true;
 		FinalScoreRank.enabled = true;
 
 		Invoke("RestartLevel", 10.0f);
 	}
+	void CalculateFinalScore()
+	{
+
+	}
+
 	
 	void RestartLevel()
 	{
 		Destroy(gameObject);
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+	string CalculateRank(int TotalScore)
+	{	
+		if (TotalScore > 50000) {
+
+			return "AMERICAN EAGLE";
+		} 
+		else if (TotalScore > 20000) {
+
+			return "SWANE";
+		}
+		else if (TotalScore > 15000) {
+			
+			return "DUCK";
+		}
+		else if (TotalScore > 6000) {
+			
+			return "MOORHEN";
+		}
+		else if (TotalScore > 1000) {
+			
+			return "FROG";
+		}
+		else {
+			
+			return "POLLYWOG";
+		}
+
+
+	}
+
 	
 }
