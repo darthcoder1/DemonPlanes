@@ -22,6 +22,10 @@ public class ControllerScript : MonoBehaviour {
 	private DropWater DropWaterComp;
 	public Text GameOverText;
 
+	//dieinn
+	private SpriteRenderer rend; 
+	Transform spawnTransform;
+
     private GameObject DropShadowObject;
 
 	private readonly string HorizontalAxixName;
@@ -52,14 +56,19 @@ public class ControllerScript : MonoBehaviour {
 
         DropShadowObject = transform.GetChild(0).gameObject;
 		OriginalScale = transform.localScale;
+		rend = gameObject.GetComponent<SpriteRenderer>();
 	}
 	
 	void Die()
 	{
 		bDied = true;
+		spawnTransform = transform;
+		rend.enabled = false;
+		//print ("spawn broken plane");
+		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
 		GameOverText.text = "Game Over!";
 		GameOverText.enabled = true;
-		Invoke("RestartLevel", 3.0f);
+		Invoke("RestartLevel", 10.0f);
 	}
 
     void Win()
@@ -67,7 +76,7 @@ public class ControllerScript : MonoBehaviour {
         bDied = true;
         GameOverText.text = "You won!";
         GameOverText.enabled = true;
-        Invoke("RestartLevel", 3.0f);
+        Invoke("RestartLevel", 10.0f);
     }
 
     void RestartLevel()
