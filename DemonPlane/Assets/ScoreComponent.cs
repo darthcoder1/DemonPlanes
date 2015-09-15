@@ -7,13 +7,19 @@ public class ScoreComponent : MonoBehaviour
     public int SurvivedWaveBonus = 5000;
     public int BurningFireMalus = 100;
 
+	public int NumDemonsKilled;
+	public int NumWavesSurvived;
+	public int NumBurning;
+
     public int Score;
 
 
 	// Use this for initialization
 	void Start ()
     {
-	
+		NumDemonsKilled = 0;
+		NumWavesSurvived = 0;
+		NumBurning = 0;
 	}
 	
 	// Update is called once per frame
@@ -24,18 +30,19 @@ public class ScoreComponent : MonoBehaviour
 
     void DemonKilled()
     {
-        Score += KilledDemonBonus;
+		++NumDemonsKilled;
+		Score += KilledDemonBonus;
     }
     
     void WaveSurvived()
     {
-        Score += SurvivedWaveBonus;
+		++NumWavesSurvived;
+		Score += SurvivedWaveBonus;
     }
 
     public int GetCurrentMalus()
     {
-        int NumBurning = 0;
-
+       
         FireCell[] fireCells = GameObject.FindObjectsOfType<FireCell>();
         foreach (FireCell cell in fireCells)
         {
