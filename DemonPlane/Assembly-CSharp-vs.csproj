@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\FireCell.cs" />
      <Compile Include="Assets\Scripts\ForestScript.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\HitStayWithDemon.cs" />
      <Compile Include="Assets\Scripts\MouseControllerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
      <Compile Include="Assets\Scripts\VillageScript.cs" />

@@ -19,15 +19,19 @@ public class DemonBehavior : MonoBehaviour
 	private bool bSoundPlayed;
 	private double TimeTillDeath;
 	private float HealthScale; 
+	private bool hit;
 
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
+
+	public GameObject HitFX;
 
 	// Use this for initialization
 	void Start () 
 	{
 		HealthBarComp = GetComponent<HealthBar> ();
 		TimeTillDeath = 0;
+		hit = false;
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
 		float nearestVillageDistance = float.MaxValue;
@@ -92,6 +96,9 @@ public class DemonBehavior : MonoBehaviour
 		Vector3 relativePos = target.position - transform.position;
 		Quaternion rotation = Quaternion.LookRotation(relativePos);
 		//transform.rotation = rotation;
+		if (hit)
+			HitUpdate ();
+
 	}
 
 	void Die()
@@ -110,4 +117,18 @@ public class DemonBehavior : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").SendMessage("DemonKilled");
 		}
 	}
+	public void Hit()
+	{
+
+		//spawn a ash particle
+		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, transform.rotation);
+		hit = true;
+	}
+	void HitUpdate()
+	{
+		HitFX.transform.position = transform.position;
+
+	}
+
+
 }

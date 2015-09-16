@@ -3790,6 +3790,10 @@ Prefab:
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 128962368}
+    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: TimeForWaterToDrop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0

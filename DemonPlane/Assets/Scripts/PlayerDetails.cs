@@ -84,9 +84,9 @@ public class PlayerDetails : MonoBehaviour {
 	public void Die()
 	{
 		bDied = true;
-		spawnTransform = transform;
 		//turn off rendering of the plane - TO DO: hide the drop shadow too
 		rend.enabled = false;
+		spawnTransform = transform;
 		//spawn a broken plane
 		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
 
