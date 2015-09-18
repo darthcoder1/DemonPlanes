@@ -40,7 +40,7 @@ public class PlayerDetails : MonoBehaviour {
 	{
 		CurrentAmmo = MaxAmmo;
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		GameOverText.enabled = false;
+		FinalScoreDisplay.text="The Demons destroyed the Village";
 		FinalScoreDisplay.enabled = false;
 		FinalScoreDemons.enabled = false;
 		FinalScoreWaves.enabled = false;
@@ -56,7 +56,7 @@ public class PlayerDetails : MonoBehaviour {
 	void Update () 
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-        ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
+        //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
         Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
         if (Malus > 0)
@@ -83,6 +83,8 @@ public class PlayerDetails : MonoBehaviour {
 
 	public void Die()
 	{
+		if(bDied) return;
+
 		bDied = true;
 		//turn off rendering of the plane - TO DO: hide the drop shadow too
 		rend.enabled = false;
@@ -99,11 +101,11 @@ public class PlayerDetails : MonoBehaviour {
 		int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = DemonScore + WaveScore + WaveScore;
 
-		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + ScoreComp.KilledDemonBonus.ToString () + " = " + DemonScore.ToString ();
-		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + ScoreComp.SurvivedWaveBonus.ToString () + " = " + WaveScore.ToString ();
-		FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text + " -" + ScoreComp.BurningFireMalus.ToString () + " = " + FireMalus.ToString ();
-		FinalScoreTotal.text += " " + FinalScore.ToString ();
-		FinalScoreRank.text += CalculateRank (FinalScore);
+		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + DemonScore.ToString ();
+		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + WaveScore.ToString ();
+		FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
+		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
+		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore);
 
 		FinalScoreDisplay.enabled = true;
 		FinalScoreDemons.enabled = true;

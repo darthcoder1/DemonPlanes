@@ -65,7 +65,7 @@ public class FireCell : MonoBehaviour
             if (BurningCounter > StartBurningThreshold)
             {
                 IsBurning = true;
-				StartedBurningSFX.Play();
+				//StartedBurningSFX.Play();
             }
         }
         else
@@ -85,7 +85,7 @@ public class FireCell : MonoBehaviour
             IsBurning = false;
             CurrentHealth = MaxHealth;
             BurningCounter = 0;
-            StoppedBurningSFX.Play ();
+            //StoppedBurningSFX.Play ();
         }
         else
         {

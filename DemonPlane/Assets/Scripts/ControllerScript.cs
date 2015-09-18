@@ -28,6 +28,7 @@ public class ControllerScript : MonoBehaviour {
 
     private GameObject DropShadowObject;
 
+
 	private readonly string HorizontalAxixName;
 	private readonly string VerticalAxixName;
 	private readonly string ClimbButtonName;
@@ -153,6 +154,7 @@ public class ControllerScript : MonoBehaviour {
 			{
 				if (PlayerDetailsComp.IsOverLand)
 				{
+					GetComponent<PlayerDetails> ().FinalScoreDisplay.text="You Crashed!";
 					Die();
 				}
 				else
