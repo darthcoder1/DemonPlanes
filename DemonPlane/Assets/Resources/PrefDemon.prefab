@@ -315,10 +315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VillageDamagePerSecond: 5
-  WalkingSpeed: .200000003
+  WalkingSpeed: .5
   TimeToDisappear: 2
   DemonExtinguishSFX: {fileID: 8298908}
   DemonDefeatedSFX: {fileID: 8231782}
+  HitFX: {fileID: 0}
 --- !u!212 &21291490
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -395,6 +396,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WalkingSpeed
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
