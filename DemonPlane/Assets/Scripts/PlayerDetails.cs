@@ -96,12 +96,12 @@ public class PlayerDetails : MonoBehaviour {
 		//ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 		int DemonScore = ScoreComp.NumDemonsKilled * ScoreComp.KilledDemonBonus;
 		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
-		int FireMalus = ScoreComp.NumBurning * ScoreComp.BurningFireMalus*(-1);
+		int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = DemonScore + WaveScore + WaveScore;
 
 		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + ScoreComp.KilledDemonBonus.ToString () + " = " + DemonScore.ToString ();
 		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + ScoreComp.SurvivedWaveBonus.ToString () + " = " + WaveScore.ToString ();
-		FinalForestFire.text = ScoreComp.NumBurning.ToString () + FinalForestFire.text + " -" + ScoreComp.BurningFireMalus.ToString () + " = " + FireMalus.ToString ();
+		FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text + " -" + ScoreComp.BurningFireMalus.ToString () + " = " + FireMalus.ToString ();
 		FinalScoreTotal.text += " " + FinalScore.ToString ();
 		FinalScoreRank.text += CalculateRank (FinalScore);
 

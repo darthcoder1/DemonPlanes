@@ -9,9 +9,25 @@ public class ScoreComponent : MonoBehaviour
 
 	public int NumDemonsKilled;
 	public int NumWavesSurvived;
-	public int NumBurning;
 
     public int Score;
+
+	public int NumBurningFires
+	{
+		get
+		{
+			int NumBurning = 0;
+			FireCell[] fireCells = GameObject.FindObjectsOfType<FireCell>();
+			foreach (FireCell cell in fireCells)
+			{
+				if (cell.IsBurning)
+				{
+					++NumBurning;
+				}
+			}
+			return NumBurning;
+		}
+	}
 
 
 	// Use this for initialization
@@ -19,7 +35,6 @@ public class ScoreComponent : MonoBehaviour
     {
 		NumDemonsKilled = 0;
 		NumWavesSurvived = 0;
-		NumBurning = 0;
 	}
 	
 	// Update is called once per frame
@@ -42,16 +57,7 @@ public class ScoreComponent : MonoBehaviour
 
     public int GetCurrentMalus()
     {
-       
-        FireCell[] fireCells = GameObject.FindObjectsOfType<FireCell>();
-        foreach (FireCell cell in fireCells)
-        {
-            if (cell.IsBurning)
-            {
-                ++NumBurning;
-            }
-        }
-        return NumBurning * BurningFireMalus;
+        return NumBurningFires * BurningFireMalus;
     }
 
     public int GetFinalScore()

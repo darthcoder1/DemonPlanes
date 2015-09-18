@@ -91,11 +91,16 @@ public class DemonBehavior : MonoBehaviour
 		Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
 		Quaternion randomRotation = Quaternion.AngleAxis((float)Random.Range(-10, 10), Vector3.back);
 
+		Vector3 originalPos = transform.position;
 		transform.position += (randomRotation * WalkDir) * WalkingSpeed * Time.deltaTime;
+
 		///rotate
-		Vector3 relativePos = target.position - transform.position;
-		Quaternion rotation = Quaternion.LookRotation(relativePos);
-		//transform.rotation = rotation;
+		if (WalkDir != Vector3.zero) 
+		{
+			float angle = Mathf.Atan2(WalkDir.y, WalkDir.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+		}
+
 		if (hit)
 			HitUpdate ();
 

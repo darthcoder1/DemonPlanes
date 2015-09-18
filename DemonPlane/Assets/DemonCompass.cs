@@ -8,6 +8,7 @@ public class DemonCompass : MonoBehaviour {
 
     public float MinDemonDistance = 1000;
     public float ArrowPlacementRadius = 200;
+	public float angleOffset = 0;
 
     private bool bDrawGui;
 
@@ -41,24 +42,28 @@ public class DemonCompass : MonoBehaviour {
     {
         if (bDrawGui && Camera.current && DemonTransforms.Length > 0)
         {
-            
+			Vector3 playerScreenPosition = Camera.current.WorldToScreenPoint(transform.position);// gets screen position.
+			playerScreenPosition.y = Screen.height - (playerScreenPosition.y + 1);// inverts y
+
             Vector2 size = new Vector2(32, 32);
 
             foreach (Vector3 demonPos in DemonTransforms)
             {
-                Vector3 dir = (demonPos - transform.position).normalized;
+				Vector3 demonScreenPosition = Camera.current.WorldToScreenPoint(demonPos);// gets screen position.
+				demonScreenPosition.y = Screen.height - (demonScreenPosition.y + 1);// inverts y
 
-                float angle = -Vector2.Angle(Vector2.up, new Vector2(dir.x, dir.y));
+				Vector3 dir = (demonScreenPosition-playerScreenPosition).normalized;
+				//float angle = Vector2.Angle(Vector2.up, -dir);
+				float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg+angleOffset;
 
-                Vector3 screenPosition = Camera.current.WorldToScreenPoint(transform.localPosition + dir * ArrowPlacementRadius);// gets screen position.
-                screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
+                Vector3 screenPosition = playerScreenPosition + dir * ArrowPlacementRadius;// gets screen position.
 
                 Vector2 pos = screenPosition;
                 Rect rect = new Rect(pos.x - size.x * 0.5f, pos.y - size.y * 0.5f, size.x, size.y);
                 Vector2 pivot = new Vector2(rect.xMin + rect.width * 0.5f, rect.yMin + rect.height * 0.5f);
 
                 Matrix4x4 matrixBackup = GUI.matrix;
-                GUIUtility.RotateAroundPivot(angle, pivot);
+                GUIUtility.RotateAroundPivot(angle, pos);
                 GUI.DrawTexture(rect, ArrowSprite.texture);
                 GUI.matrix = matrixBackup;
             }
