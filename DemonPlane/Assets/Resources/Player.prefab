@@ -331,7 +331,7 @@ MonoBehaviour:
   WaterCollisionCheckInterval: .25
   DropWaterInheritVelocity: .25
   DropWaterFX: {fileID: 19880826}
-  TimeForWaterToDrop: 1
+  TimeForWaterToDrop: 2
   WaterDropRadius: 1
   WaterDamage: 25
 --- !u!198 &19880826
@@ -340,7 +340,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116912}
-  lengthInSec: 5
+  lengthInSec: 7
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -639,7 +639,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -651,7 +651,7 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0

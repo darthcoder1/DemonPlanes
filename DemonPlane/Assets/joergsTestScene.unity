@@ -2508,7 +2508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 65
 --- !u!1001 &673235517
 Prefab:
   m_ObjectHideFlags: 0
@@ -3083,7 +3083,7 @@ Transform:
   - {fileID: 1229637346}
   - {fileID: 1040296404}
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 26
 --- !u!212 &803304310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3210,7 +3210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 54
 --- !u!1001 &883879987
 Prefab:
   m_ObjectHideFlags: 0
@@ -3510,7 +3510,7 @@ Transform:
   m_LocalScale: {x: 60, y: 60, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 20
 --- !u!1001 &1019623030
 Prefab:
   m_ObjectHideFlags: 0
@@ -7427,7 +7427,7 @@ RectTransform:
   - {fileID: 708914369}
   - {fileID: 1804245989}
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 60
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -7766,7 +7766,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 40
 --- !u!1 &1686964475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8132,7 +8132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .921568692, g: .0666666701, b: .0862745121, a: 1}
+  m_Color: {r: .992156923, g: 0, b: .0196078438, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: b9625ee30999a14439ecd4773a3769e3, type: 3}
     m_FontSize: 30
@@ -8205,7 +8205,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 47
 --- !u!1001 &1843953734
 Prefab:
   m_ObjectHideFlags: 0
@@ -8355,8 +8355,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410012, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_RootOrder
-      value: 60
+      value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 128962368}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: GameOverText
       value: 
@@ -8393,18 +8397,6 @@ Prefab:
       propertyPath: FinalScoreRank
       value: 
       objectReference: {fileID: 71308404}
-    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: GameOverText
-      value: 
-      objectReference: {fileID: 128962368}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: TimeForWaterToDrop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: FinalScore
-      value: 
-      objectReference: {fileID: 1804245990}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0
