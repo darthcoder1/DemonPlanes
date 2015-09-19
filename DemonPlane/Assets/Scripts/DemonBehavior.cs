@@ -75,7 +75,7 @@ public class DemonBehavior : MonoBehaviour
 			if(!bSoundPlayed)
 			{
 				bSoundPlayed=true;
-				DemonExtinguishSFX.Play();
+				//DemonExtinguishSFX.Play();
 
 			}
 		}
@@ -112,6 +112,8 @@ public class DemonBehavior : MonoBehaviour
 		if (TimeTillDeath == 0) {
 			//play sound when dieing
 			DemonDefeatedSFX.Play ();
+			GetComponent<SpriteRenderer>().enabled=false;
+			//gameObject.spriteRenderer.enabled = false;
 			//CountingForDeath=true;
 			TimeTillDeath = Time.time + TimeToDisappear;
 		} 
@@ -126,6 +128,7 @@ public class DemonBehavior : MonoBehaviour
 	{
 
 		//spawn a ash particle
+		DemonExtinguishSFX.Play();
 		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, transform.rotation);
 		hit = true;
 	}

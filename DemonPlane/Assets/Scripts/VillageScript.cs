@@ -11,12 +11,14 @@ public class VillageScript : MonoBehaviour
 	private GameObject VillagBurns;
 	public Text VillageIntact;
 	private int VillageHealth;
+	private AudioSource[] audios;
 
     public bool IsDestroyed { get { return HealthBarComp.Health <= 0; } }
 
 	// Use this for initialization
 	void Start () 
 	{
+		audios = GetComponents<AudioSource>();
 		DemonsInVillage = new List<GameObject> ();
 		//HealthBarComp = GetComponent<HealthBar> ();
 		VillageHealth = 100;
@@ -47,10 +49,12 @@ public class VillageScript : MonoBehaviour
 		{
 			if(VillageHealth > 0)
 			{
-				GetComponent<AudioSource>().Play();
+
+				audios[0].Play();
+				Invoke("PlayVillageDestroyedMessage", 1);
 				GameObject[] foundFireSpawnpoints = GameObject.FindGameObjectsWithTag("village_fire_spawn");
 				GameObject nearestFireSpawn = null;
-				print("Demon in village");
+
 				Vector3 demonPos = collision.gameObject.transform.position;
 				GameObject.Destroy (collision.gameObject);
 
@@ -60,7 +64,7 @@ public class VillageScript : MonoBehaviour
 					float dist = Vector2.Distance(spawnPoint.transform.position, demonPos);
 					if (nearestFireSpawn == null || dist < nearestFireSpawnDistance)
 					{
-						print ("spawn a fire");
+
 						nearestFireSpawn = spawnPoint;
 						nearestFireSpawnDistance = dist;
 					}
@@ -69,6 +73,7 @@ public class VillageScript : MonoBehaviour
 				VillageHealth -= 10;
 				VillagBurns=(GameObject)Instantiate (Resources.Load ("Smoke_01"), FireSpawnPoint.transform.position, FireSpawnPoint.transform.rotation);
 				GameObject.Destroy (FireSpawnPoint);
+
 				if(VillageHealth == 10) Die ();	
 			}
 						
@@ -87,5 +92,10 @@ public class VillageScript : MonoBehaviour
 	void Die()
 	{
 		GameObject.FindGameObjectWithTag ("Player").SendMessage ("Die");
+	}
+	void PlayVillageDestroyedMessage()
+	{
+
+		audios [1].Play ();
 	}
 }

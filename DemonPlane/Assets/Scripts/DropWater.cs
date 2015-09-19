@@ -12,6 +12,8 @@ public class DropWater : MonoBehaviour
 	public float TimeForWaterToDrop = 3;
 	public float WaterDropRadius = 1;
 	public int WaterDamage = 25;
+	private AudioSource [] SFX;
+
 
 	public bool DroppingWater { get { return bDroppingWater; } }
 
@@ -25,6 +27,7 @@ public class DropWater : MonoBehaviour
 	{
 		WaterCollisionCheckList = new List<Vector3>();
 		TimeSinceLastWaterCollisionCheck = 0.0f;
+		SFX = GetComponents<AudioSource>();
 
 		DropWaterFX.startLifetime = TimeForWaterToDrop;
 
@@ -52,16 +55,18 @@ public class DropWater : MonoBehaviour
 			if (PlayerDetailsComp.CurrentAmmo <= 0)
 			{
 				DropWaterStop();
+
 			}
 		}
 	}
 
 	public void DropWaterStart()
 	{
-		if (PlayerDetailsComp.CurrentAmmo > 0) 
-		{
+		if (PlayerDetailsComp.CurrentAmmo > 0) {
 			bDroppingWater = true;
 			DropWaterFX.enableEmission = true;
+		} else {
+			SFX[1].Play();
 		}
 	}
 
