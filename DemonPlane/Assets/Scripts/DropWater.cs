@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DropWater : MonoBehaviour 
 {
@@ -13,6 +14,10 @@ public class DropWater : MonoBehaviour
 	public float WaterDropRadius = 1;
 	public int WaterDamage = 25;
 	private AudioSource [] SFX;
+	private AudioSource OutOfWaterSFX;
+	private AudioSource DropWaterSFX;
+	public Text OutOfWaterText;
+
 
 
 	public bool DroppingWater { get { return bDroppingWater; } }
@@ -28,7 +33,9 @@ public class DropWater : MonoBehaviour
 		WaterCollisionCheckList = new List<Vector3>();
 		TimeSinceLastWaterCollisionCheck = 0.0f;
 		SFX = GetComponents<AudioSource>();
-
+		OutOfWaterSFX = SFX[2];
+		DropWaterSFX = SFX[1];
+		OutOfWaterText.enabled = false;
 		DropWaterFX.startLifetime = TimeForWaterToDrop;
 
 		PlayerDetailsComp = GetComponent<PlayerDetails> ();
@@ -60,10 +67,12 @@ public class DropWater : MonoBehaviour
 		}
 	}
 
+
 	public void DropWaterStart()
 	{
 		if (PlayerDetailsComp.CurrentAmmo > 0) {
 			bDroppingWater = true;
+			if(!DropWaterSFX.isPlaying)DropWaterSFX.Play ();
 			DropWaterFX.enableEmission = true;
 		} else {
 			SFX[1].Play();
@@ -73,8 +82,14 @@ public class DropWater : MonoBehaviour
 	public void DropWaterStop()
 	{
 		bDroppingWater = false;
+		if(DropWaterSFX.isPlaying)DropWaterSFX.Stop ();
 		DropWaterFX.enableEmission = false;
 	}
+	void StopWaterDroppingSound()
+	{
+		
+	}
+
 
 	void CheckWaterCollision()
 	{
