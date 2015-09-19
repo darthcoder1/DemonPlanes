@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\DemonCompass.cs" />
      <Compile Include="Assets\ScoreComponent.cs" />
+     <Compile Include="Assets\Scripts\AudioFadeOut.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
      <Compile Include="Assets\Scripts\DebugHelpers.cs" />

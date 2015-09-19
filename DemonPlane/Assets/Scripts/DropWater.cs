@@ -82,15 +82,11 @@ public class DropWater : MonoBehaviour
 	public void DropWaterStop()
 	{
 		bDroppingWater = false;
-		if(DropWaterSFX.isPlaying)DropWaterSFX.Stop ();
+		if (DropWaterSFX.isPlaying) Invoke ("StopWaterDroppingSound", 1);
 		DropWaterFX.enableEmission = false;
 	}
-	void StopWaterDroppingSound()
-	{
-		
-	}
 
-
+	
 	void CheckWaterCollision()
 	{
 		Vector3 Pos = WaterCollisionCheckList[0];
@@ -121,4 +117,13 @@ public class DropWater : MonoBehaviour
 			}
 		}
 	}
+	
+	void StopWaterDroppingSound()
+	{
+		//AudioFadeOut.FadeOut (DropWaterSFX, 0.1f);
+
+		DropWaterSFX.Stop ();
+
+	}
+
 }

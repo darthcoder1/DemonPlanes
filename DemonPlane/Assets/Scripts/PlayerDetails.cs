@@ -89,6 +89,9 @@ public class PlayerDetails : MonoBehaviour {
 		//turn off rendering of the plane - TO DO: hide the drop shadow too
 		rend.enabled = false;
 		spawnTransform = transform;
+		//stop airplane sound
+		GetComponent<AudioSource> ().Stop ();
+
 		//spawn a broken plane
 		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
 

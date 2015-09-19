@@ -8519,7 +8519,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
 --- !u!1001 &1843953734
 Prefab:
   m_ObjectHideFlags: 0
@@ -8739,6 +8739,10 @@ Prefab:
       propertyPath: WaterCollisionCheckInterval
       value: .25
       objectReference: {fileID: 0}
+    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: OutOfWaterText
+      value: 
+      objectReference: {fileID: 1255715600}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0
