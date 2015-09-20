@@ -12,6 +12,7 @@ public class VillageScript : MonoBehaviour
 	public Text VillageIntact;
 	private int VillageHealth;
 	private AudioSource[] audios;
+	private bool bDead;
 
     public bool IsDestroyed { get { return HealthBarComp.Health <= 0; } }
 
@@ -24,6 +25,8 @@ public class VillageScript : MonoBehaviour
 		VillageHealth = 100;
 		VillageIntact.text=VillageHealth.ToString()+"% of village intact";
 		VillageIntact.enabled = true;
+		bDead = false;
+
 	}
 	
 	// Update is called once per frame
@@ -69,12 +72,20 @@ public class VillageScript : MonoBehaviour
 						nearestFireSpawnDistance = dist;
 					}
 				}
-				FireSpawnPoint = nearestFireSpawn;
-				VillageHealth -= 10;
-				VillagBurns=(GameObject)Instantiate (Resources.Load ("Smoke_01"), FireSpawnPoint.transform.position, FireSpawnPoint.transform.rotation);
-				GameObject.Destroy (FireSpawnPoint);
-
-				if(VillageHealth == 10) Die ();	
+				if(nearestFireSpawn != null)
+				{
+					FireSpawnPoint = nearestFireSpawn;
+					VillageHealth -= 10;
+					VillagBurns=(GameObject)Instantiate (Resources.Load ("Smoke_01"), FireSpawnPoint.transform.position, FireSpawnPoint.transform.rotation);
+					GameObject.Destroy (FireSpawnPoint);
+				}
+			    if(VillageHealth < 10){
+					Die ();
+				}	
+			}
+			else if(!bDead)
+			{
+				Die ();
 			}
 						
 
@@ -91,7 +102,11 @@ public class VillageScript : MonoBehaviour
 
 	void Die()
 	{
-		GameObject.FindGameObjectWithTag ("Player").SendMessage ("Die");
+		if (!bDead) {
+			print ("die dorf die!");
+			bDead = true;
+			GameObject.FindGameObjectWithTag ("Player").SendMessage ("Die");
+		}
 	}
 	void PlayVillageDestroyedMessage()
 	{
