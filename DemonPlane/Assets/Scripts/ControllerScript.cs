@@ -13,7 +13,7 @@ public class ControllerScript : MonoBehaviour {
 	public float AltitudeChangeSpeed;	// Specifies how fast altitude is changed
 	private bool bDied;
 
-	private float Altitude; // 0.0 == ground, 1.0f == normal flight height
+	public float Altitude; // 0.0 == ground, 1.0f == normal flight height
 	private float TargetAltitude;
 	private Vector3 OriginalScale;
 	private Vector3 Direction;
@@ -62,19 +62,8 @@ public class ControllerScript : MonoBehaviour {
 	
 	void Die()
 	{
-		/*
-		bDied = true;
-		spawnTransform = transform;
-		rend.enabled = false;
-		//print ("spawn broken plane");
-		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
-		GameOverText.text = "Game Over!";
-		GameOverText.enabled = true;
-		Invoke("RestartLevel", 10.0f);
-		*/
 		bDied = true;
 		GetComponent<PlayerDetails> ().Die ();
-
 
 	}
 
@@ -161,6 +150,8 @@ public class ControllerScript : MonoBehaviour {
 				{
 					int AmmoToAdd = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoRefillPerSecond * Time.deltaTime);
 					PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo + AmmoToAdd, 0, PlayerDetailsComp.MaxAmmo);
+
+
 				}
 			}
 		}

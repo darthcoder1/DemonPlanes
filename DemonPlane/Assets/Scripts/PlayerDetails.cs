@@ -13,20 +13,25 @@ public class PlayerDetails : MonoBehaviour {
 	private bool bOverLand;
 	private bool bDied;
 	private int Malus;
+	private int NumPieplSaved;
 
 	public Text GameOverText;
 	public Text AmmoDisplay;
     public Text ScoreDisplay;
+	public Text SavedPieplDisplay;
 	public Text FinalScoreDisplay;
 	public Text FinalScoreDemons;
 	public Text FinalScoreWaves;
 	public Text FinalForestFire;
+	public Text FinalPieplSaved;
 	public Text FinalScoreTotal;
 	public Text FinalScoreRank;
 
 	private ScoreComponent ScoreComp; 
+	private AudioSource SFXPieplCollected;
 
 	public ParticleSystem CollectWaterFX;
+	//private GameObject Piepl;
 
 	//dieinn
 	private SpriteRenderer rend; 
@@ -35,15 +40,23 @@ public class PlayerDetails : MonoBehaviour {
 	public bool IsOverLand { get { return bOverLand; } }
 	public bool IsDead { get { return bDied; } }
 
+
 	// Use this for initialization
 	void Start () 
 	{
 		CurrentAmmo = MaxAmmo;
+		NumPieplSaved = 0; 
+		AudioSource[] audios = GetComponents<AudioSource> ();
+		SFXPieplCollected = audios [5];
+
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
+		SavedPieplDisplay.text = "Piepl saved: " + NumPieplSaved.ToString ();
+
 		FinalScoreDisplay.text="The Demons destroyed the Village";
 		FinalScoreDisplay.enabled = false;
 		FinalScoreDemons.enabled = false;
 		FinalScoreWaves.enabled = false;
+		FinalPieplSaved.enabled =false;
 		FinalForestFire.enabled = false;
 		FinalScoreTotal.enabled = false;
 		FinalScoreRank.enabled = false;
@@ -56,6 +69,7 @@ public class PlayerDetails : MonoBehaviour {
 	void Update () 
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
+		SavedPieplDisplay.text = "Piepl saved: " + NumPieplSaved.ToString ();
         //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
         Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
@@ -71,6 +85,14 @@ public class PlayerDetails : MonoBehaviour {
 		{
 			bOverLand = true;
 		}
+		if (collision.gameObject.tag == "piepl" && GetComponent<ControllerScript> ().Altitude <= 0.01f) {
+
+			CollectPiepl();
+
+			GameObject.Destroy (collision.gameObject);
+
+		}
+
 	}
 
 	void OnTriggerExit2D(Collider2D collision) 
@@ -78,6 +100,7 @@ public class PlayerDetails : MonoBehaviour {
 		if (collision.gameObject.tag == "land")
 		{
 			bOverLand = false;
+
 		}
 	}
 
@@ -95,16 +118,14 @@ public class PlayerDetails : MonoBehaviour {
 		//spawn a broken plane
 		GameObject.Instantiate (Resources.Load ("DeadPlayer"), spawnTransform.position, spawnTransform.rotation);
 
-		//GameOverText.enabled = true;
-		//GameOverText.text = "Game Over!";
-		//show final scores:
-		//ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 		int DemonScore = ScoreComp.NumDemonsKilled * ScoreComp.KilledDemonBonus;
+		int PieplScore = NumPieplSaved * 500;
 		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
 		int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = DemonScore + WaveScore + WaveScore;
 
 		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + DemonScore.ToString ();
+		FinalPieplSaved.text = NumPieplSaved.ToString () + FinalPieplSaved.text + PieplScore.ToString ();
 		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + WaveScore.ToString ();
 		FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
@@ -113,6 +134,7 @@ public class PlayerDetails : MonoBehaviour {
 		FinalScoreDisplay.enabled = true;
 		FinalScoreDemons.enabled = true;
 		FinalScoreWaves.enabled = true;
+		FinalPieplSaved.enabled =true;
 		FinalForestFire.enabled = true;
 		FinalScoreTotal.enabled = true;
 		FinalScoreRank.enabled = true;
@@ -158,6 +180,13 @@ public class PlayerDetails : MonoBehaviour {
 			return "POLLYWOG";
 		}
 
+
+	}
+	void CollectPiepl()
+	{
+		//collect a person in water
+		++NumPieplSaved;
+		SFXPieplCollected.Play ();
 
 	}
 

@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - volcano
   - village_fire_spawn
+  - piepl
   layers:
   - Default
   - TransparentFX
