@@ -76,7 +76,8 @@ public class VillageScript : MonoBehaviour
 				{
 					FireSpawnPoint = nearestFireSpawn;
 					VillageHealth -= 10;
-					VillagBurns=(GameObject)Instantiate (Resources.Load ("Smoke_01"), FireSpawnPoint.transform.position, FireSpawnPoint.transform.rotation);
+					Quaternion defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
+					VillagBurns=(GameObject)Instantiate (Resources.Load ("Smoke_01"), FireSpawnPoint.transform.position, defaultRotation);
 					GameObject.Destroy (FireSpawnPoint);
 				}
 			    if(VillageHealth < 10){

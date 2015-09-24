@@ -129,7 +129,8 @@ public class DemonBehavior : MonoBehaviour
 
 		//spawn a ash particle
 		DemonExtinguishSFX.Play();
-		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, transform.rotation);
+		Quaternion defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
+		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, defaultRotation);
 		hit = true;
 	}
 	void HitUpdate()

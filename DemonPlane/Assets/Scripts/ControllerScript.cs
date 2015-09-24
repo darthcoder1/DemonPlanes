@@ -29,6 +29,7 @@ public class ControllerScript : MonoBehaviour {
     private GameObject DropShadowObject;
 
 
+
 	private readonly string HorizontalAxixName;
 	private readonly string VerticalAxixName;
 	private readonly string ClimbButtonName;
