@@ -11,6 +11,7 @@ TagManager:
   - volcano
   - village_fire_spawn
   - piepl
+  - piepl_spawn
   layers:
   - Default
   - TransparentFX

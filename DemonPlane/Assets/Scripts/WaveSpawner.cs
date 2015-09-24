@@ -5,7 +5,7 @@ using System.Collections;
 [System.Serializable]
 public struct WaveInfo
 {
-	// Amount of demons to spawn in this wave
+	// Amount of Piepl to spawn in this wave
 	public int NumDemons;
 	// Time in seconds this wave takes for spawing
 	public float SpawnTimeInSeconds;
@@ -16,6 +16,7 @@ public struct WaveInfo
 public class WaveSpawner : MonoBehaviour 
 {
 	public readonly string ObjTag_Volcano = "volcano";
+	public readonly string ObjTag_PieplSpawn = "piepl_spawn";
 
 	public WaveInfo[] EnemyWaves;
 	public Text NextWaveStartsText;
@@ -23,6 +24,7 @@ public class WaveSpawner : MonoBehaviour
 
 	// List of all volanos in the level
 	private GameObject[] Volcanos;
+
 	// Currently active wave
 	private int CurrentWave;
 	// indicates whether the wave is currently spawning
@@ -35,6 +37,7 @@ public class WaveSpawner : MonoBehaviour
 	private int NumSpawned;
 
     private bool bInvokedWinning;
+	private PieplSpawner PieplSpawner;
 
 
 
@@ -42,9 +45,12 @@ public class WaveSpawner : MonoBehaviour
 	void Start () 
 	{
 		Volcanos = GameObject.FindGameObjectsWithTag (ObjTag_Volcano);
+		PieplSpawner = GetComponent<PieplSpawner> ();
 
 		CurrentWave = -1;
 		bWaveSpawningActive = PrepareNextWave ();
+		PieplSpawner.CurrentWave = 0;
+		PieplSpawner.SpawnPiepl ();
 
 		NextWaveStartsText.enabled = false;
 		WaveStartsText.enabled = false;
@@ -57,6 +63,10 @@ public class WaveSpawner : MonoBehaviour
         if (CurrentWave >= 0)
         {
             GameObject.FindGameObjectWithTag("Player").SendMessage("WaveSurvived");
+			//also start spawning piepl the player has to save from the water
+			PieplSpawner.CurrentWave = CurrentWave++;
+			PieplSpawner.SpawnPiepl ();
+
         }
        
 
