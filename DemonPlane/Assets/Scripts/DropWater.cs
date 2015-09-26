@@ -13,6 +13,9 @@ public class DropWater : MonoBehaviour
 	public float TimeForWaterToDrop = 3;
 	public float WaterDropRadius = 1;
 	public int WaterDamage = 25;
+	public float ShootingDelay; // time betweeen each shot
+	public float WaterBulletSpeed; // the speed of a water shot
+
 	private AudioSource [] SFX;
 	private AudioSource OutOfWaterSFX;
 	private AudioSource DropWaterSFX;
@@ -22,9 +25,12 @@ public class DropWater : MonoBehaviour
 
 	public bool DroppingWater { get { return bDroppingWater; } }
 
+	public bool ShootingWater { get { return bShootingWater; } }
+
 	private float TimeSinceLastWaterCollisionCheck;
 	private List<Vector3> WaterCollisionCheckList;
 	private bool bDroppingWater;
+	private bool bShootingWater;
 	private PlayerDetails PlayerDetailsComp;
 
 	// Use this for initialization
@@ -78,6 +84,25 @@ public class DropWater : MonoBehaviour
 			SFX[1].Play();
 		}
 	}
+
+	public void ShootWater()
+	{
+		if (PlayerDetailsComp.CurrentAmmo > 0 && !bShootingWater) {
+			bShootingWater = true;
+			GameObject WaterShot;
+			ControllerScript ControllerComp = GetComponent<ControllerScript>();
+			WaterShot=(GameObject)Instantiate (Resources.Load ("watershot"), ControllerComp.transform.position,ControllerComp.transform.rotation);
+			WaterShot.GetComponent<WaterShot>().Direction=ControllerComp.Direction;
+			WaterShot.GetComponent<WaterShot>().currentSpeed=ControllerComp.MaxSpeed+WaterBulletSpeed;
+			Invoke("ResetShooting", ShootingDelay);
+
+		}
+	}
+	void ResetShooting()
+	{
+		bShootingWater = false;
+	}
+
 
 	public void DropWaterStop()
 	{

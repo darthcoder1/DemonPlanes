@@ -16,7 +16,8 @@ public class ControllerScript : MonoBehaviour {
 	public float Altitude; // 0.0 == ground, 1.0f == normal flight height
 	private float TargetAltitude;
 	private Vector3 OriginalScale;
-	private Vector3 Direction;
+	public  Vector3 Direction;
+	public float currentSpeed;
 
 	private PlayerDetails PlayerDetailsComp;
 	private DropWater DropWaterComp;
@@ -37,6 +38,7 @@ public class ControllerScript : MonoBehaviour {
 	private readonly string ReleaseWaterName;
 	private readonly string StrafeLeftName;
 	private readonly string StrafeRightName;
+	private readonly string ShootButtonName;
 
 	ControllerScript()
 	{
@@ -47,6 +49,7 @@ public class ControllerScript : MonoBehaviour {
 		ReleaseWaterName = "ReleaseWater";
 		StrafeLeftName = "StrafeLeft";
 		StrafeRightName = "StrafeRight";
+		ShootButtonName = "Shoot";
 	}
 
 	// Use this for initialization
@@ -98,6 +101,18 @@ public class ControllerScript : MonoBehaviour {
 			DropWaterComp.DropWaterStop();
 		}
 	}
+	void UpdateShoot()
+	{
+		bool bShouldShoot = Input.GetAxis (ShootButtonName) > 0f;
+		if (!DropWaterComp.DroppingWater && bShouldShoot) 
+		{
+			DropWaterComp.ShootWater();
+		}
+
+	}
+
+
+
 
 	// Update is called once per frame
 	void Update () 
@@ -112,10 +127,14 @@ public class ControllerScript : MonoBehaviour {
 		float pressedAltSink = Input.GetAxis (SinkButtonName);
 
 
+		/*
 		float pressedStrafeLeft = Input.GetAxis (StrafeLeftName);
 		float pressedStrafeRight = Input.GetAxis (StrafeRightName);
 
-		print ("strafe value " + pressedStrafeRight.ToString ());
+		float pressedShoot = Input.GetAxis (ShootButtonName);
+		*/
+
+
 
 		// Rotation
 		float rotateBy = RotationSpeed * Time.deltaTime * hAxis;
@@ -129,7 +148,7 @@ public class ControllerScript : MonoBehaviour {
 		transform.rotation = rotateByQuat * transform.rotation;
 
 
-		float currentSpeed = NormalSpeed;
+		currentSpeed = NormalSpeed;
 		// Movement
 		if (vAxis < 0)
 		{
@@ -183,5 +202,6 @@ public class ControllerScript : MonoBehaviour {
         }
 
 		UpdateWaterDrop ();
+		UpdateShoot ();
 	}
 }

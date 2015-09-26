@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\PieplSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
      <Compile Include="Assets\Scripts\VillageScript.cs" />
+     <Compile Include="Assets\Scripts\WaterShot.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />
      <Compile Include="Assets\StartScreen.cs" />
  <Reference Include="UnityEngine.UI">
