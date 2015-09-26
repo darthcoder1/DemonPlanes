@@ -35,6 +35,8 @@ public class ControllerScript : MonoBehaviour {
 	private readonly string ClimbButtonName;
 	private readonly string SinkButtonName;
 	private readonly string ReleaseWaterName;
+	private readonly string StrafeLeftName;
+	private readonly string StrafeRightName;
 
 	ControllerScript()
 	{
@@ -43,6 +45,8 @@ public class ControllerScript : MonoBehaviour {
 		ClimbButtonName = "AltClimb";
 		SinkButtonName = "AltSink";
 		ReleaseWaterName = "ReleaseWater";
+		StrafeLeftName = "StrafeLeft";
+		StrafeRightName = "StrafeRight";
 	}
 
 	// Use this for initialization
@@ -103,8 +107,15 @@ public class ControllerScript : MonoBehaviour {
 		float hAxis = Input.GetAxis (HorizontalAxixName);
 		float vAxis = Input.GetAxis (VerticalAxixName);
 
+
 		float pressedAltClimb = Input.GetAxis (ClimbButtonName);
 		float pressedAltSink = Input.GetAxis (SinkButtonName);
+
+
+		float pressedStrafeLeft = Input.GetAxis (StrafeLeftName);
+		float pressedStrafeRight = Input.GetAxis (StrafeRightName);
+
+		print ("strafe value " + pressedStrafeRight.ToString ());
 
 		// Rotation
 		float rotateBy = RotationSpeed * Time.deltaTime * hAxis;

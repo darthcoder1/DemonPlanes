@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\PieplBehavior.cs" />
      <Compile Include="Assets\Scripts\PieplSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
-     <Compile Include="Assets\Scripts\ShuffleArray.cs" />
      <Compile Include="Assets\Scripts\VillageScript.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />
      <Compile Include="Assets\StartScreen.cs" />
