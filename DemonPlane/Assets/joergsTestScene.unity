@@ -3310,7 +3310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
 --- !u!1001 &775225134
 Prefab:
   m_ObjectHideFlags: 0
@@ -3530,7 +3530,7 @@ Transform:
   - {fileID: 1229637346}
   - {fileID: 1040296404}
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 70
 --- !u!212 &803304310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3657,7 +3657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 72
 --- !u!1 &873134910
 GameObject:
   m_ObjectHideFlags: 0
@@ -8417,7 +8417,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 25
 --- !u!1 &1693696662
 GameObject:
   m_ObjectHideFlags: 0
@@ -8999,7 +8999,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 44
 --- !u!1 &1824704029
 GameObject:
   m_ObjectHideFlags: 0
@@ -9456,11 +9456,15 @@ Prefab:
       objectReference: {fileID: 2136288796}
     - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: ShootingDelay
-      value: .200000003
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: WaterBulletSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: WaterDamage
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}

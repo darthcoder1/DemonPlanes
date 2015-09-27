@@ -15,6 +15,7 @@ public class DropWater : MonoBehaviour
 	public int WaterDamage = 25;
 	public float ShootingDelay; // time betweeen each shot
 	public float WaterBulletSpeed; // the speed of a water shot
+	public int WaterBulletDamage = 2;
 
 	private AudioSource [] SFX;
 	private AudioSource OutOfWaterSFX;
@@ -71,6 +72,7 @@ public class DropWater : MonoBehaviour
 
 			}
 		}
+
 	}
 
 
