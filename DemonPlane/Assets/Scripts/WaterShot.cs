@@ -41,7 +41,7 @@ public class WaterShot : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision) 
 	{
 		if (collision.gameObject.tag == "enemy") {
-			print ("HIT");
+			//print ("HIT");
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
 			int Damage =player.GetComponent<DropWater> ().WaterBulletDamage;
 			HealthBar demon = collision.GetComponent<HealthBar>();

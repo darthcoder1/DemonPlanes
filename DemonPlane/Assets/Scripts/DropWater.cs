@@ -93,6 +93,8 @@ public class DropWater : MonoBehaviour
 			bShootingWater = true;
 			GameObject WaterShot;
 			ControllerScript ControllerComp = GetComponent<ControllerScript>();
+			int AmmoToRemove = (int)Mathf.Floor((float)PlayerDetailsComp.AmmoUsagePerSecond * Time.deltaTime);
+			PlayerDetailsComp.CurrentAmmo = Mathf.Clamp(PlayerDetailsComp.CurrentAmmo - AmmoToRemove, 0, PlayerDetailsComp.MaxAmmo);
 			WaterShot=(GameObject)Instantiate (Resources.Load ("watershot"), ControllerComp.transform.position,ControllerComp.transform.rotation);
 			WaterShot.GetComponent<WaterShot>().Direction=ControllerComp.Direction;
 			WaterShot.GetComponent<WaterShot>().currentSpeed=ControllerComp.MaxSpeed+WaterBulletSpeed;

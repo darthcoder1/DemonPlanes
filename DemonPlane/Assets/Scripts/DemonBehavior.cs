@@ -24,13 +24,15 @@ public class DemonBehavior : MonoBehaviour
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
 
-	public GameObject HitFX;
+	private GameObject HitFX;
+	private int numHitFX;
 
 	// Use this for initialization
 	void Start () 
 	{
 		HealthBarComp = GetComponent<HealthBar> ();
 		TimeTillDeath = 0;
+		numHitFX = 0;
 		hit = false;
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
@@ -131,11 +133,14 @@ public class DemonBehavior : MonoBehaviour
 		DemonExtinguishSFX.Play();
 		Quaternion defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
 		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, defaultRotation);
+		HitFX.GetComponent<DieAfterGivenTime> ().Parent = gameObject;
+		//print ("MANY HITS: "+numHitFX.ToString ());
 		hit = true;
 	}
 	void HitUpdate()
 	{
-		HitFX.transform.position = transform.position;
+
+
 
 	}
 
