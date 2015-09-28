@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
      <Compile Include="Assets\Scripts\DebugHelpers.cs" />
      <Compile Include="Assets\Scripts\DemonBehavior.cs" />
+     <Compile Include="Assets\Scripts\DieAfterGivenTime.cs" />
      <Compile Include="Assets\Scripts\DropWater.cs" />
      <Compile Include="Assets\Scripts\FireCell.cs" />
      <Compile Include="Assets\Scripts\ForestScript.cs" />
