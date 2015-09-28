@@ -2736,217 +2736,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &609836839 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 131898, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-  m_PrefabInternal: {fileID: 1931785213}
---- !u!82 &609836840
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609836839}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 00d058e225a69064b80c39f34b0be824, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!82 &609836851
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609836839}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d7b53b9c592500549bc480e43767334b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!82 &609836855
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609836839}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d7b53b9c592500549bc480e43767334b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1001 &628406006
 Prefab:
   m_ObjectHideFlags: 0
@@ -9374,10 +9163,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 63
       objectReference: {fileID: 0}
-    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: GameOverText
+    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: OutOfWaterText
       value: 
-      objectReference: {fileID: 128962368}
+      objectReference: {fileID: 1255715600}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: GameOverText
       value: 
@@ -9390,6 +9179,10 @@ Prefab:
       propertyPath: ScoreDisplay
       value: 
       objectReference: {fileID: 708914368}
+    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: SavedPieplDisplay
+      value: 
+      objectReference: {fileID: 96054548}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: FinalScoreDisplay
       value: 
@@ -9407,6 +9200,10 @@ Prefab:
       value: 
       objectReference: {fileID: 252332461}
     - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: FinalPieplSaved
+      value: 
+      objectReference: {fileID: 2136288796}
+    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: FinalScoreTotal
       value: 
       objectReference: {fileID: 1274317366}
@@ -9414,58 +9211,10 @@ Prefab:
       propertyPath: FinalScoreRank
       value: 
       objectReference: {fileID: 71308404}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: TimeForWaterToDrop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: WaterDropRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19880826, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: lengthInSec
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 19880826, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
-      value: .459459424
-      objectReference: {fileID: 0}
-    - target: {fileID: 19880826, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: DropWaterInheritVelocity
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: WaterCollisionCheckInterval
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: OutOfWaterText
+    - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: GameOverText
       value: 
-      objectReference: {fileID: 1255715600}
-    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: SavedPieplDisplay
-      value: 
-      objectReference: {fileID: 96054548}
-    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: FinalPieplSaved
-      value: 
-      objectReference: {fileID: 2136288796}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: ShootingDelay
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: WaterBulletSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
-      propertyPath: WaterDamage
-      value: 50
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 128962368}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0

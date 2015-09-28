@@ -149,6 +149,9 @@ public class ControllerScript : MonoBehaviour {
 
 
 		currentSpeed = NormalSpeed;
+
+
+
 		// Movement
 		if (vAxis < 0)
 		{
@@ -158,6 +161,7 @@ public class ControllerScript : MonoBehaviour {
 		{
 			currentSpeed = Mathf.Lerp(NormalSpeed, MaxSpeed,  vAxis);
 		}
+		GetComponent<AudioSource> ().pitch =currentSpeed /10;
 
 		transform.position += Direction * currentSpeed * Time.deltaTime;
 
