@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a155a58a8f12e47b0858973d08eb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnDelay: 1
-  LifeTime: 10
+  SpawnDelay: 0
+  LifeTime: 0
 --- !u!212 &21279400
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,11 +134,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SpawnDelay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: LifeTime
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

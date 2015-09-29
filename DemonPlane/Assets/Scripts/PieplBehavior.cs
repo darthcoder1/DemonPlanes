@@ -19,6 +19,7 @@ public class PieplBehavior : MonoBehaviour {
 	public void StartForReal () {
 		
 		Invoke ("Spawn", SpawnDelay);
+		print ("spawn delay" + SpawnDelay.ToString ());
 		GetComponent<SpriteRenderer> ().enabled = true;
 		GetComponent<BoxCollider2D> ().enabled = true;
 		
