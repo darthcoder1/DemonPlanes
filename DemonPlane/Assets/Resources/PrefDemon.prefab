@@ -319,7 +319,6 @@ MonoBehaviour:
   TimeToDisappear: 2
   DemonExtinguishSFX: {fileID: 8298908}
   DemonDefeatedSFX: {fileID: 8231782}
-  HitFX: {fileID: 0}
 --- !u!212 &21291490
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -343,7 +342,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 3d0144386e2eaa24b8e7cc482789d926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -395,7 +394,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: WalkingSpeed

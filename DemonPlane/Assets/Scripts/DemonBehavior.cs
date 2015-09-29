@@ -25,14 +25,16 @@ public class DemonBehavior : MonoBehaviour
 	public AudioSource DemonDefeatedSFX;
 
 	private GameObject HitFX;
-	private int numHitFX;
+	private GameObject DeadDemon;
+	//private int numHitFX;
+	private Quaternion defaultRotation;
 
 	// Use this for initialization
 	void Start () 
 	{
 		HealthBarComp = GetComponent<HealthBar> ();
 		TimeTillDeath = 0;
-		numHitFX = 0;
+		//numHitFX = 0;
 		hit = false;
 		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
 		GameObject nearestVillage = null;
@@ -48,7 +50,7 @@ public class DemonBehavior : MonoBehaviour
 		}
 		TargetVillage = nearestVillage;
 		target = TargetVillage.transform;
-
+		defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
 		//play sound when spawning
 		AudioSource audio = GetComponent<AudioSource>();
 		audio.Play();
@@ -61,8 +63,10 @@ public class DemonBehavior : MonoBehaviour
 	void Update () 
 	{
 		//scale demon size
+		/*
 		if (HealthBarComp.Health > 0) 
 		{
+			/*
 			HealthScale=Mathf.Max((float)HealthBarComp.Health/30.0f, 0.25f); 
 			if(HealthScale <1) 
 			{
@@ -70,7 +74,7 @@ public class DemonBehavior : MonoBehaviour
 			}
 
 
-		}
+		} */
 
 		if (HealthBarComp.Health < HealthBarComp.MaxHealth * 0.8f)
 		{
@@ -114,6 +118,7 @@ public class DemonBehavior : MonoBehaviour
 		if (TimeTillDeath == 0) {
 			//play sound when dieing
 			DemonDefeatedSFX.Play ();
+			DeadDemon=(GameObject)Instantiate (Resources.Load ("dead_demon"), transform.position, transform.rotation);
 			GetComponent<SpriteRenderer>().enabled=false;
 			//gameObject.spriteRenderer.enabled = false;
 			//CountingForDeath=true;
@@ -121,6 +126,7 @@ public class DemonBehavior : MonoBehaviour
 		} 
 		else if (Time.time > TimeTillDeath)
 		{
+			GameObject.Destroy (DeadDemon);
 			GameObject.Destroy (gameObject);
 
             GameObject.FindGameObjectWithTag("Player").SendMessage("DemonKilled");
@@ -131,7 +137,7 @@ public class DemonBehavior : MonoBehaviour
 
 		//spawn a ash particle
 		DemonExtinguishSFX.Play();
-		Quaternion defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
+
 		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, defaultRotation);
 		HitFX.GetComponent<DieAfterGivenTime> ().Parent = gameObject;
 		//print ("MANY HITS: "+numHitFX.ToString ());
