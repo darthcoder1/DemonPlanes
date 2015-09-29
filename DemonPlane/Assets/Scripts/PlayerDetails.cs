@@ -50,7 +50,7 @@ public class PlayerDetails : MonoBehaviour {
 		SFXPieplCollected = audios [5];
 
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		SavedPieplDisplay.text = "Piepl saved: " + NumPieplSaved.ToString ();
+		SavedPieplDisplay.text = NumPieplSaved.ToString ();
 
 		FinalScoreDisplay.text="The Demons destroyed the Village";
 		FinalScoreDisplay.enabled = false;
@@ -69,7 +69,7 @@ public class PlayerDetails : MonoBehaviour {
 	void Update () 
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		SavedPieplDisplay.text = "Piepl saved: " + NumPieplSaved.ToString ();
+		SavedPieplDisplay.text = NumPieplSaved.ToString ();
         //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
         Malus = GetComponent<ScoreComponent>().GetCurrentMalus();

@@ -23,7 +23,7 @@ public class VillageScript : MonoBehaviour
 		DemonsInVillage = new List<GameObject> ();
 		//HealthBarComp = GetComponent<HealthBar> ();
 		VillageHealth = 100;
-		VillageIntact.text=VillageHealth.ToString()+"% of village intact";
+		VillageIntact.text=VillageHealth.ToString()+" %";
 		VillageIntact.enabled = true;
 		bDead = false;
 
@@ -33,7 +33,7 @@ public class VillageScript : MonoBehaviour
 	void Update () 
 	{
 
-		VillageIntact.text=VillageHealth.ToString()+"% of village intact";
+		VillageIntact.text=VillageHealth.ToString()+" %";
 		/*
 		float calcHealth = (float)HealthBarComp.Health;
 		foreach (GameObject Demon in DemonsInVillage) 
