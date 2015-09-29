@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21279400}
   - 61: {fileID: 6194160}
   - 95: {fileID: 9544112}
+  - 114: {fileID: 11479906}
   m_Layer: 0
   m_Name: poorpiggy_01
   m_TagString: piepl
@@ -60,6 +61,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11479906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a155a58a8f12e47b0858973d08eb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnDelay: 1
+  LifeTime: 10
 --- !u!212 &21279400
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,6 +131,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: LifeTime
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
