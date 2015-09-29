@@ -51,7 +51,7 @@ public class ScoreComponent : MonoBehaviour
     
     void WaveSurvived()
     {
-		++NumWavesSurvived;
+		NumWavesSurvived++;
 		Score += SurvivedWaveBonus;
     }
 

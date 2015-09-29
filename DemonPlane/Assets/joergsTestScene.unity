@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: .977941155, g: .812554061, b: .932317078, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: b9625ee30999a14439ecd4773a3769e3, type: 3}
     m_FontSize: 14
@@ -508,7 +508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Piepl Saved: '
+  m_Text: 'PIGGIES SAVED:'
 --- !u!222 &96054549
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3145,7 +3145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1001 &773481729
 Prefab:
   m_ObjectHideFlags: 0
@@ -5208,7 +5208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 34
 --- !u!1001 &1093228984
 Prefab:
   m_ObjectHideFlags: 0
@@ -6839,7 +6839,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 43
 --- !u!1 &1274317364
 GameObject:
   m_ObjectHideFlags: 0
@@ -8421,7 +8421,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 12
 --- !u!1 &1693696662
 GameObject:
   m_ObjectHideFlags: 0
@@ -9003,7 +9003,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 25
 --- !u!1 &1824704029
 GameObject:
   m_ObjectHideFlags: 0
@@ -10010,7 +10010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Piepl Saved '
+  m_Text: 'Piggies Saved '
 --- !u!222 &2136288797
 CanvasRenderer:
   m_ObjectHideFlags: 0

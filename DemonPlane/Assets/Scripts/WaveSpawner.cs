@@ -144,7 +144,9 @@ public class WaveSpawner : MonoBehaviour
 				NextWaveStartsText.enabled = false;
 
 				WaveStartsText.enabled = true;
-				WaveStartsText.text = "Wave " + (CurrentWave+1).ToString();
+
+				int waves= GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreComponent>().NumWavesSurvived+1;
+				WaveStartsText.text = "Wave " + (waves).ToString();
 				Invoke ("HideWaveText", 2.0f);
 			}
 			return;
