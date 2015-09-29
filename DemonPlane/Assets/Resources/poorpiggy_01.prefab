@@ -9,10 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 418946}
   - 212: {fileID: 21279400}
-  - 95: {fileID: 9565190}
+  - 61: {fileID: 6194160}
+  - 95: {fileID: 9544112}
   m_Layer: 0
   m_Name: poorpiggy_01
-  m_TagString: Untagged
+  m_TagString: piepl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,12 +25,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160682}
   m_LocalRotation: {x: 0, y: 0, z: .382683456, w: .923879504}
-  m_LocalPosition: {x: 12.1199999, y: 5.1500001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.46238947, y: -37.6553307, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!95 &9565190
+--- !u!61 &6194160
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160682}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+--- !u!95 &9544112
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -38,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 160682}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8bd2a30b544e51e46ab142da169b7a37, type: 2}
+  m_Controller: {fileID: 9100000, guid: 43e6f2e234110524c92838a05ebd9827, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -70,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c0d4347dd1a5ec4d9a73e8ac7b3f82c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39358f0021cad624f8f4c290c32e5b27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -78,7 +92,32 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c3dafd8e653b53419475b63f16f11b1,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e95b982a112d65a488e9970acb8abfab, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: piepl
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 160682}

@@ -62,7 +62,7 @@ public class PieplSpawner : MonoBehaviour
 			k=randomList[j];
 			Transform spawnTransform = PieplSpawns[k].transform;
 			//GameObject.Instantiate (Resources.Load ("piepl0"), spawnTransform.position, spawnTransform.rotation);
-			JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("piepl0"), spawnTransform.position, spawnTransform.rotation);
+			JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("poorpiggy_01"), spawnTransform.position, spawnTransform.rotation);
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,15+CurrentWave*2);
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(15,15+CurrentWave*2);
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().StartForReal();
