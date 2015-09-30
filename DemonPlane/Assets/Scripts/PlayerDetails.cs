@@ -121,13 +121,13 @@ public class PlayerDetails : MonoBehaviour {
 		int DemonScore = ScoreComp.NumDemonsKilled * ScoreComp.KilledDemonBonus;
 		int PieplScore = NumPieplSaved * 500;
 		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
-		int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
-		int FinalScore = DemonScore + WaveScore + WaveScore;
+		//int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
+		int FinalScore = DemonScore + PieplScore + WaveScore;
 
 		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + DemonScore.ToString ();
 		FinalPieplSaved.text = NumPieplSaved.ToString () + FinalPieplSaved.text + PieplScore.ToString ();
 		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + WaveScore.ToString ();
-		FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
+		//FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
 		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore);
 
