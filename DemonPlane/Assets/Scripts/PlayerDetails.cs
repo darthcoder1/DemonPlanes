@@ -8,6 +8,11 @@ public class PlayerDetails : MonoBehaviour {
 	public int AmmoRefillPerSecond;
 	public int AmmoUsagePerSecond;
 
+	//bonus stuff
+	public int BonusMaxAmmo;
+	public int BonusMaxSpeed;
+	public float BonusDuration;
+
 	public int CurrentAmmo;
 	public Vector2 FlightVelocity;
 	private bool bOverLand;
@@ -185,10 +190,35 @@ public class PlayerDetails : MonoBehaviour {
 	void CollectPiepl()
 	{
 		//collect a person in water
-		++NumPieplSaved;
+		NumPieplSaved++;
+		StartTriggerBonusSpeed ();
 		SFXPieplCollected.Play ();
 
 	}
 
-	
+	//Bonus stuff
+	//BONUS MAX AMMO
+	void StartTriggerBonusAmmo()
+	{
+		MaxAmmo += BonusMaxAmmo;
+		Invoke ("EndTriggerBonusAmmo", BonusDuration);
+	}
+	void EndTriggerBonusAmmo()
+	{
+		MaxAmmo -= BonusMaxAmmo;
+
+	}
+	//BONUS MAX SPEED
+	void StartTriggerBonusSpeed()
+	{
+		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
+		Invoke ("EndTriggerBonusSpeed", BonusDuration);
+	}
+	void EndTriggerBonusSpeed()
+	{
+		GetComponent<ControllerScript>().MaxSpeed -= BonusMaxSpeed;
+		
+	}
+
+
 }

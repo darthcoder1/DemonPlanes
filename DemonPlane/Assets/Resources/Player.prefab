@@ -41,9 +41,7 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 410012}
-  - 212: {fileID: 21244734}
-  - 114: {fileID: 11477306}
+  - 4: {fileID: 409072}
   - 61: {fileID: 6103768}
   - 50: {fileID: 5088142}
   - 82: {fileID: 8279484}
@@ -57,6 +55,9 @@ GameObject:
   - 82: {fileID: 8275036}
   - 82: {fileID: 8204512}
   - 82: {fileID: 8284222}
+  - 212: {fileID: 21244734}
+  - 222: {fileID: 22291462}
+  - 114: {fileID: 11477306}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -80,14 +81,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &410012
+--- !u!4 &409072
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0399999991, y: -49.7999992, z: 0}
+  m_LocalPosition: {x: -.0399999619, y: -78.0999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432424}
@@ -105,7 +106,7 @@ Transform:
   m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
-  m_Father: {fileID: 410012}
+  m_Father: {fileID: 409072}
   m_RootOrder: 0
 --- !u!4 &459948
 Transform:
@@ -117,7 +118,7 @@ Transform:
   m_LocalPosition: {x: .00999999978, y: -.0599999987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 410012}
+  m_Father: {fileID: 409072}
   m_RootOrder: 1
 --- !u!4 &463798
 Transform:
@@ -129,7 +130,7 @@ Transform:
   m_LocalPosition: {x: .00999999046, y: -.0599994659, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 410012}
+  m_Father: {fileID: 409072}
   m_RootOrder: 2
 --- !u!50 &5088142
 Rigidbody2D:
@@ -658,6 +659,9 @@ MonoBehaviour:
   MaxAmmo: 500
   AmmoRefillPerSecond: 250
   AmmoUsagePerSecond: 100
+  BonusMaxAmmo: 100
+  BonusMaxSpeed: 3
+  BonusDuration: 30
   CurrentAmmo: 500
   FlightVelocity: {x: 0, y: 0}
   GameOverText: {fileID: 0}
@@ -691,7 +695,7 @@ MonoBehaviour:
   WaterDamage: 50
   ShootingDelay: .100000001
   WaterBulletSpeed: 3
-  WaterBulletDamage: 2
+  WaterBulletDamage: 5
   OutOfWaterText: {fileID: 0}
 --- !u!198 &19880826
 ParticleSystem:
@@ -2903,6 +2907,12 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: f6683dcb5f7fdfb48bd2669240f263c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!222 &22291462
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131898}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -2930,6 +2940,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d4f3459171ffb624e8de0a81615c86f9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: BonusMaxAmmo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BonusMaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BonusDuration
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131898}
