@@ -1080,6 +1080,14 @@ Prefab:
       propertyPath: FinalScoreRank
       value: 
       objectReference: {fileID: 71308404}
+    - target: {fileID: 11484054, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: WaterBulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477306, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
+      propertyPath: BonusShootingRange
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
   m_IsPrefabParent: 0

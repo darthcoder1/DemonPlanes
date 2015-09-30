@@ -11,6 +11,7 @@ public class PlayerDetails : MonoBehaviour {
 	//bonus stuff
 	public int BonusMaxAmmo;
 	public int BonusMaxSpeed;
+	public int BonusShootingRange;
 	public float BonusDuration;
 
 	public int CurrentAmmo;
@@ -191,7 +192,7 @@ public class PlayerDetails : MonoBehaviour {
 	{
 		//collect a person in water
 		NumPieplSaved++;
-		StartTriggerBonusSpeed ();
+		StartTriggerBonusShootingRange ();
 		SFXPieplCollected.Play ();
 
 	}
@@ -219,6 +220,19 @@ public class PlayerDetails : MonoBehaviour {
 		GetComponent<ControllerScript>().MaxSpeed -= BonusMaxSpeed;
 		
 	}
+	//BONUS MAX SHOOTING RANGE
+	void StartTriggerBonusShootingRange()
+	{
+		GetComponent<DropWater>().WaterBulletSpeed += BonusShootingRange;
+		Invoke ("EndTriggerBonusShootingRange", BonusDuration);
+	}
+	void EndTriggerBonusShootingRange()
+	{
+		GetComponent<DropWater>().WaterBulletSpeed -= BonusShootingRange;
+		
+	}
+
+
 
 
 }
