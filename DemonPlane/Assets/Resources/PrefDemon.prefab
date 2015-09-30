@@ -143,9 +143,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 046dab2629c57cd45bb687b5182aff83, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 85bed5d4ba6b0ff49b5904e694497166, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .527999997
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -367,7 +367,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 046dab2629c57cd45bb687b5182aff83, type: 3}
+      objectReference: {fileID: 8300000, guid: 85bed5d4ba6b0ff49b5904e694497166, type: 3}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -399,6 +399,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: WalkingSpeed
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BypassReverbZones
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
