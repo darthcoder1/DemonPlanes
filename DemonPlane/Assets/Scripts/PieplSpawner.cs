@@ -65,6 +65,11 @@ public class PieplSpawner : MonoBehaviour
 			JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("poorpiggy_01"), spawnTransform.position, spawnTransform.rotation);
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,15+CurrentWave*2);
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(15,15+CurrentWave*2);
+			/*
+			if((Random.Range(0, CurrentWave +1) < 3)) {
+				JustSpawnedPiepl.GetComponent<PieplBehavior>().isSpecial=true;
+				print("SPECIAL PIG BORN!");
+			}*/
 			JustSpawnedPiepl.GetComponent<PieplBehavior>().StartForReal();
 		}
 

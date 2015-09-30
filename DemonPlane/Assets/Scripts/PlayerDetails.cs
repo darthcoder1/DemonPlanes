@@ -33,6 +33,8 @@ public class PlayerDetails : MonoBehaviour {
 	public Text FinalScoreTotal;
 	public Text FinalScoreRank;
 
+	public Text Bonus;
+
 	private ScoreComponent ScoreComp; 
 	private AudioSource SFXPieplCollected;
 
@@ -57,6 +59,9 @@ public class PlayerDetails : MonoBehaviour {
 
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
 		SavedPieplDisplay.text = NumPieplSaved.ToString ();
+
+		//Bonus Texts
+		Bonus.enabled = false;
 
 		FinalScoreDisplay.text="The Demons destroyed the Village";
 		FinalScoreDisplay.enabled = false;
@@ -93,7 +98,7 @@ public class PlayerDetails : MonoBehaviour {
 		}
 		if (collision.gameObject.tag == "piepl" && GetComponent<ControllerScript> ().Altitude <= 0.01f) {
 
-			CollectPiepl();
+			CollectPiepl(collision.gameObject.GetComponent<PieplBehavior>().isSpecial);
 
 			GameObject.Destroy (collision.gameObject);
 
@@ -188,12 +193,29 @@ public class PlayerDetails : MonoBehaviour {
 
 
 	}
-	void CollectPiepl()
+	void CollectPiepl(bool isSpecial)
 	{
 		//collect a person in water
 		NumPieplSaved++;
-		StartTriggerBonusShootingRange ();
 		SFXPieplCollected.Play ();
+		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
+		if (isSpecial) {
+
+			int RandomBonus= Random.Range(0,2);
+			print ("BONUS: "+ RandomBonus.ToString());
+			switch(RandomBonus){
+			
+				case 0: StartTriggerBonusAmmo();
+				break;
+
+				case 1: StartTriggerBonusSpeed();
+				break;
+
+				case 2: StartTriggerBonusShootingRange();
+				break;
+			
+			}
+		}
 
 	}
 
@@ -202,6 +224,10 @@ public class PlayerDetails : MonoBehaviour {
 	void StartTriggerBonusAmmo()
 	{
 		MaxAmmo += BonusMaxAmmo;
+		//Bonus Texts
+		Bonus.text="AWESOME! \n You saved a \n  ***FAT PIG*** \n  gyou ain a temporary bonus \n on MAX AMMO!";
+		Bonus.enabled = true;
+		print("AMMO");
 		Invoke ("EndTriggerBonusAmmo", BonusDuration);
 	}
 	void EndTriggerBonusAmmo()
@@ -212,22 +238,33 @@ public class PlayerDetails : MonoBehaviour {
 	//BONUS MAX SPEED
 	void StartTriggerBonusSpeed()
 	{
+		//Bonus Texts
+		Bonus.text = "!!!AWESOME!!! \n You saved a \n ***HASTY PIG*** \n  you gain a temporary bonus \n on MAX SPEED!";
+		Bonus.enabled = true;
+		print("SPPED");
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
 		Invoke ("EndTriggerBonusSpeed", BonusDuration);
 	}
 	void EndTriggerBonusSpeed()
 	{
+		Bonus.enabled = false;
 		GetComponent<ControllerScript>().MaxSpeed -= BonusMaxSpeed;
 		
 	}
 	//BONUS MAX SHOOTING RANGE
 	void StartTriggerBonusShootingRange()
 	{
+		//Bonus Texts
+		Bonus.enabled = false;
+		Bonus.text = "AWESOME! \n You saved a \n ***ACCURATE PIG*** \n  you gain a temporary bonus \n on MAX SHOOTING RANGE!";
+		Bonus.enabled = true;
+		print("RANGE");
 		GetComponent<DropWater>().WaterBulletSpeed += BonusShootingRange;
 		Invoke ("EndTriggerBonusShootingRange", BonusDuration);
 	}
 	void EndTriggerBonusShootingRange()
 	{
+		Bonus.enabled = false;
 		GetComponent<DropWater>().WaterBulletSpeed -= BonusShootingRange;
 		
 	}
