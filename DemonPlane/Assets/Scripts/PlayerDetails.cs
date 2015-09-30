@@ -158,7 +158,7 @@ public class PlayerDetails : MonoBehaviour {
 		int FinalScore = DemonScore + PieplScore + WaveScore;
 
 		FinalScoreDemons.text = "  x" + ScoreComp.NumDemonsKilled.ToString () +  " = "+DemonScore.ToString ();
-		FinalPieplSaved.text = "  x" + NumPieplSaved.ToString () + " = "+ PieplScore.ToString ();
+		FinalPieplSaved.text = "    x" + NumPieplSaved.ToString () + " = "+ PieplScore.ToString ();
 		FinalScoreWaves.text = "Waves x" +ScoreComp.NumWavesSurvived.ToString () + " = "+ WaveScore.ToString ();
 		//FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
