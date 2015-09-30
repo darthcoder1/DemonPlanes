@@ -70,7 +70,8 @@ public class WaveSpawner : MonoBehaviour
         }
        
 
-        if (++CurrentWave >= EnemyWaves.Length) 
+		if (++CurrentWave >= EnemyWaves.Length ||
+		    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDetails>().IsDead) 
 		{
 			// won
 			return false;
@@ -133,6 +134,9 @@ public class WaveSpawner : MonoBehaviour
 
 	void UpdateSpawning()
 	{
+		if (GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerDetails> ().IsDead)
+			return;
+
 		if (TimeLeftBeforeWaveStarts > 0) 
 		{
 			TimeLeftBeforeWaveStarts = Mathf.Max (TimeLeftBeforeWaveStarts - Time.deltaTime, 0.0f);

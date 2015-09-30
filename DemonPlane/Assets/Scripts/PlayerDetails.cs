@@ -86,6 +86,10 @@ public class PlayerDetails : MonoBehaviour {
 		SpeedBonusText=GameObject.Find("MaxSpeedText").GetComponent<Text>();
 		MaxAmmoBonusText=GameObject.Find("MaxAmmoText").GetComponent<Text>();
 		MaxShootingRangeText=GameObject.Find("MaxShootingRange").GetComponent<Text>();
+
+		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=false;
+		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=false;
+
 		NumSpeedBonus=0;
 	    NumMaxAmmoBonus=0;
 		NumMaxShootingRange=0;
@@ -153,9 +157,9 @@ public class PlayerDetails : MonoBehaviour {
 		//int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = DemonScore + PieplScore + WaveScore;
 
-		FinalScoreDemons.text = ScoreComp.NumDemonsKilled.ToString () + FinalScoreDemons.text + DemonScore.ToString ();
-		FinalPieplSaved.text = NumPieplSaved.ToString () + FinalPieplSaved.text + PieplScore.ToString ();
-		FinalScoreWaves.text = ScoreComp.NumWavesSurvived.ToString () + FinalScoreWaves.text + WaveScore.ToString ();
+		FinalScoreDemons.text = "  x" + ScoreComp.NumDemonsKilled.ToString () +  " = "+DemonScore.ToString ();
+		FinalPieplSaved.text = "  x" + NumPieplSaved.ToString () + " = "+ PieplScore.ToString ();
+		FinalScoreWaves.text = "Waves x" +ScoreComp.NumWavesSurvived.ToString () + " = "+ WaveScore.ToString ();
 		//FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
 		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore);
@@ -167,6 +171,9 @@ public class PlayerDetails : MonoBehaviour {
 		FinalForestFire.enabled = true;
 		FinalScoreTotal.enabled = true;
 		FinalScoreRank.enabled = true;
+
+		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=true;
+		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=true;
 
 		Invoke("RestartLevel", 10.0f);
 	}
