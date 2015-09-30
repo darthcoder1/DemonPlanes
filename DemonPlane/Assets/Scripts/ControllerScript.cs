@@ -189,6 +189,11 @@ public class ControllerScript : MonoBehaviour {
 
 				}
 			}
+			//only shjoot or drop water when high up
+			else{
+				UpdateWaterDrop ();
+				UpdateShoot ();
+			}
 		}
 		else
 		{
@@ -205,7 +210,6 @@ public class ControllerScript : MonoBehaviour {
                                                                     new Vector3(0.5f, 0.5f, 0.5f), 1.0f-Altitude);
         }
 
-		UpdateWaterDrop ();
-		UpdateShoot ();
+	
 	}
 }

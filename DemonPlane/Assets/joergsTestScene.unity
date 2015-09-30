@@ -12628,7 +12628,7 @@ Transform:
   - {fileID: 1693696663}
   - {fileID: 292190308}
   m_Father: {fileID: 0}
-  m_RootOrder: 83
+  m_RootOrder: 86
 --- !u!212 &1834549572
 SpriteRenderer:
   m_ObjectHideFlags: 0
