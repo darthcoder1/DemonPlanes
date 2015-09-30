@@ -35,6 +35,15 @@ public class PlayerDetails : MonoBehaviour {
 
 	public Text Bonus;
 
+	//Bonus stuff
+	private Text SpeedBonusText;
+	private Text MaxAmmoBonusText;
+	private Text MaxShootingRangeText;
+
+	private int NumSpeedBonus;
+	private int NumMaxAmmoBonus;
+	private int NumMaxShootingRange;
+
 	private ScoreComponent ScoreComp; 
 	private AudioSource SFXPieplCollected;
 
@@ -74,6 +83,12 @@ public class PlayerDetails : MonoBehaviour {
 		ScoreComp = GetComponent<ScoreComponent>(); 
 		rend = gameObject.GetComponent<SpriteRenderer>();
 
+		SpeedBonusText=GameObject.Find("MaxSpeedText").GetComponent<Text>();
+		MaxAmmoBonusText=GameObject.Find("MaxAmmoText").GetComponent<Text>();
+		MaxShootingRangeText=GameObject.Find("MaxShootingRange").GetComponent<Text>();
+		NumSpeedBonus=0;
+	    NumMaxAmmoBonus=0;
+		NumMaxShootingRange=0;
 	}
 	
 	// Update is called once per frame
@@ -81,6 +96,9 @@ public class PlayerDetails : MonoBehaviour {
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
 		SavedPieplDisplay.text = NumPieplSaved.ToString ();
+		SpeedBonusText.text = "x" + NumSpeedBonus.ToString();
+		MaxAmmoBonusText.text = "x" + NumMaxAmmoBonus.ToString();
+		MaxShootingRangeText.text = "x" + NumMaxShootingRange.ToString();
         //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
         Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
@@ -225,7 +243,9 @@ public class PlayerDetails : MonoBehaviour {
 	{
 		MaxAmmo += BonusMaxAmmo;
 		//Bonus Texts
-		Bonus.text="AWESOME! \n You saved a \n  ***FAT PIG*** \n  gyou ain a temporary bonus \n on MAX AMMO!";
+		Bonus.text="AWESOME! \n You saved a \n  ***FAT PIG*** \n  you ain a temporary bonus \n on MAX AMMO!";
+		NumMaxAmmoBonus++;
+
 		Bonus.enabled = true;
 		print("AMMO");
 		Invoke ("EndTriggerBonusAmmo", BonusDuration);
@@ -233,7 +253,7 @@ public class PlayerDetails : MonoBehaviour {
 	void EndTriggerBonusAmmo()
 	{
 		MaxAmmo -= BonusMaxAmmo;
-
+		NumMaxAmmoBonus--;
 	}
 	//BONUS MAX SPEED
 	void StartTriggerBonusSpeed()
@@ -242,12 +262,14 @@ public class PlayerDetails : MonoBehaviour {
 		Bonus.text = "!!!AWESOME!!! \n You saved a \n ***HASTY PIG*** \n  you gain a temporary bonus \n on MAX SPEED!";
 		Bonus.enabled = true;
 		print("SPPED");
+		NumSpeedBonus++;
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
 		Invoke ("EndTriggerBonusSpeed", BonusDuration);
 	}
 	void EndTriggerBonusSpeed()
 	{
 		Bonus.enabled = false;
+		NumSpeedBonus--;
 		GetComponent<ControllerScript>().MaxSpeed -= BonusMaxSpeed;
 		
 	}
@@ -258,6 +280,7 @@ public class PlayerDetails : MonoBehaviour {
 		Bonus.enabled = false;
 		Bonus.text = "AWESOME! \n You saved a \n ***ACCURATE PIG*** \n  you gain a temporary bonus \n on MAX SHOOTING RANGE!";
 		Bonus.enabled = true;
+		NumMaxShootingRange++;
 		print("RANGE");
 		GetComponent<DropWater>().WaterBulletSpeed += BonusShootingRange;
 		Invoke ("EndTriggerBonusShootingRange", BonusDuration);
@@ -265,6 +288,7 @@ public class PlayerDetails : MonoBehaviour {
 	void EndTriggerBonusShootingRange()
 	{
 		Bonus.enabled = false;
+		NumMaxShootingRange--;
 		GetComponent<DropWater>().WaterBulletSpeed -= BonusShootingRange;
 		
 	}
