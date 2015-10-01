@@ -17,11 +17,13 @@ public class PieplBehavior : MonoBehaviour {
 		int CurrentWave = GameObject.Find("GlobalManager").GetComponent<PieplSpawner>().CurrentWave;
 
 
-		if((Random.Range(0, CurrentWave +1) < 3)) {
+		if((Random.Range(0, CurrentWave +10) < 3)) {
 			isSpecial=true;
-			print("SPECIAL PIG BORN!");
+
 		}
 		else isSpecial = false;
+
+		//isSpecial=true;
 	
 	}
 	// This is called from the piepl spawner
@@ -35,8 +37,6 @@ public class PieplBehavior : MonoBehaviour {
 	//from now on the piepl can be picked up and all - also now we start counting the life time
 	void Spawn () {
 		
-		if(isSpecial) print("I AM SO SPECIAL!!");
-		else  print("I AM ORDINARY");
 		GetComponent<SpriteRenderer> ().enabled = true;
 		GetComponent<BoxCollider2D> ().enabled = true;
 		Invoke ("Die", LifeTime);

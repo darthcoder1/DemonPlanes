@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\DemonCompass.cs" />
      <Compile Include="Assets\ScoreComponent.cs" />
-     <Compile Include="Assets\Scripts\AudioFadeOut.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
      <Compile Include="Assets\Scripts\DebugHelpers.cs" />
@@ -64,6 +63,7 @@
      <Compile Include="Assets\Scripts\PieplSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
      <Compile Include="Assets\Scripts\VillageScript.cs" />
+     <Compile Include="Assets\Scripts\VolumeScaler.cs" />
      <Compile Include="Assets\Scripts\WaterShot.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />
      <Compile Include="Assets\StartScreen.cs" />

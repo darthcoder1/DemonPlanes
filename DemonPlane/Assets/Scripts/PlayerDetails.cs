@@ -44,6 +44,10 @@ public class PlayerDetails : MonoBehaviour {
 	private int NumMaxAmmoBonus;
 	private int NumMaxShootingRange;
 
+	private Text BonusChanceText;
+	private Image BonusChanceImage;
+	private Animator BonusChanceAnimation;
+
 	private ScoreComponent ScoreComp; 
 	private AudioSource SFXPieplCollected;
 
@@ -70,7 +74,7 @@ public class PlayerDetails : MonoBehaviour {
 		SavedPieplDisplay.text = NumPieplSaved.ToString ();
 
 		//Bonus Texts
-		Bonus.enabled = false;
+//		Bonus.enabled = false;
 
 		FinalScoreDisplay.text="The Demons destroyed the Village";
 		FinalScoreDisplay.enabled = false;
@@ -87,8 +91,29 @@ public class PlayerDetails : MonoBehaviour {
 		MaxAmmoBonusText=GameObject.Find("MaxAmmoText").GetComponent<Text>();
 		MaxShootingRangeText=GameObject.Find("MaxShootingRange").GetComponent<Text>();
 
+		GameObject.Find("FinalScore").GetComponent<Image>().enabled=false;
 		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=false;
 		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=false;
+
+		GameObject.Find("BonusChance_text").GetComponent<Text>().enabled=false;
+
+
+		BonusChanceText = GameObject.Find ("BonusChance_text").GetComponent<Text> ();
+		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
+		BonusChanceAnimation = GameObject.Find ("BonusChancePig").GetComponent<Animator> ();
+
+		/*
+		BonusChanceHasty = GameObject.Find ("BonusChanceHasty").GetComponent<Image> ();
+		BonusChanceHasty
+			BonusChanceWhale
+				BonusChanceSniper
+				*/
+
+
+
+		BonusChanceText.enabled = false;
+		BonusChanceImage.enabled = false;
+		BonusChanceAnimation.enabled = false;
 
 		NumSpeedBonus=0;
 	    NumMaxAmmoBonus=0;
@@ -171,7 +196,7 @@ public class PlayerDetails : MonoBehaviour {
 		FinalForestFire.enabled = true;
 		FinalScoreTotal.enabled = true;
 		FinalScoreRank.enabled = true;
-
+		GameObject.Find("FinalScore").GetComponent<Image>().enabled=true;
 		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=true;
 		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=true;
 
@@ -226,36 +251,51 @@ public class PlayerDetails : MonoBehaviour {
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
 		if (isSpecial) {
 
-			int RandomBonus= Random.Range(0,2);
-			print ("BONUS: "+ RandomBonus.ToString());
-			switch(RandomBonus){
-			
-				case 0: StartTriggerBonusAmmo();
-				break;
+			BonusChanceText.text="°°SPECIAL PIG°°";
 
-				case 1: StartTriggerBonusSpeed();
-				break;
-
-				case 2: StartTriggerBonusShootingRange();
-				break;
+			BonusChanceText.enabled = true;
+			BonusChanceImage.enabled = true;
+			BonusChanceAnimation.enabled = true;
+			Invoke("RollDieWhichBonus", 2);
 			
 			}
-		}
+
 
 	}
-
+	void RollDieWhichBonus()
+	{
+		int RandomBonus= Random.Range(0,3);
+		print ("BONUS: " + RandomBonus.ToString ());
+		switch(RandomBonus){
+			
+		case 0: StartTriggerBonusAmmo();
+			break;
+			
+		case 1: StartTriggerBonusSpeed();
+			break;
+			
+		case 2: StartTriggerBonusShootingRange();
+			break;
+		}
+		//BonusChanceText.enabled = false;
+		//BonusChanceImage.enabled = false;
+		//BonusChanceAnimation.enabled = false;
+	}
+	
 	//Bonus stuff
 	//BONUS MAX AMMO
 	void StartTriggerBonusAmmo()
 	{
 		MaxAmmo += BonusMaxAmmo;
 		//Bonus Texts
-		Bonus.text="AWESOME! \n You saved a \n  ***FAT PIG*** \n  you ain a temporary bonus \n on MAX AMMO!";
-		NumMaxAmmoBonus++;
+		BonusChanceImage.enabled = false;
+		BonusChanceText.text="°°WHALE PIG°°";
+		BonusChanceImage=GameObject.Find ("BonusChanceWhale").GetComponent<Image> ();
+		BonusChanceImage.enabled = true;
 
-		Bonus.enabled = true;
-		print("AMMO");
-		Invoke ("EndTriggerBonusAmmo", BonusDuration);
+		NumMaxAmmoBonus++;
+		Invoke ("EndBonusDisplay", 5);
+		//Invoke ("EndTriggerBonusAmmo", BonusDuration);
 	}
 	void EndTriggerBonusAmmo()
 	{
@@ -266,12 +306,14 @@ public class PlayerDetails : MonoBehaviour {
 	void StartTriggerBonusSpeed()
 	{
 		//Bonus Texts
-		Bonus.text = "!!!AWESOME!!! \n You saved a \n ***HASTY PIG*** \n  you gain a temporary bonus \n on MAX SPEED!";
-		Bonus.enabled = true;
-		print("SPPED");
+		BonusChanceImage.enabled = false;
+		BonusChanceText.text = "°°HASTY PIG°°";
+		BonusChanceImage=GameObject.Find ("BonusChanceHasty").GetComponent<Image> ();
+		BonusChanceImage.enabled = true;
 		NumSpeedBonus++;
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
-		Invoke ("EndTriggerBonusSpeed", BonusDuration);
+		Invoke ("EndBonusDisplay", 5);
+		//Invoke ("EndTriggerBonusSpeed", BonusDuration);
 	}
 	void EndTriggerBonusSpeed()
 	{
@@ -284,13 +326,15 @@ public class PlayerDetails : MonoBehaviour {
 	void StartTriggerBonusShootingRange()
 	{
 		//Bonus Texts
-		Bonus.enabled = false;
-		Bonus.text = "AWESOME! \n You saved a \n ***ACCURATE PIG*** \n  you gain a temporary bonus \n on MAX SHOOTING RANGE!";
-		Bonus.enabled = true;
+		BonusChanceImage.enabled = false;
+		BonusChanceText.text = "°°SNIPER PIG°°";
+		BonusChanceImage=GameObject.Find ("BonusChanceSniper").GetComponent<Image> ();
+		BonusChanceImage.enabled = true;
+
 		NumMaxShootingRange++;
-		print("RANGE");
 		GetComponent<DropWater>().WaterBulletSpeed += BonusShootingRange;
-		Invoke ("EndTriggerBonusShootingRange", BonusDuration);
+		Invoke ("EndBonusDisplay", 5);
+		//Invoke ("EndTriggerBonusShootingRange", BonusDuration);
 	}
 	void EndTriggerBonusShootingRange()
 	{
@@ -298,6 +342,16 @@ public class PlayerDetails : MonoBehaviour {
 		NumMaxShootingRange--;
 		GetComponent<DropWater>().WaterBulletSpeed -= BonusShootingRange;
 		
+	}
+	void EndBonusDisplay()
+	{
+		//BonusChanceImage.sprite=Resources.Load("shooting_range") as Sprite;
+		print (BonusChanceText.text);
+
+		BonusChanceImage.enabled = false;
+		BonusChanceText.enabled = false;
+		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
+
 	}
 
 
