@@ -14,8 +14,8 @@ public class StartScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        float pressedBtn = Input.GetAxis("AltClimb");
-        if (pressedBtn > 0)
+        bool pressedBtn = Input.GetButton("AltClimb");
+        if (pressedBtn)
         {
             Application.LoadLevel(NextSceneName);
         }

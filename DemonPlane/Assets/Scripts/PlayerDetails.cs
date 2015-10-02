@@ -61,13 +61,14 @@ public class PlayerDetails : MonoBehaviour {
 	public bool IsOverLand { get { return bOverLand; } }
 	public bool IsDead { get { return bDied; } }
 
+	private AudioSource[] audios;
 
 	// Use this for initialization
 	void Start () 
 	{
 		CurrentAmmo = MaxAmmo;
 		NumPieplSaved = 0; 
-		AudioSource[] audios = GetComponents<AudioSource> ();
+		audios = GetComponents<AudioSource> ();
 		SFXPieplCollected = audios [5];
 
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
@@ -250,7 +251,7 @@ public class PlayerDetails : MonoBehaviour {
 		SFXPieplCollected.Play ();
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
 		if (isSpecial) {
-
+			audios [6].Play();
 			BonusChanceText.text="°°SPECIAL PIG°°";
 
 			BonusChanceText.enabled = true;
@@ -265,6 +266,7 @@ public class PlayerDetails : MonoBehaviour {
 	void RollDieWhichBonus()
 	{
 		int RandomBonus= Random.Range(0,3);
+		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Play ();
 		print ("BONUS: " + RandomBonus.ToString ());
 		switch(RandomBonus){
 			
@@ -291,6 +293,8 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage.enabled = false;
 		BonusChanceText.text="°°WHALE PIG°°";
 		BonusChanceImage=GameObject.Find ("BonusChanceWhale").GetComponent<Image> ();
+		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Stop();
+		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
 		BonusChanceImage.enabled = true;
 
 		NumMaxAmmoBonus++;
@@ -309,6 +313,8 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage.enabled = false;
 		BonusChanceText.text = "°°HASTY PIG°°";
 		BonusChanceImage=GameObject.Find ("BonusChanceHasty").GetComponent<Image> ();
+		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Stop();
+		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
 		BonusChanceImage.enabled = true;
 		NumSpeedBonus++;
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
@@ -329,6 +335,8 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage.enabled = false;
 		BonusChanceText.text = "°°SNIPER PIG°°";
 		BonusChanceImage=GameObject.Find ("BonusChanceSniper").GetComponent<Image> ();
+		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Stop();
+		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
 		BonusChanceImage.enabled = true;
 
 		NumMaxShootingRange++;
