@@ -24,14 +24,20 @@ public class DemonBehavior : MonoBehaviour
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
 
-	private GameObject HitFX;
-	private GameObject DeadDemon;
+	public ParticleSystem HitFX;
 	//private int numHitFX;
 	private Quaternion defaultRotation;
 
-	// Use this for initialization
-	void Start () 
+    private static Object DemonHitPrefab = null;
+
+    // Use this for initialization
+    void Start () 
 	{
+        if (DemonHitPrefab == null)
+        {
+            DemonHitPrefab = Resources.Load("DemonHit");
+        }
+
 		HealthBarComp = GetComponent<HealthBar> ();
 		TimeTillDeath = 0;
 		//numHitFX = 0;
@@ -118,15 +124,13 @@ public class DemonBehavior : MonoBehaviour
 		if (TimeTillDeath == 0) {
 			//play sound when dieing
 			DemonDefeatedSFX.Play ();
-			DeadDemon=(GameObject)Instantiate (Resources.Load ("dead_demon"), transform.position, transform.rotation);
-			GetComponent<SpriteRenderer>().enabled=false;
+            GetComponent<Animator>().SetBool("bPlayDeadAnim", true);
 			//gameObject.spriteRenderer.enabled = false;
 			//CountingForDeath=true;
 			TimeTillDeath = Time.time + TimeToDisappear;
 		} 
 		else if (Time.time > TimeTillDeath)
 		{
-			GameObject.Destroy (DeadDemon);
 			GameObject.Destroy (gameObject);
 
             GameObject.FindGameObjectWithTag("Player").SendMessage("DemonKilled");
@@ -138,9 +142,7 @@ public class DemonBehavior : MonoBehaviour
 		//spawn a ash particle
 		DemonExtinguishSFX.Play();
 
-		HitFX=(GameObject)Instantiate (Resources.Load ("DemonHit"), transform.position, defaultRotation);
-		HitFX.GetComponent<DieAfterGivenTime> ().Parent = gameObject;
-		//print ("MANY HITS: "+numHitFX.ToString ());
+        HitFX.Play();
 		hit = true;
 	}
 	void HitUpdate()
