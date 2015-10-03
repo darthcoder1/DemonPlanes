@@ -217,21 +217,59 @@ public class PlayerDetails : MonoBehaviour {
 
 	string CalculateRank(int TotalScore)
 	{	
-		if (TotalScore > 50000) {
+		if (TotalScore > 150000) {
 
 			return "AMERICAN EAGLE";
 		} 
-		else if (TotalScore > 20000) {
+		if (TotalScore > 100000) {
+			
+			return "ALBATROSS";
+		} 
+		if (TotalScore > 80000) {
+			
+			return "FLAMINGO";
+		} 
+
+		else if (TotalScore > 70000) {
 
 			return "SWANE";
 		}
-		else if (TotalScore > 15000) {
+		else if (TotalScore > 60000) {
+			
+			return "STORK";
+		}
+		else if (TotalScore > 50000) {
+			
+			return "KINGFISHER";
+		}
+		else if (TotalScore > 45000) {
+			
+			return "CORMORAN";
+		}
+
+		else if (TotalScore > 40000) {
+			
+			return "LOON";
+		}
+		else if (TotalScore > 35000) {
+			
+			return "SHOREBIRD";
+		}
+		else if (TotalScore > 30000) {
+			
+			return "SEAGULL";
+		}
+		else if (TotalScore > 25000) {
 			
 			return "DUCK";
 		}
-		else if (TotalScore > 6000) {
+		else if (TotalScore > 20000) {
 			
 			return "MOORHEN";
+		}
+		else if (TotalScore > 15000) {
+			
+			return "DRAGONFLY";
 		}
 		else if (TotalScore > 1000) {
 			
