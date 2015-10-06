@@ -43,6 +43,7 @@ public class ControllerScript : MonoBehaviour {
 
 	private Image HowToPlay;
 	private bool bGamePaused;
+	private bool bInTheAir;
 
 	ControllerScript()
 	{
@@ -73,6 +74,8 @@ public class ControllerScript : MonoBehaviour {
         DropShadowObject = transform.GetChild(0).gameObject;
 		OriginalScale = transform.localScale;
 		rend = gameObject.GetComponent<SpriteRenderer>();
+
+		bInTheAir = true;
 	}
 	
 	void Die()
@@ -127,8 +130,21 @@ public class ControllerScript : MonoBehaviour {
 		float vAxis = Input.GetAxis (VerticalAxixName);
 
 
-		float pressedAltClimb = Input.GetAxis (ClimbButtonName);
-		float pressedAltSink = Input.GetAxis (SinkButtonName);
+		float pressedAltClimb=0f; 
+		float pressedAltSink=0f; 
+
+		//dirty dirty hack for one button climb control
+		if (bInTheAir) {
+
+
+			pressedAltSink = Input.GetAxis (ClimbButtonName);
+
+		}
+		else{
+
+			pressedAltClimb = Input.GetAxis (ClimbButtonName);
+		}
+
 
 		bool pressedStart = Input.GetButton (StartButtonName);
 
@@ -189,6 +205,7 @@ public class ControllerScript : MonoBehaviour {
 
 			if (Altitude <= 0.01f)
 			{
+				bInTheAir=false;
 				if (PlayerDetailsComp.IsOverLand)
 				{
 					GetComponent<PlayerDetails> ().FinalScoreDisplay.text="You Crashed!";
@@ -204,6 +221,7 @@ public class ControllerScript : MonoBehaviour {
 			}
 			//only shjoot or drop water when high up
 			else{
+				bInTheAir=true;
 				UpdateWaterDrop ();
 				UpdateShoot ();
 			}

@@ -30,11 +30,11 @@ InputManager:
     altNegativeButton: a
     altPositiveButton: d
     gravity: 1
-    dead: .300000012
-    sensitivity: 1
+    dead: .5
+    sensitivity: .300000012
     snap: 0
     invert: 0
-    type: 0
+    type: 1
     axis: 0
     joyNum: 1
   - serializedVersion: 3
@@ -90,7 +90,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: mouse 1
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: right alt
     gravity: 1000
@@ -108,7 +108,7 @@ InputManager:
     negativeButton: 
     positiveButton: joystick 1 button 1
     altNegativeButton: 
-    altPositiveButton: g
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -122,7 +122,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: mouse 0
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: right shift
     gravity: 1000
@@ -154,7 +154,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: e
+    positiveButton: mouse 0
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: q
+    positiveButton: mouse 1
     altNegativeButton: 
     altPositiveButton: enter
     gravity: 1000
