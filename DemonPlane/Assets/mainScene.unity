@@ -6157,6 +6157,10 @@ Prefab:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[0].NumFlyingDemons
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
   m_IsPrefabParent: 0
