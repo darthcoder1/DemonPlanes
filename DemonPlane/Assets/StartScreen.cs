@@ -14,8 +14,8 @@ public class StartScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        bool pressedBtn = Input.GetButton("AltClimb");
-        if (pressedBtn)
+        
+		if (Input.GetButton("AltClimb") || Input.GetButton("ReleaseWater")|| Input.GetButton("Shoot"))
         {
             Application.LoadLevel(NextSceneName);
         }

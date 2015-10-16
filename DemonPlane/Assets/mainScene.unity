@@ -8846,7 +8846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 99
+  m_RootOrder: 97
 --- !u!212 &1125739286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12283,7 +12283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 126
+  m_RootOrder: 124
 --- !u!212 &1629501459
 SpriteRenderer:
   m_ObjectHideFlags: 0

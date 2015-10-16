@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\DemonCompass.cs" />
+     <Compile Include="Assets\FireShotComponent.cs" />
      <Compile Include="Assets\ScoreComponent.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
