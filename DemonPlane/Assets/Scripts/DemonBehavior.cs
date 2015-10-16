@@ -9,17 +9,21 @@ public class DemonBehavior : MonoBehaviour
 	private GameObject TargetVillage;
 	private HealthBar HealthBarComp;
 
+    public bool IsFlyingDemon = false;
+    public float ShootInterval = 3.0f;
+    public float MaxShootDistance = 100.0f;
 
 	public float WalkingSpeed;
 	public double TimeToDisappear; // the time between the demon reaching 0 HP and disappearing
 
 	//rotation
-	private Transform target;
+	//private Transform target;
 
 	private bool bSoundPlayed;
 	private double TimeTillDeath;
 	private float HealthScale; 
 	private bool hit;
+    private float lastShootTime;
 
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
@@ -29,6 +33,33 @@ public class DemonBehavior : MonoBehaviour
 	private Quaternion defaultRotation;
 
     private static Object DemonHitPrefab = null;
+
+
+    GameObject FindTarget()
+    {
+        if (IsFlyingDemon)
+        {
+            return GameObject.FindGameObjectWithTag("Player");
+        }
+        else
+        { 
+            GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
+            GameObject nearestVillage = null;
+            float nearestVillageDistance = float.MaxValue;
+            foreach (GameObject village in foundVillages)
+            {
+                float dist = Vector2.Distance(village.transform.position, transform.position);
+                if (nearestVillage == null || dist < nearestVillageDistance)
+                {
+                    nearestVillage = village;
+                    nearestVillageDistance = dist;
+                }
+            }
+            return nearestVillage;
+        }
+
+       
+    }
 
     // Use this for initialization
     void Start () 
@@ -42,31 +73,20 @@ public class DemonBehavior : MonoBehaviour
 		TimeTillDeath = 0;
 		//numHitFX = 0;
 		hit = false;
-		GameObject[] foundVillages = GameObject.FindGameObjectsWithTag("village");
-		GameObject nearestVillage = null;
-		float nearestVillageDistance = float.MaxValue;
-		foreach (GameObject village in foundVillages)
-		{
-			float dist = Vector2.Distance(village.transform.position, transform.position);
-			if (nearestVillage == null || dist < nearestVillageDistance)
-			{
-				nearestVillage = village;
-				nearestVillageDistance = dist;
-			}
-		}
-		TargetVillage = nearestVillage;
-		target = TargetVillage.transform;
+		
+        TargetVillage = FindTarget();
+		//target = TargetVillage.transform;
 		defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
 		//play sound when spawning
 		AudioSource audio = GetComponent<AudioSource>();
 		audio.Play();
 		//DemonDefeatedSFX.Play ();
 
-
+        lastShootTime = Time.time;
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public void Update () 
 	{
 		//scale demon size
 		/*
@@ -93,11 +113,8 @@ public class DemonBehavior : MonoBehaviour
 		}
 		if (HealthBarComp.Health <= 0)
 		{
-
 			Die();
 			return;
-
-
 		}
 		//move
 		Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
@@ -116,6 +133,19 @@ public class DemonBehavior : MonoBehaviour
 		if (hit)
 			HitUpdate ();
 
+        if (ShootInterval > 0.0f && (Time.time - lastShootTime) > ShootInterval)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 vecToPlayer = player.transform.position - transform.position;
+            
+            if (vecToPlayer.magnitude < MaxShootDistance)
+            { 
+                GameObject shotObj = (GameObject)Instantiate(Resources.Load("fireshot"), transform.position, transform.rotation);
+                shotObj.GetComponent<FireShotComponent>().Direction = vecToPlayer.normalized;
+                Debug.LogWarning("BAM");
+                lastShootTime = Time.time;
+            }
+        }
 	}
 
 	void Die()
