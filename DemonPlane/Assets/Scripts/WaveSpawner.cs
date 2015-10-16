@@ -7,6 +7,7 @@ public struct WaveInfo
 {
 	// Amount of Piepl to spawn in this wave
 	public int NumDemons;
+    public int NumFlyingDemons;
 	// Time in seconds this wave takes for spawing
 	public float SpawnTimeInSeconds;
 	// Start delay, before this wave starts spawning after the last wave have been defeated
@@ -35,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
 	private float TimeLeftBeforeNextSpawn;
 	private int NextSpawnVolcanoIndex;
 	private int NumSpawned;
+    private int NumSpawnedFlying;
 
     private bool bInvokedWinning;
 	private PieplSpawner PieplSpawner;
@@ -82,6 +84,7 @@ public class WaveSpawner : MonoBehaviour
 		TimeLeftBeforeNextSpawn = 0.0f;
 		NextSpawnVolcanoIndex = 0;
 		NumSpawned = 0;
+        NumSpawnedFlying = 0;
 		return true;
 	}
 	
@@ -162,14 +165,27 @@ public class WaveSpawner : MonoBehaviour
 			return;
 		}
 
-		Transform spawnTransform = GetNextSpawnTransform();
-		GameObject.Instantiate (Resources.Load ("PrefDemon"), spawnTransform.position, spawnTransform.rotation);
-		TimeLeftBeforeNextSpawn = SpawnInterval;
+		
 
-		if (++NumSpawned >= EnemyWaves[CurrentWave].NumDemons)
+		if (NumSpawned < EnemyWaves[CurrentWave].NumDemons)
 		{
-			bWaveSpawningActive = false;
+            ++NumSpawned;
+            Transform spawnTransform = GetNextSpawnTransform();
+            GameObject.Instantiate(Resources.Load("PrefDemon"), spawnTransform.position, spawnTransform.rotation);
+            TimeLeftBeforeNextSpawn = SpawnInterval;
 		}
+        else if (NumSpawnedFlying < EnemyWaves[CurrentWave].NumFlyingDemons)
+        {
+            ++NumSpawnedFlying;
+            Transform spawnTransform = GetNextSpawnTransform();
+            GameObject.Instantiate(Resources.Load("flyer_demon_01"), spawnTransform.position, spawnTransform.rotation);
+            TimeLeftBeforeNextSpawn = SpawnInterval;
+        }
+
+        if (NumSpawned >= EnemyWaves[CurrentWave].NumDemons && NumSpawnedFlying >= EnemyWaves[CurrentWave].NumFlyingDemons)
+        {
+            bWaveSpawningActive = false;
+        }
 	}
 	
 	Transform GetNextSpawnTransform()
