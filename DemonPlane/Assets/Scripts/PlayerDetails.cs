@@ -23,8 +23,8 @@ public class PlayerDetails : MonoBehaviour {
 
 	public Text GameOverText;
 	public Text AmmoDisplay;
-    public Text ScoreDisplay;
-	public Text SavedPieplDisplay;
+   
+	//public Text SavedPieplDisplay;
 	public Text FinalScoreDisplay;
 	public Text FinalScoreDemons;
 	public Text FinalScoreWaves;
@@ -72,7 +72,7 @@ public class PlayerDetails : MonoBehaviour {
 		SFXPieplCollected = audios [5];
 
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		SavedPieplDisplay.text = NumPieplSaved.ToString ();
+		//SavedPieplDisplay.text = NumPieplSaved.ToString ();
 
 		//Bonus Texts
 //		Bonus.enabled = false;
@@ -125,17 +125,18 @@ public class PlayerDetails : MonoBehaviour {
 	void Update () 
 	{
 		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		SavedPieplDisplay.text = NumPieplSaved.ToString ();
+		//SavedPieplDisplay.text = NumPieplSaved.ToString ();
 		SpeedBonusText.text = "x" + NumSpeedBonus.ToString();
 		MaxAmmoBonusText.text = "x" + NumMaxAmmoBonus.ToString();
 		MaxShootingRangeText.text = "x" + NumMaxShootingRange.ToString();
         //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
-        Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
+       /*
+		Malus = GetComponent<ScoreComponent>().GetCurrentMalus();
         if (Malus > 0)
         {
             ScoreDisplay.text += "-" + Malus;
-        }
+        }*/
     }
 
 	void OnTriggerEnter2D(Collider2D collision) 
@@ -203,10 +204,7 @@ public class PlayerDetails : MonoBehaviour {
 
 		Invoke("RestartLevel", 10.0f);
 	}
-	void CalculateFinalScore()
-	{
 
-	}
 
 	
 	void RestartLevel()
@@ -286,6 +284,7 @@ public class PlayerDetails : MonoBehaviour {
 	{
 		//collect a person in water
 		NumPieplSaved++;
+		SendMessage("PiggieSaved");
 		SFXPieplCollected.Play ();
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
 		if (isSpecial) {
