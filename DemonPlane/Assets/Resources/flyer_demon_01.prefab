@@ -195,7 +195,7 @@ MonoBehaviour:
   IsFlyingDemon: 1
   ShootInterval: 10
   MaxShootDistance: 50
-  WalkingSpeed: 2
+  WalkingSpeed: 1
   TimeToDisappear: 0
   DemonExtinguishSFX: {fileID: 8266398}
   DemonDefeatedSFX: {fileID: 8266398}
