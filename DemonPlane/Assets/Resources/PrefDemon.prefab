@@ -111,6 +111,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -180,6 +181,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -249,6 +251,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -349,6 +352,7 @@ MonoBehaviour:
   IsFlyingDemon: 0
   ShootInterval: 0
   MaxShootDistance: 100
+  MaxRotationSpeed: 15
   WalkingSpeed: .5
   TimeToDisappear: 2
   DemonExtinguishSFX: {fileID: 8298908}

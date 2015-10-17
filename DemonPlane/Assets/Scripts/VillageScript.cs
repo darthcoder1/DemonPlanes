@@ -32,9 +32,11 @@ public class VillageScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
-		VillageIntact.text=VillageHealth.ToString()+" %";
-		/*
+        if (VillageIntact)
+        {
+            VillageIntact.text = VillageHealth.ToString() + " %";
+        }
+        /*
 		float calcHealth = (float)HealthBarComp.Health;
 		foreach (GameObject Demon in DemonsInVillage) 
 		{

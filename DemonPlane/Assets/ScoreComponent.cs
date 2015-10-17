@@ -44,7 +44,10 @@ public class ScoreComponent : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		ScoreDisplay.text =  Score.ToString();
+        if (ScoreDisplay)
+        {
+            ScoreDisplay.text = Score.ToString();
+        }
 	}
 
     void DemonKilled()
