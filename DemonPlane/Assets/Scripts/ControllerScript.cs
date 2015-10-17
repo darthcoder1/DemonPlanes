@@ -102,23 +102,28 @@ public class ControllerScript : MonoBehaviour {
 	void UpdateWaterDrop()
 	{
 		bool bShouldDrop = Input.GetAxis (ReleaseWaterName) > 0.3f;
-		if (!DropWaterComp.DroppingWater && bShouldDrop) 
-		{
-			DropWaterComp.DropWaterStart();
-		}
-		else if (DropWaterComp.DroppingWater && !bShouldDrop)
-		{
-			DropWaterComp.DropWaterStop();
-		}
+        if (DropWaterComp)
+        {
+            if (!DropWaterComp.DroppingWater && bShouldDrop)
+            {
+                DropWaterComp.DropWaterStart();
+            }
+            else if (DropWaterComp.DroppingWater && !bShouldDrop)
+            {
+                DropWaterComp.DropWaterStop();
+            }
+        }
 	}
 	void UpdateShoot()
 	{
 		bool bShouldShoot = Input.GetAxis (ShootButtonName) > 0f;
-		if (!DropWaterComp.DroppingWater && bShouldShoot) 
-		{
-			DropWaterComp.ShootWater();
-		}
-
+        if (DropWaterComp)
+        {
+            if (!DropWaterComp.DroppingWater && bShouldShoot)
+            {
+                DropWaterComp.ShootWater();
+            }
+        }
 	}
 
 	// Update is called once per frame
@@ -196,7 +201,10 @@ public class ControllerScript : MonoBehaviour {
 
 		Direction = newDirection;
 
-		PlayerDetailsComp.CollectWaterFX.enableEmission = Altitude < 0.01f && !PlayerDetailsComp.IsOverLand;
+        if (PlayerDetailsComp && PlayerDetailsComp.CollectWaterFX)
+        {
+            PlayerDetailsComp.CollectWaterFX.enableEmission = Altitude < 0.01f && !PlayerDetailsComp.IsOverLand;
+        }
 
 		if (TargetAltitude == Altitude)
 		{

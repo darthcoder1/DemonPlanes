@@ -1141,7 +1141,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409072, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: m_RootOrder
-      value: 150
+      value: 149
       objectReference: {fileID: 0}
     - target: {fileID: 11468372, guid: 5b928c42f0751e249944199b29f8c31f, type: 2}
       propertyPath: GameOverText

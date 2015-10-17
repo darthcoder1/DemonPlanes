@@ -45,6 +45,7 @@ public class PieplSpawner : MonoBehaviour
 
 	public void SpawnPiepl()
 	{
+        if (PieplWaves.Length <= CurrentWave) { return; }
 		//ShuffleArray<int>(PieplSpawns); 
 		int CurrentNumPiepl= PieplWaves[CurrentWave].NumPiepl;
 		int[] randomList = MakeIntList (PieplSpawns);

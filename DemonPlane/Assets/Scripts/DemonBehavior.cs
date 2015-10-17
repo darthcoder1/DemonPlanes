@@ -12,6 +12,7 @@ public class DemonBehavior : MonoBehaviour
     public bool IsFlyingDemon = false;
     public float ShootInterval = 3.0f;
     public float MaxShootDistance = 100.0f;
+    public float MaxRotationSpeed = 15.0f;
 
 	public float WalkingSpeed;
 	public double TimeToDisappear; // the time between the demon reaching 0 HP and disappearing

@@ -129,11 +129,23 @@ public class PlayerDetails : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
-		//SavedPieplDisplay.text = NumPieplSaved.ToString ();
-		SpeedBonusText.text = "x" + NumSpeedBonus.ToString();
-		MaxAmmoBonusText.text = "x" + NumMaxAmmoBonus.ToString();
-		MaxShootingRangeText.text = "x" + NumMaxShootingRange.ToString();
+        if (AmmoDisplay)
+        {
+            AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
+        }
+            //SavedPieplDisplay.text = NumPieplSaved.ToString ();
+        if (SpeedBonusText)
+        {
+            SpeedBonusText.text = "x" + NumSpeedBonus.ToString();
+        }
+        if (MaxAmmoBonusText)
+        {
+            MaxAmmoBonusText.text = "x" + NumMaxAmmoBonus.ToString();
+        }
+        if (MaxShootingRangeText)
+        {
+            MaxShootingRangeText.text = "x" + NumMaxShootingRange.ToString();
+        }
         //ScoreDisplay.text = "Score: " + GetComponent<ScoreComponent>().Score.ToString();
 
        /*

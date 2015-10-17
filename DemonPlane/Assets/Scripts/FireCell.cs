@@ -47,7 +47,7 @@ public class FireCell : MonoBehaviour
         CollisionComp = GetComponent<CircleCollider2D>();
         FireFXComp = GetComponent<ParticleSystem>();
         SpriteComp = GetComponent<SpriteRenderer>();
-		transform.rotation = GameObject.Find ("default_rotation").transform.rotation;
+		//transform.rotation = GameObject.Find ("default_rotation").transform.rotation;
 
         TrackedDemons = new List<GameObject>();
 
