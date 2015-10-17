@@ -48,6 +48,8 @@ public class PlayerDetails : MonoBehaviour {
 	private Image BonusChanceImage;
 	private Animator BonusChanceAnimation;
 
+	private Text RarePigText;
+
 	private ScoreComponent ScoreComp; 
 	private AudioSource SFXPieplCollected;
 
@@ -103,6 +105,9 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
 		BonusChanceAnimation = GameObject.Find ("BonusChancePig").GetComponent<Animator> ();
 
+		RarePigText=GameObject.Find ("RarePigText").GetComponent<Text> ();
+		RarePigText.enabled = false;
+
 		/*
 		BonusChanceHasty = GameObject.Find ("BonusChanceHasty").GetComponent<Image> ();
 		BonusChanceHasty
@@ -147,7 +152,8 @@ public class PlayerDetails : MonoBehaviour {
 		}
 		if (collision.gameObject.tag == "piepl" && GetComponent<ControllerScript> ().Altitude <= 0.01f) {
 
-			CollectPiepl(collision.gameObject.GetComponent<PieplBehavior>().isSpecial);
+			PieplBehavior piggie =collision.gameObject.GetComponent<PieplBehavior>();
+			CollectPiepl(piggie.isSpecial,piggie.PigName);
 
 			GameObject.Destroy (collision.gameObject);
 
@@ -280,23 +286,40 @@ public class PlayerDetails : MonoBehaviour {
 
 
 	}
-	void CollectPiepl(bool isSpecial)
+	void CollectPiepl(bool isSpecial, string nPigName)
 	{
 		//collect a person in water
 		NumPieplSaved++;
 		SendMessage("PiggieSaved");
 		SFXPieplCollected.Play ();
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
-		if (isSpecial) {
-			audios [6].Play();
-			BonusChanceText.text="°°SPECIAL PIG°°";
+		if(nPigName != "default")
+		{
+			audios [6].Play ();
 
+			if(nPigName =="rainbow")
+			{
+				BonusChanceText.text = "°°RAINBOW PIG°°";
+				BonusChanceImage.enabled = false;
+				BonusChanceImage=GameObject.Find ("RarePigRainbow").GetComponent<Image> ();
+				BonusChanceText.enabled = true;
+				BonusChanceImage.enabled = true;
+				RarePigText.text="°°DOUBLE SCORE FOR 30 SECONDS°°";
+				RarePigText.enabled=true;
+				SendMessage("TurnOnScoreBooster");
+			}
+			Invoke ("EndBonusDisplay", 5);
+		}
+		else if (isSpecial) {
+			audios [6].Play ();
+			BonusChanceText.text = "°°SPECIAL PIG°°";
+			
 			BonusChanceText.enabled = true;
 			BonusChanceImage.enabled = true;
 			BonusChanceAnimation.enabled = true;
-			Invoke("RollDieWhichBonus", 2);
+			Invoke ("RollDieWhichBonus", 2);
 			
-			}
+		} 
 
 
 	}
@@ -395,6 +418,7 @@ public class PlayerDetails : MonoBehaviour {
 
 		BonusChanceImage.enabled = false;
 		BonusChanceText.enabled = false;
+		RarePigText.enabled=false;
 		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
 
 	}

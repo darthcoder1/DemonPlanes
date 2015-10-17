@@ -9,6 +9,8 @@ public class PieplBehavior : MonoBehaviour {
 	//the time in seconds the pieple will be alive
 	public float LifeTime;
 
+	public string PigName;
+
 	public bool isSpecial;
 	// Use this for initialization
 	void Start () {

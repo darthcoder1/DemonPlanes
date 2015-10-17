@@ -13,6 +13,12 @@ public class ScoreComponent : MonoBehaviour
 	public int NumWavesSurvived;
 	public int NumPiggiesSaved;
 
+	private bool bScoreBoost;
+	public float ScoreBoostTimer;
+
+	private Text BoosterScore;
+	private Image BoosterScoreImage;
+
     public int Score;
 
 	public int NumBurningFires
@@ -39,12 +45,22 @@ public class ScoreComponent : MonoBehaviour
 		NumDemonsKilled = 0;
 		NumWavesSurvived = 0;
 		NumPiggiesSaved = 0;
+		bScoreBoost = false;
+		ScoreBoostTimer = 0f;
+
+		BoosterScore=GameObject.Find("BoosterScore").GetComponent<Text>();
+		BoosterScoreImage=GameObject.Find("BoosterScoreImage").GetComponent<Image>();
+
+		BoosterScore.enabled = false;
+		BoosterScoreImage.enabled = false;
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
 		ScoreDisplay.text =  Score.ToString();
+		BoosterScore.text = ScoreBoostTimer.ToString()+" s";
 	}
 
     void DemonKilled()
@@ -83,13 +99,12 @@ public class ScoreComponent : MonoBehaviour
 	void AddScore(int ScoreToAdd)
 	{
 		int i;
-		//print ("ADD SCORE gets called");
+		if(bScoreBoost){ ScoreToAdd*=2;}
 
 		for (i=0; i<ScoreToAdd; i++) {
 			
 			Invoke("AddOnePoint",(i+1)*0.001f);
-			//print("infinite loop "+i.ToString()+"/"+ScoreToAdd.ToString());
-			//Score++;
+
 		}
 
 	}
@@ -97,4 +112,28 @@ public class ScoreComponent : MonoBehaviour
 	{
 		Score++;
 	}
+	//BOOSTER
+	//score booster
+	void TurnOnScoreBooster()
+	{
+		bScoreBoost = true;
+		ScoreBoostTimer += 30f;
+		ScoreBoosterCountDown ();
+		BoosterScore.enabled = true;
+		BoosterScoreImage.enabled = true;
+
+	}
+	void ScoreBoosterCountDown()
+	{
+		ScoreBoostTimer -= 1.0f;
+		if (ScoreBoostTimer > 0f) {
+			Invoke ("ScoreBoosterCountDown", 1);
+		} else {
+			bScoreBoost = false;
+			ScoreBoostTimer=0f;
+			BoosterScore.enabled = false;
+			BoosterScoreImage.enabled = false;
+		}
+	}
+
 }
