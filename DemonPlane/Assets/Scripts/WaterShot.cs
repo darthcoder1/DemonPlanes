@@ -43,7 +43,13 @@ public class WaterShot : MonoBehaviour {
 		if (collision.gameObject.tag == "enemy") {
 			//print ("HIT");
 			GameObject player = GameObject.FindGameObjectWithTag("Player");
-			int Damage =player.GetComponent<DropWater> ().WaterBulletDamage;
+			int Damage;
+			if(player.GetComponent<ScoreComponent>().bDamageBoost)
+			{
+				Damage =player.GetComponent<DropWater> ().WaterBulletDamage*2;
+			}
+			else{ Damage =player.GetComponent<DropWater> ().WaterBulletDamage;}
+
 			HealthBar demon = collision.GetComponent<HealthBar>();
 			DemonBehavior demon_behavior = collision.GetComponent<DemonBehavior>();
 			demon.Health -= Damage;

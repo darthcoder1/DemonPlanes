@@ -48,7 +48,7 @@ public class PlayerDetails : MonoBehaviour {
 	private Image BonusChanceImage;
 	private Animator BonusChanceAnimation;
 
-	private Text RarePigText;
+	private Text BonusDetailText;
 
 	private ScoreComponent ScoreComp; 
 	private AudioSource SFXPieplCollected;
@@ -105,8 +105,8 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
 		BonusChanceAnimation = GameObject.Find ("BonusChancePig").GetComponent<Animator> ();
 
-		RarePigText=GameObject.Find ("RarePigText").GetComponent<Text> ();
-		RarePigText.enabled = false;
+		BonusDetailText=GameObject.Find ("RarePigText").GetComponent<Text> ();
+		BonusDetailText.enabled = false;
 
 		/*
 		BonusChanceHasty = GameObject.Find ("BonusChanceHasty").GetComponent<Image> ();
@@ -316,9 +316,20 @@ public class PlayerDetails : MonoBehaviour {
 				BonusChanceImage=GameObject.Find ("RarePigRainbow").GetComponent<Image> ();
 				BonusChanceText.enabled = true;
 				BonusChanceImage.enabled = true;
-				RarePigText.text="°°DOUBLE SCORE FOR 30 SECONDS°°";
-				RarePigText.enabled=true;
+				BonusDetailText.text="°°DOUBLE SCORE FOR 30 SECONDS°°";
+				BonusDetailText.enabled=true;
 				SendMessage("TurnOnScoreBooster");
+			}
+			if(nPigName =="dark")
+			{
+				BonusChanceText.text = "°°DARK PIG°°";
+				BonusChanceImage.enabled = false;
+				BonusChanceImage=GameObject.Find ("RarePigDark").GetComponent<Image> ();
+				BonusChanceText.enabled = true;
+				BonusChanceImage.enabled = true;
+				BonusDetailText.text="°°DOUBLE DAMAGE FOR 30 SECONDS°°";
+				BonusDetailText.enabled=true;
+				SendMessage("TurnOnDamageBooster");
 			}
 			Invoke ("EndBonusDisplay", 5);
 		}
@@ -369,6 +380,9 @@ public class PlayerDetails : MonoBehaviour {
 		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
 		BonusChanceImage.enabled = true;
 
+		BonusDetailText.text="°°STORE MORE WATER °°";
+		BonusDetailText.enabled = true;
+
 		NumMaxAmmoBonus++;
 		Invoke ("EndBonusDisplay", 5);
 		//Invoke ("EndTriggerBonusAmmo", BonusDuration);
@@ -388,6 +402,8 @@ public class PlayerDetails : MonoBehaviour {
 		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Stop();
 		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
 		BonusChanceImage.enabled = true;
+		BonusDetailText.text="°°FLY FASTER°°";
+		BonusDetailText.enabled = true;
 		NumSpeedBonus++;
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
 		Invoke ("EndBonusDisplay", 5);
@@ -409,6 +425,8 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage=GameObject.Find ("BonusChanceSniper").GetComponent<Image> ();
 		//GameObject.Find ("BonusChancePig").GetComponent<AudioSource>().Stop();
 		//GameObject.Find ("BonusChanceHasty").GetComponent<AudioSource>().Play ();
+		BonusDetailText.text="°°SHOOT FURTHER°°";
+		BonusDetailText.enabled = true;
 		BonusChanceImage.enabled = true;
 
 		NumMaxShootingRange++;
@@ -430,7 +448,7 @@ public class PlayerDetails : MonoBehaviour {
 
 		BonusChanceImage.enabled = false;
 		BonusChanceText.enabled = false;
-		RarePigText.enabled=false;
+		BonusDetailText.enabled=false;
 		BonusChanceImage = GameObject.Find ("BonusChancePig").GetComponent<Image> ();
 
 	}

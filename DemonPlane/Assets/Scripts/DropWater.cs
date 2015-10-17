@@ -141,7 +141,11 @@ public class DropWater : MonoBehaviour
 			{
 				HealthBar demon = coll.GetComponent<HealthBar>();
 				DemonBehavior demon_behavior = coll.GetComponent<DemonBehavior>();
-				demon.Health -= WaterDamage;
+				if(GameObject.Find("Player").GetComponent<ScoreComponent>().bDamageBoost)
+				{
+					demon.Health -= WaterDamage*2;
+				}
+				else demon.Health -= WaterDamage;
 				demon_behavior.Hit();
 			}
 		}

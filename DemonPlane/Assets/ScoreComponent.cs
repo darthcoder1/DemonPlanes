@@ -15,9 +15,13 @@ public class ScoreComponent : MonoBehaviour
 
 	private bool bScoreBoost;
 	public float ScoreBoostTimer;
-
 	private Text BoosterScore;
 	private Image BoosterScoreImage;
+
+	public bool bDamageBoost;
+	public float DamageBoostTimer;
+	private Text BoosterDamage;
+	private Image BoosterDamageImage;
 
     public int Score;
 
@@ -54,6 +58,11 @@ public class ScoreComponent : MonoBehaviour
 		BoosterScore.enabled = false;
 		BoosterScoreImage.enabled = false;
 
+		BoosterDamage=GameObject.Find("BoosterDamage").GetComponent<Text>();
+		BoosterDamageImage=GameObject.Find("BoosterDamageImage").GetComponent<Image>();
+		BoosterDamage.enabled = false;
+		BoosterDamageImage.enabled = false;
+
 	}
 	
 	// Update is called once per frame
@@ -61,6 +70,7 @@ public class ScoreComponent : MonoBehaviour
     {
 		ScoreDisplay.text =  Score.ToString();
 		BoosterScore.text = ScoreBoostTimer.ToString()+" s";
+		BoosterDamage.text = DamageBoostTimer.ToString()+" s";
 	}
 
     void DemonKilled()
@@ -116,8 +126,11 @@ public class ScoreComponent : MonoBehaviour
 	//score booster
 	void TurnOnScoreBooster()
 	{
-		bScoreBoost = true;
 		ScoreBoostTimer += 30f;
+		if (bScoreBoost) {
+			return;
+		}
+		bScoreBoost = true;
 		ScoreBoosterCountDown ();
 		BoosterScore.enabled = true;
 		BoosterScoreImage.enabled = true;
@@ -133,6 +146,31 @@ public class ScoreComponent : MonoBehaviour
 			ScoreBoostTimer=0f;
 			BoosterScore.enabled = false;
 			BoosterScoreImage.enabled = false;
+		}
+	}
+	//damage booster
+	void TurnOnDamageBooster()
+	{
+		DamageBoostTimer += 30f;
+		if (bDamageBoost) {
+			return;
+		}
+		bDamageBoost = true;
+		DamageBoosterCountDown ();
+		BoosterDamage.enabled = true;
+		BoosterDamageImage.enabled = true;
+		
+	}
+	void DamageBoosterCountDown()
+	{
+		DamageBoostTimer -= 1.0f;
+		if (DamageBoostTimer > 0f) {
+			Invoke ("DamageBoosterCountDown", 1);
+		} else {
+			bDamageBoost = false;
+			DamageBoostTimer=0f;
+			BoosterDamage.enabled = false;
+			BoosterDamageImage.enabled = false;
 		}
 	}
 
