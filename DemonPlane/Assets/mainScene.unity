@@ -4341,7 +4341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 117
+  m_RootOrder: 114
 --- !u!212 &610401371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6441,11 +6441,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[4].NumDemons
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[5].NumFlyingDemons
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[6].NumFlyingDemons
@@ -6457,7 +6457,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[8].NumFlyingDemons
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[9].NumFlyingDemons
@@ -6486,6 +6486,26 @@ Prefab:
     - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
       propertyPath: EnemyWaves.Array.data[0].NumDemons
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[3].NumDemons
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[5].NumDemons
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[6].NumDemons
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[7].NumDemons
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494160, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
+      propertyPath: EnemyWaves.Array.data[8].NumDemons
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99a2cf0af561a0242863ca585cebf144, type: 2}
@@ -12809,7 +12829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 124
+  m_RootOrder: 123
 --- !u!212 &1629501459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13646,7 +13666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 122
+  m_RootOrder: 121
 --- !u!212 &1776922613
 SpriteRenderer:
   m_ObjectHideFlags: 0
