@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6148508}
   - 82: {fileID: 8294090}
   - 50: {fileID: 5062400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: watershot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: c446c4d68ae6a8446a0414c098ee335e, type: 3}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

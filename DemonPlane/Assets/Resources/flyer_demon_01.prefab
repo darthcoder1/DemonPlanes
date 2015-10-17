@@ -17,7 +17,7 @@ GameObject:
   - 50: {fileID: 5036692}
   - 198: {fileID: 19830054}
   - 199: {fileID: 19951690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: flyer_demon_01
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -196,9 +196,11 @@ MonoBehaviour:
   IsFlyingDemon: 1
   ShootInterval: 10
   MaxShootDistance: 50
-  MaxRotationSpeed: 15
+  RotationSpeed: 1
   WalkingSpeed: 1
   TimeToDisappear: 0
+  TimeFollowingTarget: 0
+  TimeFlyingInLastDirection: 0
   DemonExtinguishSFX: {fileID: 8266398}
   DemonDefeatedSFX: {fileID: 8266398}
   HitFX: {fileID: 19830054}
@@ -1386,6 +1388,26 @@ Prefab:
       propertyPath: HitFX
       value: 
       objectReference: {fileID: 19830054}
+    - target: {fileID: 0}
+      propertyPath: MaxRotationSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TimeFollowingTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TimeFlyingInLastDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131870}

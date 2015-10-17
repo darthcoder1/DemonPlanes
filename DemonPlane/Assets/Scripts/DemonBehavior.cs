@@ -12,11 +12,13 @@ public class DemonBehavior : MonoBehaviour
     public bool IsFlyingDemon = false;
     public float ShootInterval = 3.0f;
     public float MaxShootDistance = 100.0f;
-    public float MaxRotationSpeed = 15.0f;
+    public float RotationSpeed = 10.0f;
 
 	public float WalkingSpeed;
 	public double TimeToDisappear; // the time between the demon reaching 0 HP and disappearing
 
+    public float TimeFollowingTarget = 5.0f;
+    public float TimeFlyingInLastDirection = 5.0f;
 	//rotation
 	//private Transform target;
 
@@ -25,6 +27,7 @@ public class DemonBehavior : MonoBehaviour
 	private float HealthScale; 
 	private bool hit;
     private float lastShootTime;
+    private float lastFrameAngle;
 
 	public AudioSource DemonExtinguishSFX;
 	public AudioSource DemonDefeatedSFX;
@@ -32,6 +35,7 @@ public class DemonBehavior : MonoBehaviour
 	public ParticleSystem HitFX;
 	//private int numHitFX;
 	private Quaternion defaultRotation;
+    private Vector3 flightDirection;
 
     private static Object DemonHitPrefab = null;
 
@@ -86,14 +90,44 @@ public class DemonBehavior : MonoBehaviour
 		
         TargetVillage = FindTarget();
 		//target = TargetVillage.transform;
-		defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
+		//defaultRotation = GameObject.Find ("default_rotation").transform.rotation;
 		//play sound when spawning
 		AudioSource audio = GetComponent<AudioSource>();
-		audio.Play();
+        if (audio)
+        {
+            audio.Play();
+        }
 		//DemonDefeatedSFX.Play ();
+
+        if (IsFlyingDemon && TimeFlyingInLastDirection != 0.0f && TimeFollowingTarget != 0.0f)
+        {
+            Invoke("SwitchToNoTarget", TimeFollowingTarget);
+        }
+
+        Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
+		
+		///rotate
+        if (WalkDir != Vector3.zero)
+        {
+            lastFrameAngle = Mathf.Atan2(WalkDir.y, WalkDir.x) * Mathf.Rad2Deg;
+        }
 
         lastShootTime = Time.time;
 	}
+
+    void SwitchToNoTarget()
+    {
+        flightDirection = (TargetVillage.transform.position - transform.position).normalized;
+
+        TargetVillage = null;
+        Invoke("SwitchToTarget", TimeFlyingInLastDirection);
+    }
+
+    void SwitchToTarget()
+    {
+        TargetVillage = FindTarget();
+        Invoke("SwitchToNoTarget", TimeFollowingTarget);
+    }
 	
 	// Update is called once per frame
 	public void Update () 
@@ -127,18 +161,19 @@ public class DemonBehavior : MonoBehaviour
 			return;
 		}
 		//move
-		Vector3 WalkDir = Vector3.Normalize(TargetVillage.transform.position - transform.position);
-		Quaternion randomRotation = Quaternion.AngleAxis((float)Random.Range(-10, 10), Vector3.back);
+        Vector3 currentDir = transform.TransformDirection(Vector3.down);
+        Vector3 WalkDir = TargetVillage ? Vector3.Normalize(TargetVillage.transform.position - transform.position) : currentDir;
+        
+        //float rotAng = Vector3.Angle(currentDir, WalkDir);
+        //transform.Rotate(0, 0, Mathf.Clamp(-rotAng, -MaxRotationSpeed, MaxRotationSpeed) * Time.deltaTime);
 
-		Vector3 originalPos = transform.position;
-		transform.position += (randomRotation * WalkDir) * WalkingSpeed * Time.deltaTime;
+        float angle = (Mathf.Atan2(WalkDir.y, WalkDir.x) * Mathf.Rad2Deg)+90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * RotationSpeed);
 
-		///rotate
-		if (WalkDir != Vector3.zero) 
-		{
-			float angle = Mathf.Atan2(WalkDir.y, WalkDir.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
-		}
+        Vector3 originalPos = transform.position;
+        transform.position += currentDir * WalkingSpeed * Time.deltaTime;
+
 
 		if (hit)
 			HitUpdate ();
@@ -151,8 +186,7 @@ public class DemonBehavior : MonoBehaviour
             if (vecToPlayer.magnitude < MaxShootDistance)
             { 
                 GameObject shotObj = (GameObject)Instantiate(Resources.Load("fireshot"), transform.position, transform.rotation);
-                shotObj.GetComponent<FireShotComponent>().Direction = vecToPlayer.normalized;
-                Debug.LogWarning("BAM");
+                shotObj.GetComponent<FireShotComponent>().Direction = currentDir;// vecToPlayer.normalized;
                 lastShootTime = Time.time;
             }
         }
