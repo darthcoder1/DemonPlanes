@@ -27,18 +27,17 @@ public class PieplBehavior : MonoBehaviour {
 			} else {
 
 				isSpecial = false;
-				int rare; 
-				GameObject JustSpawnedPiepl;
+				int rare = Random.Range (0, 20);
+				GameObject TheJustSpawnedPiepl;
 
-				if(rare Random.Range (0, 20) < 6)
+				if(rare  < 6)
 				{
-					GameObject JustSpawnedPiepl;
-					if (rare == 0 || rare == 1) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
-					if (rare == 2 || rare == 3) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
-					if (rare == 4 || rare == 5) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
+					if (rare == 0 || rare == 1) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
+					if (rare == 2 || rare == 3) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
+					if (rare == 4 || rare == 5) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
 
-					JustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
-					JustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
+					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
+					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
 					Destroy(gameObject);
 				}
 			}
