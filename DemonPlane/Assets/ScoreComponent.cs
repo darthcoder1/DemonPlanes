@@ -79,6 +79,23 @@ public class ScoreComponent : MonoBehaviour
 		//Score += KilledDemonBonus;
 		AddScore (KilledDemonBonus);
 		print ("Demon kill gets called");
+
+        if (NumDemonsKilled >= 100)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_KillDemon_100);
+        }
+        else if (NumDemonsKilled >= 20)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_KillDemon_20);
+        }
+        else if (NumDemonsKilled >= 5)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_KillDemon_5);
+        }
+        else if (NumDemonsKilled >= 1)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_KillDemon_1);
+        }
     }
 	    
     void WaveSurvived()

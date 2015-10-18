@@ -9,6 +9,11 @@ public class AchievmentManager : ScriptableObject {
     public const int kAchievement_SaveThePig_20 = 43243;
     public const int kAchievement_SaveThePig_50 = 43245;
 
+    public const int kAchievement_KillDemon_1 = 43249;
+    public const int kAchievement_KillDemon_5 = 43248;
+    public const int kAchievement_KillDemon_20 = 43250;
+    public const int kAchievement_KillDemon_100 = 43251;
+
     static AchievmentManager s_mgr;
 
     private List<int> UnlockedAchievements = new List<int>();
