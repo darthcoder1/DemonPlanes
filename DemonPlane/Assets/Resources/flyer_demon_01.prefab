@@ -269,7 +269,7 @@ MonoBehaviour:
   MaxShootDistance: 50
   RotationSpeed: .5
   WalkingSpeed: 3
-  TimeToDisappear: 0
+  TimeToDisappear: .5
   TimeFollowingTarget: 2
   TimeFlyingInLastDirection: 8
   DemonExtinguishSFX: {fileID: 8266398}
@@ -1483,6 +1483,10 @@ Prefab:
       propertyPath: DemonDefeatedSFX
       value: 
       objectReference: {fileID: 8294712}
+    - target: {fileID: 0}
+      propertyPath: TimeToDisappear
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131870}

@@ -137,17 +137,24 @@ public class PlayerDetails : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (WaitingForLeaderboard)
+        if (WaitingForLeaderboard)
 		{
 			if (Input.GetButton("AltClimb") || Input.GetButton("ReleaseWater") || Input.GetButton("Shoot"))
 			{
 				WaitingForLeaderboard = false;
-				
-				GameJolt.UI.Manager.Instance.ShowLeaderboards((bool success) =>
-				                                              {
-					WaitingForLeaderboard = false;
-					WaitingForRestart = true;
-				});
+
+                if (GlobalSettings.Instance.UseGameJolt)
+                {
+                    GameJolt.UI.Manager.Instance.ShowLeaderboards((bool success) =>
+                                                                  {
+                                                                      WaitingForLeaderboard = false;
+                                                                      WaitingForRestart = true;
+                                                                  });
+                }
+                else
+                {
+                    RestartLevel();
+                }
 			}
 			return;
 		}
