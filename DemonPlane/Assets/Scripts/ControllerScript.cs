@@ -80,6 +80,8 @@ public class ControllerScript : MonoBehaviour {
 	
 	void Die()
 	{
+		if (GetComponent<ScoreComponent>().bInvincibleBoost)
+			return;
 		bDied = true;
 		GetComponent<PlayerDetails> ().Die ();
 
