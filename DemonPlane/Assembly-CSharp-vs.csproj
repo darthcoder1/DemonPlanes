@@ -49,6 +49,7 @@
      <Compile Include="Assets\DemonCompass.cs" />
      <Compile Include="Assets\FireShotComponent.cs" />
      <Compile Include="Assets\ScoreComponent.cs" />
+     <Compile Include="Assets\Scripts\AchievmentManager.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
      <Compile Include="Assets\Scripts\DebugHelpers.cs" />
@@ -57,6 +58,7 @@
      <Compile Include="Assets\Scripts\DropWater.cs" />
      <Compile Include="Assets\Scripts\FireCell.cs" />
      <Compile Include="Assets\Scripts\ForestScript.cs" />
+     <Compile Include="Assets\Scripts\GlobalSettings.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HitStayWithDemon.cs" />
      <Compile Include="Assets\Scripts\MouseControllerScript.cs" />
@@ -81,6 +83,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{3B4F8D9C-8F00-DEFD-57AC-1A6D1A557721}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
