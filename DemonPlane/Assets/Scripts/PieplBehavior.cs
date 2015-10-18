@@ -17,14 +17,29 @@ public class PieplBehavior : MonoBehaviour {
 
 
 		int CurrentWave = GameObject.Find("GlobalManager").GetComponent<PieplSpawner>().CurrentWave;
+		isSpecial = false;
+		if(PigName=="default")
+		{
 
+			if ((Random.Range (0, CurrentWave + 10) < 3) ) {
+				isSpecial = true;
 
-		if((Random.Range(0, CurrentWave +10) < 3)) {
-			isSpecial=true;
+			} else {
 
+				isSpecial = false;
+				if(int rare Random.Range (0, 20) < 6)
+				{
+					GameObject JustSpawnedPiepl;
+					if (rare == 0 || rare == 1) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
+					if (rare == 2 || rare == 3) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
+					if (rare == 4 || rare == 5) JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
+
+					JustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
+					JustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
+					Destroy(gameObject);
+				}
+			}
 		}
-		else isSpecial = false;
-
 		//isSpecial=true;
 	
 	}
