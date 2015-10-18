@@ -208,7 +208,7 @@ public class ControllerScript : MonoBehaviour {
             PlayerDetailsComp.CollectWaterFX.enableEmission = Altitude < 0.01f && !PlayerDetailsComp.IsOverLand;
         }
 
-        GetComponent<SpriteRenderer>().sortingOrder = Altitude > 0.7f ? 10 : 6
+        GetComponent<SpriteRenderer>().sortingOrder = Altitude > 0.7f ? 10 : 6;
         
 		if (TargetAltitude == Altitude)
 		{
