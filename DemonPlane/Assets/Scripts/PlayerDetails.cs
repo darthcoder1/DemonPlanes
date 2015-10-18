@@ -347,6 +347,24 @@ public class PlayerDetails : MonoBehaviour {
 		//collect a person in water
 		NumPieplSaved++;
 		SendMessage("PiggieSaved");
+
+        if (NumPieplSaved >= 50)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_50);
+        }
+        else if (NumPieplSaved >= 20)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_20);
+        }
+        else if (NumPieplSaved >= 5)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_5);
+        }
+        else if (NumPieplSaved >= 1)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_1);
+        }
+
 		SFXPieplCollected.Play ();
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
 		if(nPigName != "default")
