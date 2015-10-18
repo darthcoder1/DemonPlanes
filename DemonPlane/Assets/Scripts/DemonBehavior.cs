@@ -70,8 +70,9 @@ public class DemonBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.SendMessage("Die");
+            GetComponent<HealthBar>().Health = 0;
             Die();
+            collision.gameObject.SendMessage("Die");
         }
     }
 
