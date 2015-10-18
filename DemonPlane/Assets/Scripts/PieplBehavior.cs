@@ -27,14 +27,14 @@ public class PieplBehavior : MonoBehaviour {
 			} else {
 
 				isSpecial = false;
-				int rare = Random.Range (0, 20);
+				int rare = Random.Range (0, 3);
 				GameObject TheJustSpawnedPiepl=null;
 
-				if(rare  < 6) 
+				if(rare  < 3) 
 				{
-					if (rare == 0 || rare == 1) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
-					if (rare == 2 || rare == 3) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
-					if (rare == 4 || rare == 5) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
+					if (rare == 0) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
+					if (rare == 1) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
+					if (rare == 2) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
 
 					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
 					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
