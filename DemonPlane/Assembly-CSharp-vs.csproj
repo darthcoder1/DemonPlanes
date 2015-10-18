@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HitStayWithDemon.cs" />
      <Compile Include="Assets\Scripts\MouseControllerScript.cs" />
+     <Compile Include="Assets\Scripts\MoveComponent.cs" />
      <Compile Include="Assets\Scripts\PieplBehavior.cs" />
      <Compile Include="Assets\Scripts\PieplSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerDetails.cs" />
