@@ -11,46 +11,18 @@ public class PieplBehavior : MonoBehaviour {
 
 	public string PigName;
 
-	public bool isSpecial;
+	public bool isSpecial = false;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 
-
-		int CurrentWave = GameObject.Find("GlobalManager").GetComponent<PieplSpawner>().CurrentWave;
-		isSpecial = false;
-		if(PigName=="default")
-		{
-
-			if ((Random.Range (0, CurrentWave + 10) < 3) ) {
-				isSpecial = true;
-
-			} else {
-
-				isSpecial = false;
-				int rare = Random.Range (0, 3);
-				GameObject TheJustSpawnedPiepl=null;
-
-				if(rare  < 3) 
-				{
-					if (rare == 0) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
-					if (rare == 1) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
-					if (rare == 2) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("rainbowpiggy"), transform.position, transform.rotation);
-
-					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
-					TheJustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
-					Destroy(gameObject);
-				}
-			}
-		}
-		//isSpecial=true;
-	
 	}
+
 	// This is called from the piepl spawner
 	public void StartForReal () {
 		
 		Invoke ("Spawn", SpawnDelay);
-		//print ("spawn delay" + SpawnDelay.ToString ());
-				
 	}
 
 	//from now on the piepl can be picked up and all - also now we start counting the life time

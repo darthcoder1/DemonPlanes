@@ -49,7 +49,6 @@ public class PieplSpawner : MonoBehaviour
 		//ShuffleArray<int>(PieplSpawns); 
 		int CurrentNumPiepl= PieplWaves[CurrentWave].NumPiepl;
 		int[] randomList = MakeIntList (PieplSpawns);
-		GameObject JustSpawnedPiepl;
 
 		if (CurrentNumPiepl > PieplSpawns.Length)
 			CurrentNumPiepl = PieplSpawns.Length;
@@ -62,18 +61,33 @@ public class PieplSpawner : MonoBehaviour
 		{
 			k=randomList[j];
 			Transform spawnTransform = PieplSpawns[k].transform;
-			//GameObject.Instantiate (Resources.Load ("piepl0"), spawnTransform.position, spawnTransform.rotation);
 
-			JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("poorpiggy_01"), spawnTransform.position, spawnTransform.rotation);
-			//JustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), spawnTransform.position, spawnTransform.rotation);
-			JustSpawnedPiepl.GetComponent<PieplBehavior>().SpawnDelay= Random.Range(1,65+CurrentWave*2);
-			JustSpawnedPiepl.GetComponent<PieplBehavior>().LifeTime= Random.Range(35,75+CurrentWave*2);
-			/*
-			if((Random.Range(0, CurrentWave +1) < 3)) {
-				JustSpawnedPiepl.GetComponent<PieplBehavior>().isSpecial=true;
-				print("SPECIAL PIG BORN!");
-			}*/
-			JustSpawnedPiepl.GetComponent<PieplBehavior>().StartForReal();
+            string PigToSpawn = "poorpiggy_01";
+            bool spawnSpecial = false;
+            if ((Random.Range(0, CurrentWave + 10) < 3))
+            {
+                spawnSpecial = true;
+            }
+            else
+            {
+                int rare = Random.Range(0, 20);
+                
+                if (rare < 6)
+                {
+                    if (rare < 2) { PigToSpawn = "zombiepiggy"; }
+                    if (rare < 4) { PigToSpawn = "darkpiggy"; }
+                    if (rare < 6) { PigToSpawn = "rainbowpiggy"; }
+                }
+            }
+            GameObject spawnedPigObj = (GameObject)Instantiate(Resources.Load(PigToSpawn), spawnTransform.position, spawnTransform.rotation);
+
+            PieplBehavior piggy = spawnedPigObj.GetComponent<PieplBehavior>();
+
+            piggy.isSpecial = spawnSpecial;
+            piggy.SpawnDelay= Random.Range(1,65+CurrentWave*2);
+            piggy.LifeTime = Random.Range(35, 75 + CurrentWave * 2);
+			
+            piggy.StartForReal();
 		}
 
 	}
