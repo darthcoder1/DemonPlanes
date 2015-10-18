@@ -228,7 +228,7 @@ public class ScoreComponent : MonoBehaviour
 			bInvincibleBoost = false;
 			InvincibleBoostTimer=0f;
 			BoosterInvincible.enabled = false;
-			BoosterDamageImage.enabled = false;
+			BoosterInvincibleImage.enabled = false;
 		}
 	}
 	

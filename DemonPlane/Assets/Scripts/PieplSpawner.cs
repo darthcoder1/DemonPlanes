@@ -70,13 +70,13 @@ public class PieplSpawner : MonoBehaviour
             }
             else
             {
-                int rare = Random.Range(0, 20);
+                int rare = Random.Range(0, 40);
                 
                 if (rare < 6)
                 {
                     if (rare < 2) { PigToSpawn = "zombiepiggy"; }
-                    if (rare < 4) { PigToSpawn = "darkpiggy"; }
-                    if (rare < 6) { PigToSpawn = "rainbowpiggy"; }
+                    else if (rare < 4) { PigToSpawn = "darkpiggy"; }
+                    else if (rare < 6) { PigToSpawn = "rainbowpiggy"; }
                 }
             }
             GameObject spawnedPigObj = (GameObject)Instantiate(Resources.Load(PigToSpawn), spawnTransform.position, spawnTransform.rotation);

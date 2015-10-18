@@ -110,7 +110,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -180,7 +179,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -269,7 +267,7 @@ MonoBehaviour:
   MaxShootDistance: 50
   RotationSpeed: .5
   WalkingSpeed: 3
-  TimeToDisappear: .5
+  TimeToDisappear: 2
   TimeFollowingTarget: 2
   TimeFlyingInLastDirection: 8
   DemonExtinguishSFX: {fileID: 8266398}
@@ -1485,7 +1483,7 @@ Prefab:
       objectReference: {fileID: 8294712}
     - target: {fileID: 0}
       propertyPath: TimeToDisappear
-      value: .5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
