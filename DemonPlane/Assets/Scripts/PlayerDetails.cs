@@ -278,7 +278,7 @@ public class PlayerDetails : MonoBehaviour {
 	string CalculateRank(int TotalScore)
 	{	
 		if (TotalScore > 150000) {
-
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_AmericanEagle);
 			return "AMERICAN EAGLE";
 		} 
 		if (TotalScore > 100000) {
@@ -299,7 +299,7 @@ public class PlayerDetails : MonoBehaviour {
 			return "STORK";
 		}
 		else if (TotalScore > 50000) {
-			
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_KingFisher);
 			return "KINGFISHER";
 		}
 		else if (TotalScore > 45000) {
@@ -328,11 +328,11 @@ public class PlayerDetails : MonoBehaviour {
 			return "MOORHEN";
 		}
 		else if (TotalScore > 15000) {
-			
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_DragonFly);
 			return "DRAGONFLY";
 		}
 		else if (TotalScore > 1000) {
-			
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_Frog);
 			return "FROG";
 		}
 		else {
@@ -381,6 +381,8 @@ public class PlayerDetails : MonoBehaviour {
 				BonusDetailText.text="°°DOUBLE SCORE FOR 30 SECONDS°°";
 				BonusDetailText.enabled=true;
 				SendMessage("TurnOnScoreBooster");
+
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_Rainbow);
 			}
 			if(nPigName =="dark")
 			{
@@ -392,6 +394,7 @@ public class PlayerDetails : MonoBehaviour {
 				BonusDetailText.text="°°DOUBLE DAMAGE FOR 30 SECONDS°°";
 				BonusDetailText.enabled=true;
 				SendMessage("TurnOnDamageBooster");
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_Dark);
 			}
 			Invoke ("EndBonusDisplay", 5);
 		}
@@ -446,6 +449,23 @@ public class PlayerDetails : MonoBehaviour {
 		BonusDetailText.enabled = true;
 
 		NumMaxAmmoBonus++;
+
+        if (NumMaxAmmoBonus >= 5)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Whale_5);
+        }
+        else if (NumMaxAmmoBonus >= 3)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Whale_3);
+        }
+        else if (NumMaxAmmoBonus >= 2)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Whale_2);
+        }
+        else if (NumMaxAmmoBonus >= 1)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Whale_1);
+        }
 		Invoke ("EndBonusDisplay", 5);
 		//Invoke ("EndTriggerBonusAmmo", BonusDuration);
 	}
@@ -467,6 +487,24 @@ public class PlayerDetails : MonoBehaviour {
 		BonusDetailText.text="°°FLY FASTER°°";
 		BonusDetailText.enabled = true;
 		NumSpeedBonus++;
+
+        if (NumSpeedBonus >= 5)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Hasty_5);
+        }
+        else if (NumSpeedBonus >= 3)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Hasty_3);
+        }
+        else if (NumSpeedBonus >= 2)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Hasty_2);
+        }
+        else if (NumSpeedBonus >= 1)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Hasty_1);
+        }
+
 		GetComponent<ControllerScript>().MaxSpeed += BonusMaxSpeed;
 		Invoke ("EndBonusDisplay", 5);
 		//Invoke ("EndTriggerBonusSpeed", BonusDuration);
@@ -492,6 +530,24 @@ public class PlayerDetails : MonoBehaviour {
 		BonusChanceImage.enabled = true;
 
 		NumMaxShootingRange++;
+
+        if (NumMaxShootingRange >= 5)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Sniper_5);
+        }
+        else if (NumMaxShootingRange >= 3)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Sniper_3);
+        }
+        else if (NumMaxShootingRange >= 2)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Sniper_2);
+        }
+        else if (NumMaxShootingRange >= 1)
+        {
+            AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Skill_Sniper_1);
+        }
+
 		GetComponent<DropWater>().WaterBulletSpeed += BonusShootingRange;
 		Invoke ("EndBonusDisplay", 5);
 		//Invoke ("EndTriggerBonusShootingRange", BonusDuration);
