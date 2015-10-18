@@ -28,9 +28,9 @@ public class PieplBehavior : MonoBehaviour {
 
 				isSpecial = false;
 				int rare = Random.Range (0, 20);
-				GameObject TheJustSpawnedPiepl;
+				GameObject TheJustSpawnedPiepl=null;
 
-				if(rare  < 6)
+				if(rare  < 6) 
 				{
 					if (rare == 0 || rare == 1) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("zombiepiggy"), transform.position, transform.rotation);
 					if (rare == 2 || rare == 3) TheJustSpawnedPiepl=(GameObject)Instantiate (Resources.Load ("darkpiggy"), transform.position, transform.rotation);
