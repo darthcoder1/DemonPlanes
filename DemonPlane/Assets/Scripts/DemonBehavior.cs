@@ -194,7 +194,7 @@ public class DemonBehavior : MonoBehaviour
 
 	void Die()
 	{
-	   
+        GetComponent<CircleCollider2D>().enabled = false;
 		if (TimeTillDeath == 0) {
 			//play sound when dieing
 			DemonDefeatedSFX.Play ();

@@ -17,6 +17,7 @@ GameObject:
   - 50: {fileID: 5036692}
   - 198: {fileID: 19830054}
   - 199: {fileID: 19951690}
+  - 82: {fileID: 8294712}
   m_Layer: 10
   m_Name: flyer_demon_01
   m_TagString: enemy
@@ -109,6 +110,77 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8294712
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131870}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 85bed5d4ba6b0ff49b5904e694497166, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .527999997
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -201,7 +273,7 @@ MonoBehaviour:
   TimeFollowingTarget: 2
   TimeFlyingInLastDirection: 8
   DemonExtinguishSFX: {fileID: 8266398}
-  DemonDefeatedSFX: {fileID: 8266398}
+  DemonDefeatedSFX: {fileID: 8294712}
   HitFX: {fileID: 19830054}
 --- !u!114 &11482464
 MonoBehaviour:
@@ -1407,6 +1479,10 @@ Prefab:
       propertyPath: RotationSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DemonDefeatedSFX
+      value: 
+      objectReference: {fileID: 8294712}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131870}

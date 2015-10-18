@@ -55,7 +55,6 @@ public class WaterShot : MonoBehaviour {
 			demon.Health -= Damage;
 			demon_behavior.Hit();
 
-
 			Die ();
 		}
 	}
