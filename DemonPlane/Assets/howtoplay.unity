@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: mainScene
+  WithGameJolt: 0
 --- !u!114 &499659664
 MonoBehaviour:
   m_ObjectHideFlags: 0
