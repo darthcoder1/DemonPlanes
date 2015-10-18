@@ -57,8 +57,8 @@ public class AchievmentManager : ScriptableObject {
     public void UnlockAchievement(int trophyID)
     {
         if (UnlockedAchievements.Contains(trophyID)) { return; }
-        
-        if (GlobalSettings.Instance.UseGameJolt)
+
+        if (GlobalSettings.Instance.UseGameJolt && GameJolt.API.Manager.Instance.CurrentUser != null)
         {
             GameJolt.API.Trophies.Get(trophyID, (GameJolt.API.Objects.Trophy trophy) =>
             {
