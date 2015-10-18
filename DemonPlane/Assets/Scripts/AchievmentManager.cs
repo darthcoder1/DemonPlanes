@@ -12,6 +12,7 @@ public class AchievmentManager : ScriptableObject {
     public const int kAchievement_SaveThePig_Rainbow = 43252;
     public const int kAchievement_SaveThePig_Dark = 43253;
     public const int kAchievement_SaveThePig_Zombie = 43254;
+    public const int kAchievement_SaveThePig_AllRare = 43255;
 
     public const int kAchievement_KillDemon_1 = 43249;
     public const int kAchievement_KillDemon_5 = 43248;

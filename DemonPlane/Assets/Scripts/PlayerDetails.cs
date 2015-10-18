@@ -40,6 +40,10 @@ public class PlayerDetails : MonoBehaviour {
 	private Text SpeedBonusText;
 	private Text MaxAmmoBonusText;
 	private Text MaxShootingRangeText;
+
+    bool RainbowPigCollected = false;
+    bool DarkPigCollected = false;
+    bool ZombiePigCollected = false;
 	
 	private int NumSpeedBonus;
 	private int NumMaxAmmoBonus;
@@ -75,6 +79,10 @@ public class PlayerDetails : MonoBehaviour {
 		//WaitingForRestart = false;
 		WaitingForLeaderboard = false;
 		WaitingForRestart = false;
+
+        ZombiePigCollected = false;
+        DarkPigCollected = false;
+        RainbowPigCollected = false;
 		
 		CurrentAmmo = MaxAmmo;
 		NumPieplSaved = 0; 
@@ -390,7 +398,7 @@ public class PlayerDetails : MonoBehaviour {
 				BonusDetailText.text="°°DOUBLE SCORE FOR 30 SECONDS°°";
 				BonusDetailText.enabled=true;
 				SendMessage("TurnOnScoreBooster");
-				
+				RainbowPigCollected=true;
 				AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_Rainbow);
 			}
 			if(nPigName =="dark")
@@ -403,6 +411,7 @@ public class PlayerDetails : MonoBehaviour {
 				BonusDetailText.text="°°DOUBLE DAMAGE FOR 30 SECONDS°°";
 				BonusDetailText.enabled=true;
 				SendMessage("TurnOnDamageBooster");
+                DarkPigCollected=true;
 				AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_Dark);
 			}
 			if(nPigName =="zombie")
@@ -415,8 +424,14 @@ public class PlayerDetails : MonoBehaviour {
 				BonusDetailText.text="°°INVINCIBLE FOR 20 SECONDS°°";
 				BonusDetailText.enabled=true;
 				SendMessage("TurnOnInvincibleBooster");
+                ZombiePigCollected=true;
 				AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_Zombie);
 			}
+
+            if (ZombiePigCollected && RainbowPigCollected && DarkPigCollected)
+            {
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_AllRare);
+            }
 			Invoke ("EndBonusDisplay", 5);
 		}
 		else if (isSpecial) {
