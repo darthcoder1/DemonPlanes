@@ -62,9 +62,11 @@ public class WaveSpawner : MonoBehaviour
 
 	bool PrepareNextWave()
 	{
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.GetComponent<PlayerDetails>().IsDead) { return false;  }
         if (CurrentWave >= 0)
         {
-            GameObject.FindGameObjectWithTag("Player").SendMessage("WaveSurvived");
+            player.SendMessage("WaveSurvived");
 			//also start spawning piepl the player has to save from the water
 			PieplSpawner.CurrentWave = CurrentWave++;
 			PieplSpawner.SpawnPiepl ();
@@ -73,7 +75,7 @@ public class WaveSpawner : MonoBehaviour
        
 
 		if (++CurrentWave >= EnemyWaves.Length ||
-		    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDetails>().IsDead) 
+            player.GetComponent<PlayerDetails>().IsDead) 
 		{
 			// won
 			return false;

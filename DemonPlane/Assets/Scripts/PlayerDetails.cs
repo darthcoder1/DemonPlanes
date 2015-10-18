@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using GameJolt;
 
 public class PlayerDetails : MonoBehaviour {
 
@@ -56,6 +57,9 @@ public class PlayerDetails : MonoBehaviour {
 	public ParticleSystem CollectWaterFX;
 	//private GameObject Piepl;
 
+    private bool WaitingForRestart;
+    private bool WaitingForLeaderboard;
+
 	//dieinn
 	private SpriteRenderer rend; 
 	Transform spawnTransform;
@@ -68,6 +72,10 @@ public class PlayerDetails : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+        //WaitingForRestart = false;
+        WaitingForLeaderboard = false;
+        WaitingForRestart = false;
+
 		CurrentAmmo = MaxAmmo;
 		NumPieplSaved = 0; 
 		audios = GetComponents<AudioSource> ();
@@ -129,6 +137,27 @@ public class PlayerDetails : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+        if (WaitingForLeaderboard)
+        {
+            if (Input.GetButton("AltClimb") || Input.GetButton("ReleaseWater") || Input.GetButton("Shoot"))
+            {
+                WaitingForLeaderboard = false;
+
+                GameJolt.UI.Manager.Instance.ShowLeaderboards((bool success) =>
+                {
+                    WaitingForLeaderboard = false;
+                    WaitingForRestart = true;
+                });
+            }
+            return;
+        }
+        if (WaitingForRestart)
+        {
+            RestartLevel();
+            return;
+        }
+
+
         if (AmmoDisplay)
         {
             AmmoDisplay.text = "Water: " + CurrentAmmo.ToString();
@@ -202,6 +231,19 @@ public class PlayerDetails : MonoBehaviour {
 		//int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = DemonScore + PieplScore + WaveScore;
 
+        if (GlobalSettings.Instance.UseGameJolt)
+        {
+            if (GameJolt.API.Manager.Instance.CurrentUser != null)
+            {
+                GameJolt.API.Objects.Score score = new GameJolt.API.Objects.Score(FinalScore, FinalScore.ToString());
+                GameJolt.API.Scores.Add(score);
+            }
+            else
+            {
+                GameJolt.API.Scores.Add(FinalScore, string.Format("{0} points", FinalScore), "Guest");
+            }
+        }
+
 		FinalScoreDemons.text = "  x" + ScoreComp.NumDemonsKilled.ToString () +  " = "+DemonScore.ToString ();
 		FinalPieplSaved.text = "    x" + NumPieplSaved.ToString () + " = "+ PieplScore.ToString ();
 		FinalScoreWaves.text = "Waves x" +ScoreComp.NumWavesSurvived.ToString () + " = "+ WaveScore.ToString ();
@@ -220,13 +262,15 @@ public class PlayerDetails : MonoBehaviour {
 		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=true;
 		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=true;
 
-		Invoke("RestartLevel", 10.0f);
+        WaitingForLeaderboard = true;
 	}
 
 
 	
 	void RestartLevel()
 	{
+        WaitingForLeaderboard = false;
+        WaitingForRestart = false;
 		Destroy(gameObject);
 		Application.LoadLevel(Application.loadedLevel);
 	}

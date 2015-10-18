@@ -206,7 +206,6 @@ public class DemonBehavior : MonoBehaviour
 		else if (Time.time > TimeTillDeath)
 		{
 			GameObject.Destroy (gameObject);
-
             GameObject.FindGameObjectWithTag("Player").SendMessage("DemonKilled");
 		}
 	}

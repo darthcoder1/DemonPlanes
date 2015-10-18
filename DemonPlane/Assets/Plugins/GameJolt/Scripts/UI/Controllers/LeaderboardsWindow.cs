@@ -19,6 +19,7 @@ namespace GameJolt.UI.Controllers
 		
 		override public void Show(Action<bool> callback)
 		{
+            this.callback = callback;
 			animator.SetTrigger("Leaderboards");
 			animator.SetTrigger("ShowLoadingIndicator");
 
