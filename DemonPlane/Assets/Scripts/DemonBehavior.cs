@@ -71,7 +71,7 @@ public class DemonBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.SendMessage("Die");
-            Destroy(gameObject);
+            Die();
         }
     }
 
