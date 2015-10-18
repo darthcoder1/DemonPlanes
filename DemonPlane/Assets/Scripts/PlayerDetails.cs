@@ -238,7 +238,7 @@ public class PlayerDetails : MonoBehaviour {
 		int PieplScore = NumPieplSaved * 500;
 		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
 		//int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
-		int FinalScore = DemonScore + PieplScore + WaveScore;
+		int FinalScore = ScoreComp.Score;
 		
 		if (GlobalSettings.Instance.UseGameJolt)
 		{
@@ -253,9 +253,9 @@ public class PlayerDetails : MonoBehaviour {
 			}
 		}
 		
-		FinalScoreDemons.text = "  x" + ScoreComp.NumDemonsKilled.ToString () +  " = "+DemonScore.ToString ();
-		FinalPieplSaved.text = "    x" + NumPieplSaved.ToString () + " = "+ PieplScore.ToString ();
-		FinalScoreWaves.text = "Waves x" +ScoreComp.NumWavesSurvived.ToString () + " = "+ WaveScore.ToString ();
+		FinalScoreDemons.text = "  x " + ScoreComp.NumDemonsKilled.ToString ();
+		FinalPieplSaved.text = "    x " + NumPieplSaved.ToString ();
+		FinalScoreWaves.text = "Waves x " +ScoreComp.NumWavesSurvived.ToString ();
 		//FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
 		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore);
