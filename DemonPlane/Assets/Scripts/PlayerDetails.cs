@@ -247,27 +247,56 @@ public class PlayerDetails : MonoBehaviour {
 		int WaveScore = ScoreComp.NumWavesSurvived * ScoreComp.SurvivedWaveBonus;
 		//int FireMalus = ScoreComp.NumBurningFires * ScoreComp.BurningFireMalus*(-1);
 		int FinalScore = ScoreComp.Score;
-		
-		if (GlobalSettings.Instance.UseGameJolt)
-		{
-			if (GameJolt.API.Manager.Instance.CurrentUser != null)
-			{
-				GameJolt.API.Objects.Score score = new GameJolt.API.Objects.Score(FinalScore, FinalScore.ToString());
-				GameJolt.API.Scores.Add(score);
-			}
-			else
-			{
-				GameJolt.API.Scores.Add(FinalScore, string.Format("{0} points", FinalScore), "Guest");
-			}
-		}
-		
+
+        int rank = 0;
 		FinalScoreDemons.text = "  x " + ScoreComp.NumDemonsKilled.ToString ();
 		FinalPieplSaved.text = "    x " + NumPieplSaved.ToString ();
 		FinalScoreWaves.text = "Waves x " +ScoreComp.NumWavesSurvived.ToString ();
 		//FinalForestFire.text = ScoreComp.NumBurningFires.ToString () + FinalForestFire.text +  FireMalus.ToString ();
 		FinalScoreTotal.text = FinalScoreTotal.text+" " + FinalScore.ToString ();
-		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore);
-		
+		FinalScoreRank.text = FinalScoreRank.text + CalculateRank (FinalScore, out rank);
+
+        if (GlobalSettings.Instance.UseGameJolt)
+        {
+            if (GameJolt.API.Manager.Instance.CurrentUser != null)
+            {
+                GameJolt.API.Objects.Score score = new GameJolt.API.Objects.Score(FinalScore, FinalScore.ToString());
+                GameJolt.API.Scores.Add(score);
+            }
+            else
+            {
+                GameJolt.API.Scores.Add(FinalScore, string.Format("{0} points", FinalScore), "Guest");
+            }
+        }
+        else if (GlobalSettings.Instance.UseKongregate && KongregateAPI.Instance.Connected != null)
+        {
+            KongregateAPI.Instance.Submit("ScorePT", FinalScore);
+            KongregateAPI.Instance.Submit("ScoreOverall", FinalScore);
+
+            KongregateAPI.Instance.Submit("KilledDemonsPT", ScoreComp.NumDemonsKilled);
+            KongregateAPI.Instance.Submit("KilledDemonsOverall", ScoreComp.NumDemonsKilled);
+
+            KongregateAPI.Instance.Submit("PiggiesSavedPT", NumPieplSaved);
+            KongregateAPI.Instance.Submit("PiggiesSavedOverall", NumPieplSaved);
+
+            KongregateAPI.Instance.Submit("DeathCount", 1);
+            KongregateAPI.Instance.Submit("Rank", rank);
+
+            KongregateAPI.Instance.Submit("WavesSurvivedPT", ScoreComp.NumWavesSurvived);
+            KongregateAPI.Instance.Submit("WavesSurvivedOverall", ScoreComp.NumWavesSurvived);
+
+            KongregateAPI.Instance.Submit("HastySkillPT", NumSpeedBonus);
+            KongregateAPI.Instance.Submit("HastySkillOverall", NumSpeedBonus);
+
+            KongregateAPI.Instance.Submit("SniperSkillPT", NumMaxShootingRange);
+            KongregateAPI.Instance.Submit("SniperSkillOverall", NumMaxShootingRange);
+
+            KongregateAPI.Instance.Submit("WhaleSkillPT", NumMaxAmmoBonus);
+            KongregateAPI.Instance.Submit("WhaleSkillOverall", NumMaxAmmoBonus);
+        }
+
+        WaitingForLeaderboard = true;
+
 		FinalScoreDisplay.enabled = true;
 		FinalScoreDemons.enabled = true;
 		FinalScoreWaves.enabled = true;
@@ -279,7 +308,7 @@ public class PlayerDetails : MonoBehaviour {
 		GameObject.Find("FS_Demons_IMG").GetComponent<Image>().enabled=true;
 		GameObject.Find("FS_Piggies_IMG").GetComponent<Image>().enabled=true;
 		
-		WaitingForLeaderboard = true;
+		
 	}
 	
 	
@@ -292,68 +321,73 @@ public class PlayerDetails : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel);
 	}
 	
-	string CalculateRank(int TotalScore)
+	string CalculateRank(int TotalScore, out int rank)
 	{	
 		if (TotalScore > 150000) {
+            rank = 15;
 			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_AmericanEagle);
 			return "AMERICAN EAGLE";
 		} 
 		if (TotalScore > 100000) {
-			
+            rank = 14;
 			return "ALBATROSS";
 		} 
 		if (TotalScore > 80000) {
-			
+            rank = 13;
 			return "FLAMINGO";
 		} 
 		
 		else if (TotalScore > 70000) {
-			
+            rank = 12;
 			return "SWANE";
 		}
 		else if (TotalScore > 60000) {
-			
+            rank = 11;
 			return "STORK";
 		}
 		else if (TotalScore > 50000) {
+            rank = 10;
 			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_KingFisher);
 			return "KINGFISHER";
 		}
 		else if (TotalScore > 45000) {
-			
+            rank = 9;
 			return "CORMORAN";
 		}
 		
 		else if (TotalScore > 40000) {
-			
+            rank = 8;
 			return "LOON";
 		}
 		else if (TotalScore > 35000) {
-			
+            rank = 7;
 			return "SHOREBIRD";
 		}
 		else if (TotalScore > 30000) {
-			
+            rank = 6;
 			return "SEAGULL";
 		}
 		else if (TotalScore > 25000) {
-			
+            rank = 5;
 			return "DUCK";
+            
 		}
 		else if (TotalScore > 20000) {
-			
+            rank = 4;
 			return "MOORHEN";
 		}
 		else if (TotalScore > 15000) {
 			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_DragonFly);
+            rank = 3;
 			return "DRAGONFLY";
 		}
 		else if (TotalScore > 1000) {
 			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_Rank_Frog);
+            rank = 2;
 			return "FROG";
 		}
 		else {
-			
+            rank = 1;
 			return "POLLYWOG";
 		}
 		
@@ -364,24 +398,26 @@ public class PlayerDetails : MonoBehaviour {
 		//collect a person in water
 		NumPieplSaved++;
 		SendMessage("PiggieSaved");
-		
-		if (NumPieplSaved >= 50)
-		{
-			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_50);
-		}
-		else if (NumPieplSaved >= 20)
-		{
-			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_20);
-		}
-		else if (NumPieplSaved >= 5)
-		{
-			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_5);
-		}
-		else if (NumPieplSaved >= 1)
-		{
-			AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_1);
-		}
-		
+
+        if (GlobalSettings.Instance.UseGameJolt)
+        {
+            if (NumPieplSaved >= 50)
+            {
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_50);
+            }
+            else if (NumPieplSaved >= 20)
+            {
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_20);
+            }
+            else if (NumPieplSaved >= 5)
+            {
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_5);
+            }
+            else if (NumPieplSaved >= 1)
+            {
+                AchievmentManager.Instance.UnlockAchievement(AchievmentManager.kAchievement_SaveThePig_1);
+            }
+        }
 		SFXPieplCollected.Play ();
 		//CALCULATE WHICH BONUS IF PIGGIE IS SPECIAL
 		if(nPigName != "default")

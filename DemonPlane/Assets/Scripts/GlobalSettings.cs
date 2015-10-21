@@ -7,6 +7,7 @@ public class GlobalSettings : ScriptableObject
     static GlobalSettings s_settings = null;
 
     public bool UseGameJolt = false;
+    public bool UseKongregate = false;
     public bool GameJoltInitialized = false;
 
     static public GlobalSettings Instance

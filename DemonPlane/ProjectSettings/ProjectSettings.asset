@@ -312,7 +312,10 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: WITH_GAMEJOLT
+    2: WITH_GAMEJOLT
+    22: WITH_GAMEJOLT
   metroPackageName: DemonPlane
   metroPackageLogo: 
   metroPackageLogo140: 

@@ -17,16 +17,19 @@ public class ScoreComponent : MonoBehaviour
 	public float ScoreBoostTimer;
 	private Text BoosterScore;
 	private Image BoosterScoreImage;
+    public int NumScoreBoosts = 0;
 	
 	public bool bDamageBoost;
 	public float DamageBoostTimer;
 	private Text BoosterDamage;
 	private Image BoosterDamageImage;
+    public int NumDamageBoosts = 0;
 	
 	public bool bInvincibleBoost;
 	public float InvincibleBoostTimer;
 	private Text BoosterInvincible;
 	private Image BoosterInvincibleImage;
+    public int NumInvincibleBoosts = 0;
 	
 	public int Score;
 	
@@ -61,6 +64,10 @@ public class ScoreComponent : MonoBehaviour
 		ScoreBoostTimer = 0f;
 		DamageBoostTimer = 0;
 		InvincibleBoostTimer = 0;
+
+        NumScoreBoosts = 0;
+        NumDamageBoosts = 0;
+        NumInvincibleBoosts = 0;
 		
 		BoosterScore=GameObject.Find("BoosterScore").GetComponent<Text>();
 		BoosterScoreImage=GameObject.Find("BoosterScoreImage").GetComponent<Image>();
@@ -159,6 +166,7 @@ public class ScoreComponent : MonoBehaviour
 	//score booster
 	void TurnOnScoreBooster()
 	{
+        ++NumScoreBoosts;
 		ScoreBoostTimer += 30f;
 		if (bScoreBoost) {
 			return;
@@ -184,6 +192,7 @@ public class ScoreComponent : MonoBehaviour
 	//damage booster
 	void TurnOnDamageBooster()
 	{
+        ++NumDamageBoosts;
 		DamageBoostTimer += 30f;
 		if (bDamageBoost) {
 			return;
@@ -192,6 +201,7 @@ public class ScoreComponent : MonoBehaviour
 		DamageBoosterCountDown ();
 		BoosterDamage.enabled = true;
 		BoosterDamageImage.enabled = true;
+        
 		
 	}
 	void DamageBoosterCountDown()
@@ -209,6 +219,7 @@ public class ScoreComponent : MonoBehaviour
 	//invincible booster
 	void TurnOnInvincibleBooster()
 	{
+        ++NumInvincibleBoosts;
 		InvincibleBoostTimer += 20f;
 		if (bInvincibleBoost) {
 			return;

@@ -5,28 +5,49 @@ using GameJolt;
 public class StartScreen : MonoBehaviour {
 
     public string NextSceneName;
+    
     public bool WithGameJolt;
+    public bool WithKongregate;
 
     private bool SignInFinished = false;
 
-	// Use this for initialization
 	void Start ()
     {
-        SignInFinished = !WithGameJolt;
+        SignInFinished = false;
 
-        if (!GlobalSettings.Instance.GameJoltInitialized)
+        if (WithGameJolt)
         {
-            GlobalSettings.Instance.GameJoltInitialized = true;
-            GlobalSettings.Instance.UseGameJolt = WithGameJolt;
-            if (WithGameJolt)
+            if (!GlobalSettings.Instance.GameJoltInitialized)
             {
-                GameJolt.UI.Manager.Instance.ShowSignIn(
+                GlobalSettings.Instance.GameJoltInitialized = true;
+                GlobalSettings.Instance.UseGameJolt = WithGameJolt;
+                if (WithGameJolt)
+                {
+                    GameJolt.UI.Manager.Instance.ShowSignIn(
+                        (bool success) =>
+                        {
+                            SignInFinished = true;
+                        });
+                }
+            }
+        }
+        else if (WithKongregate)
+        {
+            GlobalSettings.Instance.UseKongregate = true;
+            if (!KongregateAPI.Instance.Connected)
+            {
+                KongregateAPI.Instance.Connect(
                     (bool success) =>
                     {
                         SignInFinished = true;
                     });
             }
         }
+        else
+        {
+            SignInFinished = true;
+        }
+
 	}
 	
 	// Update is called once per frame
