@@ -93,7 +93,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 19490766}
-  - 212: {fileID: 19490767}
   m_Layer: 0
   m_Name: piepl_spawn (10)
   m_TagString: piepl_spawn
@@ -113,32 +112,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 97
---- !u!212 &19490767
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 19490765}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &20390295
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +120,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 20390296}
-  - 212: {fileID: 20390297}
   m_Layer: 0
   m_Name: piepl_spawn (9)
   m_TagString: piepl_spawn
@@ -167,32 +139,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 110
---- !u!212 &20390297
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20390295}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &33511893
 Prefab:
   m_ObjectHideFlags: 0
@@ -360,7 +306,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 64384773}
-  - 212: {fileID: 64384774}
   m_Layer: 0
   m_Name: piepl_spawn (5)
   m_TagString: piepl_spawn
@@ -380,32 +325,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 130
---- !u!212 &64384774
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 64384772}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &68043418
 Prefab:
   m_ObjectHideFlags: 0
@@ -532,7 +451,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 71393221}
-  - 212: {fileID: 71393222}
   m_Layer: 0
   m_Name: piepl_spawn (14)
   m_TagString: piepl_spawn
@@ -552,32 +470,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 115
---- !u!212 &71393222
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 71393220}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &76855362
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +478,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 76855363}
-  - 212: {fileID: 76855364}
   m_Layer: 0
   m_Name: piepl_spawn (6)
   m_TagString: piepl_spawn
@@ -606,32 +497,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 131
---- !u!212 &76855364
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 76855362}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &77173830
 Prefab:
   m_ObjectHideFlags: 0
@@ -880,7 +745,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 133768453}
-  - 212: {fileID: 133768454}
   m_Layer: 0
   m_Name: piepl_spawn (2)
   m_TagString: piepl_spawn
@@ -900,32 +764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 103
---- !u!212 &133768454
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133768452}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &135554095
 Prefab:
   m_ObjectHideFlags: 0
@@ -1095,7 +933,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 180712083}
-  - 212: {fileID: 180712084}
   m_Layer: 0
   m_Name: piepl_spawn (23)
   m_TagString: piepl_spawn
@@ -1115,32 +952,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 137
---- !u!212 &180712084
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180712082}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &182224429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +960,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 182224430}
-  - 212: {fileID: 182224431}
   m_Layer: 0
   m_Name: piepl_spawn (21)
   m_TagString: piepl_spawn
@@ -1169,32 +979,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 135
---- !u!212 &182224431
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 182224429}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &184191160
 Prefab:
   m_ObjectHideFlags: 0
@@ -1983,7 +1767,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 292190308}
-  - 212: {fileID: 292190309}
   m_Layer: 0
   m_Name: piepl_spawn (7)
   m_TagString: piepl_spawn
@@ -2003,32 +1786,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 94
---- !u!212 &292190309
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 292190307}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &309651895
 Prefab:
   m_ObjectHideFlags: 0
@@ -3650,7 +3407,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461230642}
-  - 212: {fileID: 461230643}
   m_Layer: 0
   m_Name: piepl_spawn (5)
   m_TagString: piepl_spawn
@@ -3670,32 +3426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 92
---- !u!212 &461230643
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 461230641}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &466281836
 Prefab:
   m_ObjectHideFlags: 0
@@ -4015,7 +3745,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 494704925}
-  - 212: {fileID: 494704926}
   m_Layer: 0
   m_Name: piepl_spawn (11)
   m_TagString: piepl_spawn
@@ -4035,32 +3764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 98
---- !u!212 &494704926
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 494704924}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &510569128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,7 +3772,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 510569129}
-  - 212: {fileID: 510569130}
   m_Layer: 0
   m_Name: piepl_spawn (8)
   m_TagString: piepl_spawn
@@ -4089,32 +3791,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 95
---- !u!212 &510569130
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 510569128}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &524340077
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,7 +3799,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 524340078}
-  - 212: {fileID: 524340079}
   m_Layer: 0
   m_Name: piepl_spawn (9)
   m_TagString: piepl_spawn
@@ -4143,32 +3818,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 96
---- !u!212 &524340079
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 524340077}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &528952994
 Prefab:
   m_ObjectHideFlags: 0
@@ -4361,7 +4010,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 547993397}
-  - 212: {fileID: 547993398}
   m_Layer: 0
   m_Name: piepl_spawn (6)
   m_TagString: piepl_spawn
@@ -4381,32 +4029,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 107
---- !u!212 &547993398
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 547993396}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &551189882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,7 +4183,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 606768621}
-  - 212: {fileID: 606768622}
   m_Layer: 0
   m_Name: piepl_spawn (26)
   m_TagString: piepl_spawn
@@ -4581,32 +4202,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 139
---- !u!212 &606768622
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 606768620}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &610401369
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,7 +4210,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 610401370}
-  - 212: {fileID: 610401371}
   m_Layer: 0
   m_Name: piepl_spawn (16)
   m_TagString: piepl_spawn
@@ -4635,32 +4229,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 124
---- !u!212 &610401371
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 610401369}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &617567879
 Prefab:
   m_ObjectHideFlags: 0
@@ -4882,7 +4450,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 644684908}
-  - 212: {fileID: 644684909}
   m_Layer: 0
   m_Name: piepl_spawn (13)
   m_TagString: piepl_spawn
@@ -4902,32 +4469,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 114
---- !u!212 &644684909
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 644684907}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &671085552
 GameObject:
   m_ObjectHideFlags: 0
@@ -5318,7 +4859,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 713151985}
-  - 212: {fileID: 713151986}
   m_Layer: 0
   m_Name: piepl_spawn (11)
   m_TagString: piepl_spawn
@@ -5339,32 +4879,6 @@ Transform:
   - {fileID: 975822388}
   m_Father: {fileID: 0}
   m_RootOrder: 112
---- !u!212 &713151986
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713151984}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &718289336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5373,7 +4887,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 718289337}
-  - 212: {fileID: 718289338}
   m_Layer: 0
   m_Name: piepl_spawn (15)
   m_TagString: piepl_spawn
@@ -5393,32 +4906,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 116
---- !u!212 &718289338
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 718289336}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &724086995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7706,7 +7193,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 866774491}
-  - 212: {fileID: 866774492}
   m_Layer: 0
   m_Name: piepl_spawn (12)
   m_TagString: piepl_spawn
@@ -7726,32 +7212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 134
---- !u!212 &866774492
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866774490}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &873134910
 GameObject:
   m_ObjectHideFlags: 0
@@ -7760,7 +7220,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 873134911}
-  - 212: {fileID: 873134912}
   m_Layer: 0
   m_Name: piepl_spawn (5)
   m_TagString: piepl_spawn
@@ -7780,32 +7239,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 106
---- !u!212 &873134912
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873134910}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &883879987
 Prefab:
   m_ObjectHideFlags: 0
@@ -8194,7 +7627,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 975822388}
-  - 212: {fileID: 975822389}
   m_Layer: 0
   m_Name: piepl_spawn (20)
   m_TagString: piepl_spawn
@@ -8214,32 +7646,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 713151985}
   m_RootOrder: 0
---- !u!212 &975822389
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 975822387}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &977748091
 Prefab:
   m_ObjectHideFlags: 0
@@ -8302,7 +7708,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 979681985}
-  - 212: {fileID: 979681986}
   m_Layer: 0
   m_Name: piepl_spawn (10)
   m_TagString: piepl_spawn
@@ -8322,32 +7727,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 111
---- !u!212 &979681986
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 979681984}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &980870839
 GameObject:
   m_ObjectHideFlags: 0
@@ -8711,7 +8090,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1038303260}
-  - 212: {fileID: 1038303261}
   m_Layer: 0
   m_Name: piepl_spawn (8)
   m_TagString: piepl_spawn
@@ -8731,32 +8109,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 109
---- !u!212 &1038303261
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1038303259}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1039575836
 Prefab:
   m_ObjectHideFlags: 0
@@ -10137,7 +9489,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1125739285}
-  - 212: {fileID: 1125739286}
   m_Layer: 0
   m_Name: piepl_spawn (1)
   m_TagString: piepl_spawn
@@ -10157,32 +9508,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 102
---- !u!212 &1125739286
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1125739284}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1141064448
 GameObject:
   m_ObjectHideFlags: 0
@@ -10191,7 +9516,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1141064449}
-  - 212: {fileID: 1141064450}
   m_Layer: 0
   m_Name: piepl_spawn (3)
   m_TagString: piepl_spawn
@@ -10211,32 +9535,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 90
---- !u!212 &1141064450
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1141064448}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1167072544
 GameObject:
   m_ObjectHideFlags: 0
@@ -12535,7 +11833,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1402859183}
-  - 212: {fileID: 1402859184}
   m_Layer: 0
   m_Name: piepl_spawn (12)
   m_TagString: piepl_spawn
@@ -12555,32 +11852,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 113
---- !u!212 &1402859184
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1402859182}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1435774819
 Prefab:
   m_ObjectHideFlags: 0
@@ -13409,7 +12680,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1576744470}
-  - 212: {fileID: 1576744471}
   m_Layer: 0
   m_Name: piepl_spawn (10)
   m_TagString: piepl_spawn
@@ -13429,32 +12699,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 132
---- !u!212 &1576744471
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1576744469}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1579713645
 GameObject:
   m_ObjectHideFlags: 0
@@ -13463,7 +12707,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1579713646}
-  - 212: {fileID: 1579713647}
   m_Layer: 0
   m_Name: piepl_spawn (2)
   m_TagString: Untagged
@@ -13483,32 +12726,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 141
---- !u!212 &1579713647
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1579713645}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1582059313
 Prefab:
   m_ObjectHideFlags: 0
@@ -14048,7 +13265,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1629501458}
-  - 212: {fileID: 1629501459}
   m_Layer: 0
   m_Name: piepl_spawn (4)
   m_TagString: piepl_spawn
@@ -14068,32 +13284,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 129
---- !u!212 &1629501459
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1629501457}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1640779905
 Prefab:
   m_ObjectHideFlags: 0
@@ -14148,7 +13338,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1643453806}
-  - 212: {fileID: 1643453807}
   m_Layer: 0
   m_Name: piepl_spawn (4)
   m_TagString: piepl_spawn
@@ -14168,32 +13357,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 91
---- !u!212 &1643453807
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1643453805}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1648466652
 GameObject:
   m_ObjectHideFlags: 0
@@ -14202,7 +13365,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1648466653}
-  - 212: {fileID: 1648466654}
   m_Layer: 0
   m_Name: piepl_spawn (27)
   m_TagString: piepl_spawn
@@ -14222,32 +13384,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 140
---- !u!212 &1648466654
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1648466652}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1655560769
 Prefab:
   m_ObjectHideFlags: 0
@@ -14407,7 +13543,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1675413684}
-  - 212: {fileID: 1675413685}
   m_Layer: 0
   m_Name: piepl_spawn (25)
   m_TagString: piepl_spawn
@@ -14427,32 +13562,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 138
---- !u!212 &1675413685
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1675413683}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1685006827
 GameObject:
   m_ObjectHideFlags: 0
@@ -14561,7 +13670,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1693696663}
-  - 212: {fileID: 1693696664}
   m_Layer: 0
   m_Name: piepl_spawn (6)
   m_TagString: piepl_spawn
@@ -14581,32 +13689,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 93
---- !u!212 &1693696664
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1693696662}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1695886978
 GameObject:
   m_ObjectHideFlags: 0
@@ -14903,7 +13985,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1776922612}
-  - 212: {fileID: 1776922613}
   m_Layer: 0
   m_Name: piepl_spawn (1)
   m_TagString: Untagged
@@ -14923,32 +14004,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 128
---- !u!212 &1776922613
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1776922611}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1777525096
 Prefab:
   m_ObjectHideFlags: 0
@@ -15540,7 +14595,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1824704031}
-  - 212: {fileID: 1824704030}
   m_Layer: 0
   m_Name: piepl_spawn (1)
   m_TagString: piepl_spawn
@@ -15548,32 +14602,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1824704030
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1824704029}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1824704031
 Transform:
   m_ObjectHideFlags: 0
@@ -15594,7 +14622,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1834549571}
-  - 212: {fileID: 1834549572}
   m_Layer: 0
   m_Name: piepl_spawn
   m_TagString: Untagged
@@ -15614,32 +14641,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 101
---- !u!212 &1834549572
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1834549570}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1839839432
 Prefab:
   m_ObjectHideFlags: 0
@@ -15740,7 +14741,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1857453796}
-  - 212: {fileID: 1857453797}
   m_Layer: 0
   m_Name: piepl_spawn (3)
   m_TagString: piepl_spawn
@@ -15760,32 +14760,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 104
---- !u!212 &1857453797
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1857453795}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1869531460
 Prefab:
   m_ObjectHideFlags: 0
@@ -16005,7 +14979,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1910120784}
-  - 212: {fileID: 1910120785}
   m_Layer: 0
   m_Name: piepl_spawn (2)
   m_TagString: piepl_spawn
@@ -16025,32 +14998,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 89
---- !u!212 &1910120785
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1910120783}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1911926734
 GameObject:
   m_ObjectHideFlags: 0
@@ -16220,7 +15167,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1962548585}
-  - 212: {fileID: 1962548586}
   m_Layer: 0
   m_Name: piepl_spawn (11)
   m_TagString: piepl_spawn
@@ -16240,32 +15186,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 133
---- !u!212 &1962548586
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1962548584}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1963197008
 GameObject:
   m_ObjectHideFlags: 0
@@ -16614,7 +15534,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2005117285}
-  - 212: {fileID: 2005117284}
   m_Layer: 0
   m_Name: piepl_spawn (7)
   m_TagString: piepl_spawn
@@ -16622,32 +15541,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &2005117284
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2005117283}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2005117285
 Transform:
   m_ObjectHideFlags: 0
@@ -16898,7 +15791,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2081599480}
-  - 212: {fileID: 2081599481}
   m_Layer: 0
   m_Name: piepl_spawn (4)
   m_TagString: piepl_spawn
@@ -16918,32 +15810,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 105
---- !u!212 &2081599481
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2081599479}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2083773979
 GameObject:
   m_ObjectHideFlags: 0
@@ -17113,7 +15979,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2115382408}
-  - 212: {fileID: 2115382409}
   m_Layer: 0
   m_Name: piepl_spawn (22)
   m_TagString: piepl_spawn
@@ -17133,32 +15998,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 136
---- !u!212 &2115382409
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2115382407}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 00764e293eeb6334fa1e27f9b6b129e1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2123188579
 Prefab:
   m_ObjectHideFlags: 0
